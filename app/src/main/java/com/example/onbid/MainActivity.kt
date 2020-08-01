@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity() {
             rotate.setAnimation(rotateAnimation)
         }
         Handler().postDelayed({
-            startActivity(Intent(this, Home::class.java))
+            startActivity(Intent(this, hometab::class.java))
 
         },4500)
     }
