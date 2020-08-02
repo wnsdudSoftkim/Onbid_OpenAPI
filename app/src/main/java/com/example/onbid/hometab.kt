@@ -1,9 +1,11 @@
 package com.example.onbid
 
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
+import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentStatePagerAdapter
@@ -28,8 +30,10 @@ class hometab : AppCompatActivity() {
         tabLayout.setupWithViewPager(viewPager)
         tabLayout.getTabAt(0)?.setCustomView(createView("best 20"))
         tabLayout.getTabAt(1)?.setCustomView(createView("물건 조회"))
+
         tabLayout.getTabAt(2)?.setCustomView(createView("공매 일정"))
     }
+
 
     fun createView(tabName:String): View {    // 매개
         val tabView  = LayoutInflater.from(this).inflate(R.layout.tabview,null)
@@ -40,6 +44,9 @@ class hometab : AppCompatActivity() {
             }
             "물건 조회" -> {
                 tabView.hometab_img.setImageResource(R.drawable.ic_baseline_search_24)
+
+                tabView.hometab_img.setColorFilter(333)
+
             }
             else -> {
                 return tabView
