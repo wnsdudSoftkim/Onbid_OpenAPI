@@ -20,31 +20,22 @@ class hometab : AppCompatActivity() {
         val fragment1 = fragment1()
         val fragment2 = fragment2()
         val fragment3 = fragment3()
+        val fragment4 = fragment4()
+        val fragment5 = fragment5()
         val adapter = pagerAdapter(supportFragmentManager)
         adapter.addItems(fragment1)    // adapter는 지원
         adapter.addItems(fragment2)
         adapter.addItems(fragment3)
+        adapter.addItems(fragment4)
+        adapter.addItems(fragment5)
         viewPager.adapter = adapter
         tabLayout.setupWithViewPager(viewPager)
-        tabLayout.getTabAt(0)?.setCustomView(createView("best 20"))
-        tabLayout.getTabAt(1)?.setCustomView(createView("물건 조회"))
-        tabLayout.getTabAt(2)?.setCustomView(createView("공매 일정"))
+        tabLayout.getTabAt(0)?.setIcon(R.drawable.ic_baseline_menu_24)
+        tabLayout.getTabAt(1)?.setIcon(R.drawable.ic_baseline_search_24)
+        tabLayout.getTabAt(2)?.setIcon(R.drawable.ic_baseline_home_24)
+        tabLayout.getTabAt(3)?.setIcon(R.drawable.ic_baseline_favorite_24)
+        tabLayout.getTabAt(4)?.setIcon(R.drawable.ic_baseline_person_24)
     }
 
-    fun createView(tabName:String): View {    // 매개
-        val tabView  = LayoutInflater.from(this).inflate(R.layout.tabview,null)
-        tabView.hometab_text.text = tabName
-        when(tabName) {
-            "공매 일정" -> {
-                tabView.hometab_img.setImageResource(R.drawable.ic_baseline_calendar_today_24)
-            }
-            "물건 조회" -> {
-                tabView.hometab_img.setImageResource(R.drawable.ic_baseline_search_24)
-            }
-            else -> {
-                return tabView
-            }
-        }
-        return tabView
-    }
+
 }

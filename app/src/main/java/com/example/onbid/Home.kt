@@ -18,7 +18,7 @@ class Home : AppCompatActivity() {
         setContentView(R.layout.activity_home)
         btn_start.setOnClickListener {
 
-            RetrofitClient.dataservice.getdata()
+            RetrofitClient.dataservice.getnewlist()
                 .enqueue(object : retrofit2.Callback<Camco> {
                     override fun onFailure(call: retrofit2.Call<Camco>, t: Throwable) {
                         text_sample.setText("" + t.message)

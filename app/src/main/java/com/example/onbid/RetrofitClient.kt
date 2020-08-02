@@ -4,9 +4,9 @@ package com.example.onbid
 import okhttp3.OkHttpClient
 import retrofit2.Call
 import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.converter.simplexml.SimpleXmlConverterFactory
-import retrofit2.http.GET
-import retrofit2.http.Header
+import retrofit2.http.*
 
 
 object RetrofitClient {
@@ -16,11 +16,25 @@ object RetrofitClient {
         .client (OkHttpClient ())
         .build()
     val dataservice: DataService = retrofit.create(DataService::class.java)
+    //로그인,회원가입 retrofit
+    val retrofitforlogin = Retrofit.Builder()
+        .baseUrl("")
+        .addConverterFactory(GsonConverterFactory.create())
+        .build()
+    val loginservice :DataService = retrofitforlogin.create(DataService::class.java)
 
 }
 
 //서버로 보내는 INPUT데이터
 interface DataService {
+    //회원가입 POST
+    @FormUrlEncoded
+    @POST("aa")
+    fun SignUp(
+        @Field("email") email:String,
+        @Field("password") password:String,
+        @Field("name") name:String
+    ):Call<LoginData>
     //베이스 URL 을 제외한 경로
     //캠코공매물건목록조회
     @GET("KamcoPblsalThingInquireSvc/getKamcoPbctCltrList?serviceKey=TqjIDWEFUiSaeznEMiLDt2X05LgJsJWP0Ja9xKpbEIbwBfiGFLQoAXV1kpXjBNLZSQyhHOzF5Vh%2Fm4wZE7XXug%3D%3D&numOfRows=10&pageNo=1")

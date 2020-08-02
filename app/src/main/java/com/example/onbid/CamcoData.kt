@@ -46,97 +46,97 @@ data class CamcoData_item @JvmOverloads constructor(
     val PBCT_NO: String? = "",
 
     //공매조건번호
-    @field:Element(name = "PBCT_CDTN_NO")
-    @param:Element(name = "PBCT_CDTN_NO")
+    @field:Element(name = "PBCT_CDTN_NO", required = false)
+    @param:Element(name = "PBCT_CDTN_NO", required = false)
     val PBCT_CDTN_NO: String? = "",
 
     //물건번호
-    @field:Element(name = "CLTR_NO")
-    @param:Element(name = "CLTR_NO")
+    @field:Element(name = "CLTR_NO", required = false)
+    @param:Element(name = "CLTR_NO", required = false)
     val CLTR_NO: String? = "",
     //물건이력번호
-    @field:Element(name = "CLTR_HSTR_NO")
-    @param:Element(name = "CLTR_HSTR_NO")
+    @field:Element(name = "CLTR_HSTR_NO", required = false)
+    @param:Element(name = "CLTR_HSTR_NO", required = false)
     val CLTR_HSTR_NO: String? = "",
     //화면그룹코드
-    @field:Element(name = "SCRN_GRP_CD")
-    @param:Element(name = "SCRN_GRP_CD")
+    @field:Element(name = "SCRN_GRP_CD", required = false)
+    @param:Element(name = "SCRN_GRP_CD", required = false)
     val SCRN_GRP_CD: String? = "",
     //용도명
-    @field:Element(name = "CTGR_FULL_NM")
-    @param:Element(name = "CTGR_FULL_NM")
+    @field:Element(name = "CTGR_FULL_NM", required = false)
+    @param:Element(name = "CTGR_FULL_NM", required = false)
     val CTGR_FULL_NM: String? = "",
     //입찰번호
-    @field:Element(name = "BID_MNMT_NO")
-    @param:Element(name = "BID_MNMT_NO")
+    @field:Element(name = "BID_MNMT_NO", required = false)
+    @param:Element(name = "BID_MNMT_NO", required = false)
     val BID_MNMT_NO: String? = "",
     //물건명
-    @field:Element(name = "CLTR_NM")
-    @param:Element(name = "CLTR_NM")
+    @field:Element(name = "CLTR_NM", required = false)
+    @param:Element(name = "CLTR_NM", required = false)
     val CLTR_NM: String? = "",
     //물건관리번호
-    @field:Element(name = "CLTR_MNMT_NO")
-    @param:Element(name = "CLTR_MNMT_NO")
+    @field:Element(name = "CLTR_MNMT_NO", required = false)
+    @param:Element(name = "CLTR_MNMT_NO", required = false)
     val CLTR_MNMT_NO: String? = "",
     //물건소재지(지번)
-    @field:Element(name = "LDNM_ADRS")
-    @param:Element(name = "LDNM_ADRS")
+    @field:Element(name = "LDNM_ADRS", required = false)
+    @param:Element(name = "LDNM_ADRS", required = false)
     val LDNM_ADRS: String? = "",
     //물건소재지(도로명)
-    @field:Element(name = "NMRD_ADRS")
-    @param:Element(name = "NMRD_ADRS")
+    @field:Element(name = "NMRD_ADRS", required = false)
+    @param:Element(name = "NMRD_ADRS", required = false)
     val NMRD_ADRS: String? = "",
     //?
-    @field:Element(name = "LDNM_PNU")
-    @param:Element(name = "LDNM_PNU")
+    @field:Element(name = "LDNM_PNU", required = false)
+    @param:Element(name = "LDNM_PNU", required = false)
     val LDNM_PNU: String?= "",
     //처분방식코드
-    @field:Element(name = "DPSL_MTD_CD")
-    @param:Element(name = "DPSL_MTD_CD")
+    @field:Element(name = "DPSL_MTD_CD", required = false)
+    @param:Element(name = "DPSL_MTD_CD", required = false)
     val DPSL_MTD_CD: String? = "",
     //처분방식코드명
-    @field:Element(name = "DPSL_MTD_NM")
-    @param:Element(name = "DPSL_MTD_NM")
+    @field:Element(name = "DPSL_MTD_NM", required = false)
+    @param:Element(name = "DPSL_MTD_NM", required = false)
     val DPSL_MTD_NM: String? = "",
     //입찰방식명
-    @field:Element(name = "BID_MTD_NM")
-    @param:Element(name = "BID_MTD_NM")
+    @field:Element(name = "BID_MTD_NM", required = false)
+    @param:Element(name = "BID_MTD_NM", required = false)
     val BID_MTD_NM: String? = "",
     //최저입찰가
-    @field:Element(name = "MIN_BID_PRC")
-    @param:Element(name = "MIN_BID_PRC")
+    @field:Element(name = "MIN_BID_PRC", required = false)
+    @param:Element(name = "MIN_BID_PRC", required = false)
     val MIN_BID_PRC: String? = "",
     //감정가
-    @field:Element(name = "APSL_ASES_AVG_AMT")
-    @param:Element(name = "APSL_ASES_AVG_AMT")
+    @field:Element(name = "APSL_ASES_AVG_AMT", required = false)
+    @param:Element(name = "APSL_ASES_AVG_AMT", required = false)
     val APSL_ASES_AVG_AMTC: String? = "",
     //최저입찰가율
-    @field:Element(name = "FEE_RATE")
-    @param:Element(name = "FEE_RATE")
+    @field:Element(name = "FEE_RATE", required = false)
+    @param:Element(name = "FEE_RATE", required = false)
     val FEE_RATE: String? = "",
     //입찰시작일시
-    @field:Element(name = "PBCT_BEGN_DTM")
-    @param:Element(name = "PBCT_BEGN_DTM")
+    @field:Element(name = "PBCT_BEGN_DTM", required = false)
+    @param:Element(name = "PBCT_BEGN_DTM", required = false)
     val PBCT_BEGN_DTM: String? = "",
     //입찰마감일시
-    @field:Element(name = "PBCT_CLS_DTM")
-    @param:Element(name = "PBCT_CLS_DTM")
+    @field:Element(name = "PBCT_CLS_DTM", required = false)
+    @param:Element(name = "PBCT_CLS_DTM", required = false)
     val PBCT_CLS_DTM: String? = "",
     //물건상태
-    @field:Element(name = "PBCT_CLTR_STAT_NM")
-    @param:Element(name = "PBCT_CLTR_STAT_NM")
+    @field:Element(name = "PBCT_CLTR_STAT_NM", required = false)
+    @param:Element(name = "PBCT_CLTR_STAT_NM", required = false)
     val PBCT_CLTR_STAT_NM: String? = "",
     //유찰횟수
-    @field:Element(name = "USCBD_CNT")
-    @param:Element(name = "USCBD_CNT")
+    @field:Element(name = "USCBD_CNT", required = false)
+    @param:Element(name = "USCBD_CNT", required = false)
     val USCBD_CNT: String? = "",
     //조회수
-    @field:Element(name = "IQRY_CNT")
-    @param:Element(name = "IQRY_CNT")
+    @field:Element(name = "IQRY_CNT", required = false)
+    @param:Element(name = "IQRY_CNT", required = false)
     val IQRY_CNT: String? = "",
     //물건상세정보
-    @field:Element(name = "GOODS_NM")
-    @param:Element(name = "GOODS_NM")
+    @field:Element(name = "GOODS_NM", required = false)
+    @param:Element(name = "GOODS_NM", required = false)
     val GOODS_NM: String?= "",
     //제조사
     @field:Element(name = "MANF", required = false)
