@@ -76,29 +76,45 @@
 
         </LinearLayout>
         <LinearLayout
+            android:padding="8dp"
+            android:id="@+id/text_search_how"
             android:layout_marginTop="12dp"
             android:layout_width="wrap_content"
             android:orientation="horizontal"
+            android:background="@drawable/login_borderbox"
             android:layout_height="wrap_content">
             <TextView
-                android:gravity="center"
-                android:layout_width="80dp"
-                android:text="처분방식"
                 android:textColor="#000"
-                android:background="@drawable/login_borderbox"
-                android:layout_height="30dp">
-
-            </TextView>
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="처분방식 : "/>
             <TextView
-                android:layout_marginLeft="8dp"
+                android:id="@+id/text_search_result1"
                 android:gravity="center"
-                android:layout_width="80dp"
-                android:text="물건종류"
+                android:layout_width="wrap_content"
+                android:text="전체"
                 android:textColor="#000"
-                android:background="@drawable/login_borderbox"
-                android:layout_height="30dp">
 
-            </TextView>
+                android:layout_height="30dp"/>
+            <TextView
+                android:layout_marginLeft="4dp"
+                android:textColor="#000"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="물건종류 : "/>
+            <TextView
+                android:id="@+id/text_search_result2"
+                android:textColor="#000"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="전체"/>
+            <ImageView
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:src="@drawable/ic_baseline_close_24"/>
+
+
+
 
 
         </LinearLayout>
