@@ -30,11 +30,11 @@ class fragment1 : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        gradle1.setOnClickListener {
+            gradle1.setOnClickListener {
             startActivity(
                 Intent(
                     context,
-                    com.example.onbid.gradle1::class.java
+                    gradle1::class.java
                 )
             )
         }
@@ -42,7 +42,7 @@ class fragment1 : Fragment() {
             startActivity(
                 Intent(
                     context,
-                    com.example.onbid.gradle2::class.java
+                    gradle2::class.java
                 )
             )
         }
@@ -50,7 +50,7 @@ class fragment1 : Fragment() {
             startActivity(
                 Intent(
                     context,
-                    com.example.onbid.gradle3::class.java
+                    gradle3::class.java
                 )
             )
         }
@@ -58,7 +58,7 @@ class fragment1 : Fragment() {
             startActivity(
                 Intent(
                     context,
-                    com.example.onbid.gradle4::class.java
+                    gradle4::class.java
                 )
             )
         }
@@ -66,7 +66,7 @@ class fragment1 : Fragment() {
             startActivity(
                 Intent(
                     context,
-                    com.example.onbid.gradle5::class.java
+                    gradle5::class.java
                 )
             )
         }
@@ -74,7 +74,7 @@ class fragment1 : Fragment() {
             startActivity(
                 Intent(
                     context,
-                    com.example.onbid.gradle6::class.java
+                    gradle6::class.java
                 )
             )
         }
