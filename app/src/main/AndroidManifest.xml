@@ -16,24 +16,21 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".fragment_searchpopup2"></activity>
-        <activity android:name=".fragment2_searchpopup" >
-
-        </activity>
-        <activity android:name=".hometab">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".fragment6"></activity>
+        <activity android:name=".hometab"/>
         <activity android:name=".fragment5" />
         <activity android:name=".fragment4" />
         <activity android:name=".fragment3" />
         <activity android:name=".fragment2" />
         <activity android:name=".fragment1" />
         <activity android:name=".Home" />
-        <activity android:name=".MainActivity" />
+        <activity android:name=".MainActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
