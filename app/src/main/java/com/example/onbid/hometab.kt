@@ -2,21 +2,25 @@ package com.example.onbid
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentStatePagerAdapter
+
+import androidx.activity.viewModels
+
+import com.example.onbid.data.ViewModel
+import com.example.onbid.fragment.*
+
 import kotlinx.android.synthetic.main.activity_hometab.*
-import kotlinx.android.synthetic.main.tabview.view.*
 
 class hometab : AppCompatActivity() {
+    val viewModel: ViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_hometab)
         initView()
+
+
     }
-    fun initView(){
+
+    fun initView() {
         val fragment1 = fragment1()
         val fragment2 = fragment2()
         val fragment3 = fragment3()
@@ -35,6 +39,8 @@ class hometab : AppCompatActivity() {
         tabLayout.getTabAt(2)?.setIcon(R.drawable.ic_baseline_home_24)
         tabLayout.getTabAt(3)?.setIcon(R.drawable.ic_baseline_favorite_24)
         tabLayout.getTabAt(4)?.setIcon(R.drawable.ic_baseline_person_24)
+
+
     }
 
 

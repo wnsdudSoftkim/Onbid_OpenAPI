@@ -16,26 +16,28 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".hometab"/>
-        <activity android:name=".fragment5" />
-        <activity android:name=".gradle1"/>
-        <activity android:name=".gradle2"/>
-        <activity android:name=".gradle3"/>
-        <activity android:name=".gradle4"/>
-        <activity android:name=".gradle5"/>
-        <activity android:name=".gradle6"/>
-        <activity android:name=".fragment4" />
-        <activity android:name=".fragment3" />
-        <activity android:name=".fragment2" />
-        <activity android:name=".fragment1" />
-        <activity android:name=".Home" />
-        <activity android:name=".MainActivity" >
+        <activity android:name=".Home_ShowDetail"></activity>
+        <activity android:name=".hometab">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".fragment.fragment2_searchpopup" />
+        <activity android:name=".fragment.fragment5" />
+        <activity android:name=".gradle.gradle1" />
+        <activity android:name=".gradle.gradle2" />
+        <activity android:name=".gradle.gradle3" />
+        <activity android:name=".gradle.gradle4" />
+        <activity android:name=".gradle.gradle5" />
+        <activity android:name=".gradle.gradle6" />
+        <activity android:name=".fragment.fragment4" />
+        <activity android:name=".fragment.fragment3" />
+        <activity android:name=".fragment.fragment2" />
+        <activity android:name=".fragment.fragment1" />
+        <activity android:name=".Home"></activity>
+        <activity android:name=".MainActivity"></activity>
     </application>
 
 </manifest>
