@@ -1,12 +1,12 @@
-package com.example.onbid
+package com.example.onbid.fragment
 
 import android.app.Activity
-import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.RadioButton
+import com.example.onbid.R
 import kotlinx.android.synthetic.main.activity_fragment2_searchpopup.*
 
 class fragment2_searchpopup : AppCompatActivity() {
@@ -40,7 +40,7 @@ class fragment2_searchpopup : AppCompatActivity() {
                         check1=how_total.text.toString()
 
                     }
-                R.id.how_sell->
+                R.id.how_sell ->
                     if(checked) {
                         check1=how_sell.text.toString()
                     }
@@ -49,21 +49,21 @@ class fragment2_searchpopup : AppCompatActivity() {
                         check1=how_borrow.text.toString()
                     }
 
-                R.id.thing_total->
+                R.id.thing_total ->
                     if(checked){
                         check2 = thing_total.text.toString()
                     }
-                R.id.thing_car->
+                R.id.thing_car ->
                     if(checked){
                         check2 = thing_car.text.toString()
                     }
 
-                R.id.thing_thing->
+                R.id.thing_thing ->
                     if(checked){
                         check2 = thing_thing.text.toString()
                     }
 
-                R.id.thing_money->
+                R.id.thing_money ->
                     if(checked){
                         check2 = thing_money.text.toString()
                     }

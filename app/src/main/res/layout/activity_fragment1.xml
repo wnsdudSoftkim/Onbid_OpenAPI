@@ -16,22 +16,7 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="55dp"
-                android:background="#4585FF"
-                android:orientation="vertical">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="280dp"
-                    android:layout_marginTop="10dp"
-                    android:fontFamily="@font/mapo"
-                    android:text="Onbid"
-                    android:textColor="#fff"
-                    android:textSize="35dp" />
-            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -206,6 +191,14 @@
                     android:text="○ 전체 목록" />
 
             </LinearLayout>
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+
         </LinearLayout>
     </ScrollView>
 

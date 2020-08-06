@@ -1,9 +1,9 @@
-package com.example.onbid
-
+package com.example.onbid.data
 
 import org.simpleframework.xml.Element
 import org.simpleframework.xml.ElementList
 import org.simpleframework.xml.Root
+
 
 
 @Root(name = "response", strict = false)
@@ -109,7 +109,7 @@ data class CamcoData_item @JvmOverloads constructor(
     //감정가
     @field:Element(name = "APSL_ASES_AVG_AMT", required = false)
     @param:Element(name = "APSL_ASES_AVG_AMT", required = false)
-    val APSL_ASES_AVG_AMTC: String? = "",
+    val APSL_ASES_AVG_AMT: String? = "",
     //최저입찰가율
     @field:Element(name = "FEE_RATE", required = false)
     @param:Element(name = "FEE_RATE", required = false)
@@ -181,7 +181,18 @@ data class CamcoData_item @JvmOverloads constructor(
     //회원권명
     @field:Element(name = "MMB_RGT_NM", required = false)
     @param:Element(name = "MMB_RGT_NM", required = false)
-    val MMB_RGT_NM: String? = ""
+    val MMB_RGT_NM: String? = "",
+    //이미지파일
+    @field:ElementList(name="CLTR_IMG_FILES", required = false)
+    @param:ElementList(name="CLTR_IMG_FILES", required = false)
+    val CLTR_IMG_FILES:List<img>?=null
+
+)
+@Root(name = "CLTR_IMG_FILES",strict = false)
+data class img(
+    @field:Element(name = "CLTR_IMG_FILE", required = false)
+    @param:Element(name = "CLTR_IMG_FILE", required = false)
+    val CLTR_IMG_FILE: String?=""
 )
 
 

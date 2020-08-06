@@ -1,4 +1,4 @@
-package com.example.onbid
+package com.example.onbid.data
 
 import java.io.Serializable
 
