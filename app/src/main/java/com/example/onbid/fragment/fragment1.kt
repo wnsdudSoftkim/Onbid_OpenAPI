@@ -30,8 +30,6 @@ class fragment1 : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        //홈 전체목록 통신을 위한 함수
-
         gradle1.setOnClickListener {
             startActivity(
                 Intent(
@@ -95,7 +93,9 @@ class fragment1 : Fragment() {
                         viewModel.data,
                         LayoutInflater.from(context),
                         onClick = {
-                            startActivity(Intent(context,Home_ShowDetail::class.java))
+                            //여기서 통신을 바로 하고 통신이 완료될 때 까지 dialog 보여준다 통신이 완료되면 상세페이지로 이동하게끔 , data 를 intent 로 보내준다.
+                            //물건정보조회 서비스의 상세조회API
+                            startActivity(Intent(context, Home_ShowDetail::class.java))
                         })
                 recycler_view.adapter = adapter
                 recycler_view.layoutManager = LinearLayoutManager(context)
@@ -110,7 +110,7 @@ class fragment1 : Fragment() {
         RetrofitClient.dataservice.getdata()
             .enqueue(object : retrofit2.Callback<Camco> {
                 override fun onFailure(call: retrofit2.Call<Camco>, t: Throwable) {
-                    Toast.makeText(context,"리스트를 읽어오는데 실패하였습니다",Toast.LENGTH_SHORT).show()
+                    Toast.makeText(context, "리스트를 읽어오는데 실패하였습니다", Toast.LENGTH_SHORT).show()
                 }
 
                 override fun onResponse(
