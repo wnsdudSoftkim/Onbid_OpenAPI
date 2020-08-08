@@ -16,7 +16,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Home_ShowDetail"></activity>
+        <activity android:name=".SignUp"></activity>
+        <activity android:name=".Login" />
+        <activity android:name=".Home_ShowDetail" />
         <activity android:name=".hometab">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -36,8 +38,7 @@
         <activity android:name=".fragment.fragment3" />
         <activity android:name=".fragment.fragment2" />
         <activity android:name=".fragment.fragment1" />
-        <activity android:name=".Home"></activity>
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>

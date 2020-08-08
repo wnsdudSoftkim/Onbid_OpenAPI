@@ -31,20 +31,32 @@ object RetrofitClient {
 interface DataService {
     //회원가입 POST
     @FormUrlEncoded
-    @POST("aa")
+    @POST("app_login")
     fun SignUp(
         @Field("email") email:String,
         @Field("password") password:String,
         @Field("name") name:String
     ):Call<LoginData>
+    //로그인 POST
+    @FormUrlEncoded
+    @POST("app_login")
+    fun Login(
+        @Field("email") email:String,
+        @Field("password") password:String
+    ):Call<LoginData>
+
     //베이스 URL 을 제외한 경로
     //캠코공매물건목록조회(상세)
-    @GET("http://openapi.onbid.co.kr/openapi/services/KamcoPblsalThingInquireSvc/getKamcoPbctCltrList?serviceKey=TqjIDWEFUiSaeznEMiLDt2X05LgJsJWP0Ja9xKpbEIbwBfiGFLQoAXV1kpXjBNLZSQyhHOzF5Vh%2Fm4wZE7XXug%3D%3D&numO" +
-            "fRows=10&pageNo=1&DPSL_MTD_CD=&CTGR_HIRK_ID=&CTGR_HIRK_ID_MID=&SIDO=&SGK=&EMD=&GOODS_PRICE_FROM=&GOODS_PRICE_TO=&OPEN_PRICE_FROM=&OPEN_PRICE_TO=&CLTR_NM=&PBCT_BEGN_DTM=&PBCT_CLS_DTM=&CLTR_MNMT_NO=&")
+    @GET("KamcoPblsalThingInquireSvc/getKamcoPbctCltrList?serviceKey=TqjIDWEFUiSaeznEMiLDt2X05LgJsJWP0Ja9xKpbEIbwBfiGFLQoAXV1kpXjBNLZSQyhHOzF5Vh%2Fm4wZE7XXug%3D%3D&numOfRows=10&pageNo=1&DPSL_MTD_CD=&CTGR_HIRK_ID=&CTGR_HIRK_ID_MID=&SIDO=&SGK=&EMD=&GOODS_PRICE_FROM=&GOODS_PRICE_TO=&OPEN_PRICE_FROM=&OPEN_PRICE_TO=&CLTR_NM=&PBCT_BEGN_DTM=&PBCT_CLS_DTM=&CLTR_MNMT_NO=&")
     fun getdata(): Call<Camco>
+
     //1.통합관심탑20물건목록조회(0001부동산/0002자동차,운송장비 / 0003물품[기계] / 0004 물품(기타) / 0005 권리,증권
-    @GET("ThingInfoInquireSvc/getUnifyInterestTop20CltrList?serviceKey=TqjIDWEFUiSaeznEMiLDt2X05LgJsJWP0Ja9xKpbEIbwBfiGFLQoAXV1kpXjBNLZSQyhHOzF5Vh%2Fm4wZE7XXug%3D%3D&CTGR_TYPE_ID=0003&numOfRows=10&pageNo=1")
-    fun getTop20():Call<Camco>
+    @GET("ThingInfoInquireSvc/getUnifyInterestTop20CltrList?serviceKey=TqjIDWEFUiSaeznEMiLDt2X05LgJsJWP0Ja9xKpbEIbwBfiGFLQoAXV1kpXjBNLZSQyhHOzF5Vh%2Fm4wZE7XXug%3D%3D&")
+    fun getTop20(
+        @Query("CTGR_TYPE_ID") CTGR_TYPE_ID: String,
+        @Query("numOfRows") numOfRows:String,
+        @Query("pageNo") pageNo:String
+    ):Call<Camco>
     //2. 통합클릭탑20물건목록조회(코드 위와 동일)
     @GET("ThingInfoInquireSvc/getUnifyClickTop20CltrList?serviceKey=TqjIDWEFUiSaeznEMiLDt2X05LgJsJWP0Ja9xKpbEIbwBfiGFLQoAXV1kpXjBNLZSQyhHOzF5Vh%2Fm4wZE7XXug%3D%3D&CTGR_TYPE_ID=&numOfRows=10&pageNo=1")
     fun getclick20():Call<Camco>

@@ -17,7 +17,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="85"
-            android:text="My OnBid"
+            android:text="내 정보"
             android:textColor="#4585FF"
             android:textSize="30dp" />
 
@@ -30,7 +30,7 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/fragment6"
+        android:id="@+id/linear_gologin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
@@ -104,40 +104,7 @@
             android:layout_weight="10"/>
 
     </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_marginTop="30dp"
-        android:gravity="center"
-        android:paddingTop="27dp"
-        android:layout_height="50dp">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="19dp"
-            android:textColor="#c92a2a"
-            android:text="대한민국 최대 공매정보"/>
-    </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:gravity="center">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/mapo"
-            android:text="온비드"
-            android:textColor="#1864ab"
-            android:textSize="75dp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingTop="40dp"
-            android:text="동산"
-            android:textSize="20dp" />
-    </LinearLayout>
 
 
 </LinearLayout>
