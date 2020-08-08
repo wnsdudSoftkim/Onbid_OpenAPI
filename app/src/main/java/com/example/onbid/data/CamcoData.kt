@@ -32,17 +32,17 @@ data class CamcoData_items @JvmOverloads constructor(
 
 @Root(name = "item",strict = false)
 data class CamcoData_item @JvmOverloads constructor(
-    @field:Element(name = "RNUM")
-    @param:Element(name = "RNUM")
+    @field:Element(name = "RNUM", required = false)
+    @param:Element(name = "RNUM", required = false)
     val RNUM: String? = "",
     //공고 번호
-    @field:Element(name = "PLNM_NO")
-    @param:Element(name = "PLNM_NO")
+    @field:Element(name = "PLNM_NO", required = false)
+    @param:Element(name = "PLNM_NO", required = false)
     val PLNM_NO: String? = "",
 
     //공매 번호
-    @field:Element(name = "PBCT_NO")
-    @param:Element(name = "PBCT_NO")
+    @field:Element(name = "PBCT_NO", required = false)
+    @param:Element(name = "PBCT_NO", required = false)
     val PBCT_NO: String? = "",
 
     //공매조건번호
@@ -188,6 +188,7 @@ data class CamcoData_item @JvmOverloads constructor(
     val CLTR_IMG_FILES:List<img>?=null
 
 )
+
 @Root(name = "CLTR_IMG_FILES",strict = false)
 data class img(
     @field:Element(name = "CLTR_IMG_FILE", required = false)

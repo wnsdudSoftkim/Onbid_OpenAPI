@@ -2,16 +2,12 @@ package com.example.onbid
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-
-import androidx.activity.viewModels
-
-import com.example.onbid.data.ViewModel
 import com.example.onbid.fragment.*
-
+import com.google.android.material.tabs.TabLayout
+import kotlinx.android.synthetic.main.activity_gradle1.*
 import kotlinx.android.synthetic.main.activity_hometab.*
 
 class hometab : AppCompatActivity() {
-    val viewModel: ViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_hometab)
@@ -39,6 +35,59 @@ class hometab : AppCompatActivity() {
         tabLayout.getTabAt(2)?.setIcon(R.drawable.ic_baseline_home_24)
         tabLayout.getTabAt(3)?.setIcon(R.drawable.ic_baseline_favorite_24)
         tabLayout.getTabAt(4)?.setIcon(R.drawable.ic_baseline_person_24)
+        tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
+            override fun onTabReselected(tab: TabLayout.Tab?) {
+
+            }
+
+            override fun onTabUnselected(tab: TabLayout.Tab?) {
+                when (tab!!.position) {
+                    0 -> {
+                        linear_home_color1.setBackgroundResource(R.color.gray6)
+                    }
+                    1 -> {
+                        linear_home_color2.setBackgroundResource(R.color.gray6)
+                    }
+                    2 -> {
+                        linear_home_color3.setBackgroundResource(R.color.gray6)
+                    }
+                    3 -> {
+                        linear_home_color4.setBackgroundResource(R.color.gray6)
+                    }
+                    4 -> {
+                        linear_home_color5.setBackgroundResource(R.color.gray6)
+                    }
+                    else -> {
+
+                    }
+                }
+            }
+
+            override fun onTabSelected(tab: TabLayout.Tab?) {
+
+                when (tab!!.position) {
+                    0 -> {
+                        linear_home_color1.setBackgroundResource(R.color.gray6)
+                    }
+                    1 -> {
+                        linear_home_color2.setBackgroundResource(R.color.gray6)
+                    }
+                    2 -> {
+                        linear_home_color3.setBackgroundResource(R.color.gray6)
+                    }
+                    3 -> {
+                        linear_home_color4.setBackgroundResource(R.color.gray6)
+                    }
+                    4 -> {
+                        linear_home_color5.setBackgroundResource(R.color.gray6)
+                    }
+                    else -> {
+
+                    }
+                }
+
+            }
+        })
 
 
     }
