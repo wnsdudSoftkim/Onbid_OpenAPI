@@ -19,7 +19,7 @@ import kotlinx.android.synthetic.main.grid_fragment1.*
 import retrofit2.Response
 
 
-class grid1_fragment1 : Fragment() {
+class grid2_fragment2 : Fragment() {
     val viewModel: ViewModel by viewModels()
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -38,11 +38,11 @@ class grid1_fragment1 : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel.Livegrid1fragment1data.observe(viewLifecycleOwner, Observer {
-            if (viewModel.grid1fragment1data != null) {
+        viewModel.Livegrid1fragment2data.observe(viewLifecycleOwner, Observer {
+            if (viewModel.grid1fragment2data != null) {
                 val adapter =
                     RecyclerAdapter(
-                        viewModel.grid1fragment1data,
+                        viewModel.grid1fragment2data,
                         LayoutInflater.from(context),
                         onClick = {
                             //여기서 통신을 바로 하고 통신이 완료될 때 까지 dialog 보여준다 통신이 완료되면 상세페이지로 이동하게끔 , data 를 intent 로 보내준다.
@@ -58,8 +58,8 @@ class grid1_fragment1 : Fragment() {
     }
 
     fun initview() {
-        if (viewModel.grid1fragment1data.size==0) {
-            RetrofitClient.dataservice.getTop20("0002","20","1")
+        if (viewModel.grid1fragment2data.size==0) {
+            RetrofitClient.dataservice.getclick20("0003","20","1")
                 .enqueue(object : retrofit2.Callback<Camco> {
                     override fun onFailure(call: retrofit2.Call<Camco>, t: Throwable) {
                     }
@@ -71,7 +71,7 @@ class grid1_fragment1 : Fragment() {
                         val body = response.body()
                         //viewModel로 데이터를 보내줌.
                         if (body != null) {
-                            viewModel.myGrid1Fragment1SetData(body)
+                            viewModel.myGrid1Fragment2SetData(body)
 
                         }
                     }

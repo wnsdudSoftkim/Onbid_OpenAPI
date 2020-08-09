@@ -38,7 +38,9 @@
         <activity android:name=".fragment.fragment3" />
         <activity android:name=".fragment.fragment2" />
         <activity android:name=".fragment.fragment1" />
-        <activity android:name=".MainActivity" />
+        <activity android:name=".MainActivity" >
+
+        </activity>
     </application>
 
 </manifest>

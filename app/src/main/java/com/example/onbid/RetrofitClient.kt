@@ -58,8 +58,12 @@ interface DataService {
         @Query("pageNo") pageNo:String
     ):Call<Camco>
     //2. 통합클릭탑20물건목록조회(코드 위와 동일)
-    @GET("ThingInfoInquireSvc/getUnifyClickTop20CltrList?serviceKey=TqjIDWEFUiSaeznEMiLDt2X05LgJsJWP0Ja9xKpbEIbwBfiGFLQoAXV1kpXjBNLZSQyhHOzF5Vh%2Fm4wZE7XXug%3D%3D&CTGR_TYPE_ID=&numOfRows=10&pageNo=1")
-    fun getclick20():Call<Camco>
+    @GET("ThingInfoInquireSvc/getUnifyClickTop20CltrList?serviceKey=TqjIDWEFUiSaeznEMiLDt2X05LgJsJWP0Ja9xKpbEIbwBfiGFLQoAXV1kpXjBNLZSQyhHOzF5Vh%2Fm4wZE7XXug%3D%3D&")
+    fun getclick20(
+        @Query("CTGR_TYPE_ID") CTGR_TYPE_ID: String,
+        @Query("numOfRows") numOfRows:String,
+        @Query("pageNo") pageNo:String
+    ):Call<Camco>
     //3. 통합50%체감물건조회
     @GET("ThingInfoInquireSvc/getUnifyDegression50PerCltrList?serviceKey=TqjIDWEFUiSaeznEMiLDt2X05LgJsJWP0Ja9xKpbEIbwBfiGFLQoAXV1kpXjBNLZSQyhHOzF5Vh%2Fm4wZE7XXug%3D%3D&CTGR_HIRK_ID=&SIDO=&SGK=&EMD=&GOODS_PRICE_FROM=&GOODS_PRICE_TO=&OPEN_PRICE_FROM=&OPEN_PRICE_TO=&CLTR_NM=&PBCT_BEGN_DTM=&PBCT_CLS_DTM=&CLTR_MNMT_NO=&numOfRows=10&pageNo=1")
     fun get50 ():Call<Camco>

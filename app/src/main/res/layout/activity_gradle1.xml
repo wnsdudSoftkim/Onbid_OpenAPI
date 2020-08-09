@@ -52,7 +52,6 @@
             android:background="#868e96">
             <LinearLayout
                 android:id="@+id/linear_grid1_color1"
-                android:backgroundTint="@color/ourcolor"
                 android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"

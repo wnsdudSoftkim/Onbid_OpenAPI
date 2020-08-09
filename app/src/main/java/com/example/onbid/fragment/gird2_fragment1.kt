@@ -19,7 +19,7 @@ import kotlinx.android.synthetic.main.grid_fragment1.*
 import retrofit2.Response
 
 
-class grid1_fragment1 : Fragment() {
+class grid2_fragment1 : Fragment() {
     val viewModel: ViewModel by viewModels()
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -59,7 +59,7 @@ class grid1_fragment1 : Fragment() {
 
     fun initview() {
         if (viewModel.grid1fragment1data.size==0) {
-            RetrofitClient.dataservice.getTop20("0002","20","1")
+            RetrofitClient.dataservice.getclick20("0002","20","1")
                 .enqueue(object : retrofit2.Callback<Camco> {
                     override fun onFailure(call: retrofit2.Call<Camco>, t: Throwable) {
                     }
