@@ -12,6 +12,7 @@ import retrofit2.http.*
 
 
 object RetrofitClient {
+    //XML 데이터 retrofit
     val retrofit = Retrofit.Builder()
         .baseUrl("http://openapi.onbid.co.kr/openapi/services/")
         .addConverterFactory(SimpleXmlConverterFactory.createNonStrict())
@@ -64,8 +65,8 @@ interface DataService {
         @Query("numOfRows") numOfRows:String,
         @Query("pageNo") pageNo:String
     ):Call<Camco>
-    //3. 통합50%체감물건조회
-    @GET("ThingInfoInquireSvc/getUnifyDegression50PerCltrList?serviceKey=TqjIDWEFUiSaeznEMiLDt2X05LgJsJWP0Ja9xKpbEIbwBfiGFLQoAXV1kpXjBNLZSQyhHOzF5Vh%2Fm4wZE7XXug%3D%3D&CTGR_HIRK_ID=&SIDO=&SGK=&EMD=&GOODS_PRICE_FROM=&GOODS_PRICE_TO=&OPEN_PRICE_FROM=&OPEN_PRICE_TO=&CLTR_NM=&PBCT_BEGN_DTM=&PBCT_CLS_DTM=&CLTR_MNMT_NO=&numOfRows=10&pageNo=1")
+    //3. 통합50%체감물건조회(총 281개 받아야함.)
+    @GET("ThingInfoInquireSvc/getUnifyDegression50PerCltrList?serviceKey=TqjIDWEFUiSaeznEMiLDt2X05LgJsJWP0Ja9xKpbEIbwBfiGFLQoAXV1kpXjBNLZSQyhHOzF5Vh%2Fm4wZE7XXug%3D%3D&CTGR_HIRK_ID=&SIDO=&SGK=&EMD=&GOODS_PRICE_FROM=&GOODS_PRICE_TO=&OPEN_PRICE_FROM=&OPEN_PRICE_TO=&CLTR_NM=&PBCT_BEGN_DTM=&PBCT_CLS_DTM=&CLTR_MNMT_NO=&numOfRows=10&pageNo=1&")
     fun get50 ():Call<Camco>
     //4.캠코공매공고목록조회(0001 수탁,유입재산 / 0002 압류재산 / 0003 국유재산 )
     @GET("KamcoPblsalThingInquireSvc/getKamcoPlnmPbctList?serviceKey=TqjIDWEFUiSaeznEMiLDt2X05LgJsJWP0Ja9xKpbEIbwBfiGFLQoAXV1kpXjBNLZSQyhHOzF5Vh%2Fm4wZE7XXug%3D%3D&numOfRows=10&pageNo=1&PRPT_DVSN_CD=&")
@@ -81,7 +82,7 @@ interface DataService {
     fun getThinginfo():Call<Camco>
     //6-2. 통합 마감임박 목록조회
     @GET("ThingInfoInquireSvc/getUnifyDeadlineCltrList?serviceKey=TqjIDWEFUiSaeznEMiLDt2X05LgJsJWP0Ja9xKpbEIbwBfiGFLQoAXV1kpXjBNLZSQyhHOzF5Vh%2Fm4wZE7XXug%3D%3D&DPSL_MTD_CD=&CTGR_HIRK_ID=&CTGR_HIRK_ID_MID=&SIDO=&SGK=&EMD=&GOODS_PRICE_FROM=&GOODS_PRICE_TO=&OPEN_PRICE_FROM=&OPEN_PRICE_TO=&CLTR_NM=&PBCT_BEGN_DTM=&PBCT_CLS_DTM=&CLTR_MNMT_NO=&numOfRows=10&pageNo=1&")
-    fun getThingup():Call<Camco>
+    fun getemergency():Call<Camco>
     //6-1-1. 통합용도별 물건 상세조회(물건번호, 공매번호 필수 !!!)
     @GET("ThingInfoInquireSvc/getUnifyUsageCltrBasicInfoDetail?serviceKey=TqjIDWEFUiSaeznEMiLDt2X05LgJsJWP0Ja9xKpbEIbwBfiGFLQoAXV1kpXjBNLZSQyhHOzF5Vh%2Fm4wZE7XXug%3D%3D&CLTR_NO=1226758&PBCT_NO=9301922&")
     fun getThingdetail():Call<Camco>

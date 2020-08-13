@@ -1,38 +1,28 @@
-package com.example.onbid.gradle
+package com.example.onbid.menu
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
-import android.view.View
-import android.widget.LinearLayout
-import android.widget.TextView
-import android.widget.Toast
 import androidx.activity.viewModels
-import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.onbid.*
+import com.example.onbid.Home_ShowDetail
+import com.example.onbid.R
+import com.example.onbid.RecyclerAdapter
+import com.example.onbid.RetrofitClient
 import com.example.onbid.data.Camco
 import com.example.onbid.data.ViewModel
-import com.example.onbid.fragment.grid1_fragment1
-import com.example.onbid.fragment.grid1_fragment2
-import com.example.onbid.fragment.grid1_fragment3
-import com.example.onbid.fragment.grid1_fragment4
-import com.google.android.material.tabs.TabLayout
-import kotlinx.android.synthetic.main.activity_gradle1.*
-import kotlinx.android.synthetic.main.activity_gradle3.*
-import kotlinx.android.synthetic.main.grid_fragment1.*
-import kotlinx.android.synthetic.main.grid_tabitem.*
+import kotlinx.android.synthetic.main.activity_emargy_top.*
+import kotlinx.android.synthetic.main.activity_new_list.*
 import retrofit2.Response
 
-class gradle3 : AppCompatActivity() {
+class newList : AppCompatActivity() {
     val viewModel: ViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_gradle3)
-        initview()
-        btn_grid3_backpress.setOnClickListener {
+        setContentView(R.layout.activity_new_list)
+        btn_newlist_backpress.setOnClickListener {
             onBackPressed()
         }
         viewModel.Livegrid1fragment1data.observe(this, Observer {
@@ -46,23 +36,21 @@ class gradle3 : AppCompatActivity() {
                             //물건정보조회 서비스의 상세조회API
                             startActivity(Intent(this, Home_ShowDetail::class.java))
                         })
-                recycler_view_grid3.adapter = adapter
-                recycler_view_grid3.layoutManager = LinearLayoutManager(this)
-                recycler_view_grid3.adapter?.notifyDataSetChanged()
-                (recycler_view_grid3.adapter as RecyclerAdapter).setData(it)
+                recycler_view_newlist.adapter = adapter
+                recycler_view_newlist.layoutManager = LinearLayoutManager(this)
+                recycler_view_newlist.adapter?.notifyDataSetChanged()
+                (recycler_view_newlist.adapter as RecyclerAdapter).setData(it)
             }
         })
     }
 
 
 
-
     fun initview() {
         if (viewModel.grid1fragment1data.size==0) {
-            RetrofitClient.dataservice.get50()
+            RetrofitClient.dataservice.getnewlist()
                 .enqueue(object : retrofit2.Callback<Camco> {
                     override fun onFailure(call: retrofit2.Call<Camco>, t: Throwable) {
-                        Toast.makeText(applicationContext,"실패"+t.message,Toast.LENGTH_LONG).show()
                     }
 
                     override fun onResponse(
@@ -73,8 +61,6 @@ class gradle3 : AppCompatActivity() {
                         //viewModel로 데이터를 보내줌.
                         if (body != null) {
                             viewModel.myGrid1Fragment1SetData(body)
-                            Toast.makeText(applicationContext,"성공"+body,Toast.LENGTH_LONG).show()
-
 
                         }
                     }

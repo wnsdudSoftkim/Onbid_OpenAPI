@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContentProviderCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
@@ -39,7 +40,7 @@ class grid1_fragment1 : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel.Livegrid1fragment1data.observe(viewLifecycleOwner, Observer {
-            if (viewModel.grid1fragment1data != null) {
+            if (viewModel.grid1fragment1data.size == 0) {
                 val adapter =
                     RecyclerAdapter(
                         viewModel.grid1fragment1data,
@@ -57,12 +58,15 @@ class grid1_fragment1 : Fragment() {
         })
     }
 
+
     fun initview() {
+
+
         if (viewModel.grid1fragment1data.size==0) {
             RetrofitClient.dataservice.getTop20("0002","20","1")
                 .enqueue(object : retrofit2.Callback<Camco> {
                     override fun onFailure(call: retrofit2.Call<Camco>, t: Throwable) {
-                    }
+                }
 
                     override fun onResponse(
                         call: retrofit2.Call<Camco>,
@@ -73,6 +77,8 @@ class grid1_fragment1 : Fragment() {
                         if (body != null) {
                             viewModel.myGrid1Fragment1SetData(body)
 
+
+
                         }
                     }
 
@@ -80,5 +86,7 @@ class grid1_fragment1 : Fragment() {
         }
 
     }
+
+
 }
 

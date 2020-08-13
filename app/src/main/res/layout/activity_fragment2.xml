@@ -57,6 +57,7 @@
             android:weightSum="100">
 
             <EditText
+                android:id="@+id/edit_search"
                 android:layout_width="0dp"
                 android:layout_height="40dp"
                 android:layout_gravity="center"
@@ -67,6 +68,7 @@
                 android:textColorHint="#868e96" />
 
             <ImageView
+                android:id="@+id/btn_search"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"

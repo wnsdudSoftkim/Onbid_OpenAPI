@@ -14,6 +14,8 @@ import com.example.onbid.fragment.grid1_fragment4
 import com.example.onbid.pagerAdapter
 import com.google.android.material.tabs.TabLayout
 import kotlinx.android.synthetic.main.activity_gradle1.*
+import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.grid_fragment1.*
 import kotlinx.android.synthetic.main.grid_tabitem.*
 
 class gradle1 : AppCompatActivity() {

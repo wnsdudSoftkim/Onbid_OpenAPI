@@ -1,16 +1,13 @@
 package com.example.onbid.data
 
-import android.widget.Toast
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.onbid.RetrofitClient
-import retrofit2.Response
 
 class ViewModel : ViewModel() {
     //데이터와 Livedata 선언
     val data = ArrayList<CamcoData_item>()
     val logindata = ArrayList<LoginData>()
-    val grid1fragment1data = ArrayList<CamcoData_item>()
+    var grid1fragment1data = ArrayList<CamcoData_item>()
     val grid1fragment2data = ArrayList<CamcoData_item>()
     val grid1fragment3data = ArrayList<CamcoData_item>()
     val grid1fragment4data = ArrayList<CamcoData_item>()
@@ -47,6 +44,7 @@ class ViewModel : ViewModel() {
         for ( i in 0 until a.size ) {
             grid1fragment1data.add(a[i])
         }
+
         Livegrid1fragment1data.value = grid1fragment1data
 
     }

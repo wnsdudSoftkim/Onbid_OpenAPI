@@ -58,6 +58,9 @@ class grid2_fragment2 : Fragment() {
     }
 
     fun initview() {
+
+
+
         if (viewModel.grid1fragment2data.size==0) {
             RetrofitClient.dataservice.getclick20("0003","20","1")
                 .enqueue(object : retrofit2.Callback<Camco> {

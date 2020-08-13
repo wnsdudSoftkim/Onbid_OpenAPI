@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:weightSum="100"
     android:orientation="vertical"
-    tools:context=".gradle.gradle1">
+    tools:context=".gradle.gradle2">
     <LinearLayout
         android:layout_weight="10"
         android:layout_width="match_parent"

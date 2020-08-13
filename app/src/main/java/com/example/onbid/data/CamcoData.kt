@@ -1,9 +1,11 @@
 package com.example.onbid.data
 
+import androidx.room.Entity
 import org.simpleframework.xml.Element
 import org.simpleframework.xml.ElementList
 import org.simpleframework.xml.Root
-
+import org.simpleframework.xml.Serializer
+import java.io.Serializable
 
 
 @Root(name = "response", strict = false)
@@ -11,7 +13,7 @@ data class Camco @JvmOverloads constructor(
     @field:ElementList(name = "body", inline = true)
     @param:ElementList(name = "body", inline = true)
     val body: List<CamcoData>
-)
+):Serializable
 
 
 
@@ -29,7 +31,6 @@ data class CamcoData_items @JvmOverloads constructor(
     val item: List<CamcoData_item>
 
 )
-
 @Root(name = "item",strict = false)
 data class CamcoData_item @JvmOverloads constructor(
     @field:Element(name = "RNUM", required = false)

@@ -6,11 +6,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.onbid.R
 import kotlinx.android.synthetic.main.activity_fragment2.*
 
 class fragment2 : Fragment() {
+    var result1 :String?=null
+    var result2 : String?=null
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -25,6 +28,14 @@ class fragment2 : Fragment() {
             startActivityForResult(Intent(context,
                 fragment2_searchpopup::class.java),200)
         }
+        btn_search.setOnClickListener {
+            if(edit_search.toString()!=null) {
+
+
+            }else {
+                Toast.makeText(context,"기입해주세요",Toast.LENGTH_SHORT).show()
+            }
+        }
 
     }
     //돌아오는 값 받기
@@ -32,8 +43,8 @@ class fragment2 : Fragment() {
         super.onActivityResult(requestCode, resultCode, data)
         if(requestCode==200) {
             if(resultCode==Activity.RESULT_OK) {
-                val result1 = data?.getStringExtra("check1")
-                val result2 = data?.getStringExtra("check2")
+                result1 = data?.getStringExtra("check1")
+                result2 = data?.getStringExtra("check2")
                 text_search_result1.setText(result1)
                 text_search_result2.setText(result2)
             }
