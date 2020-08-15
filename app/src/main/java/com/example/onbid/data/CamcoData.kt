@@ -1,10 +1,8 @@
 package com.example.onbid.data
 
-import androidx.room.Entity
 import org.simpleframework.xml.Element
 import org.simpleframework.xml.ElementList
 import org.simpleframework.xml.Root
-import org.simpleframework.xml.Serializer
 import java.io.Serializable
 
 
@@ -191,6 +189,7 @@ data class CamcoData_item @JvmOverloads constructor(
 )
 
 @Root(name = "CLTR_IMG_FILES",strict = false)
+
 data class img(
     @field:Element(name = "CLTR_IMG_FILE", required = false)
     @param:Element(name = "CLTR_IMG_FILE", required = false)

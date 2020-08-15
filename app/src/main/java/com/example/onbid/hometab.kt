@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.onbid.fragment.*
 import com.google.android.material.tabs.TabLayout
-import kotlinx.android.synthetic.main.activity_gradle1.*
 import kotlinx.android.synthetic.main.activity_hometab.*
 
 class hometab : AppCompatActivity() {
@@ -17,9 +16,9 @@ class hometab : AppCompatActivity() {
     }
 
     fun initView() {
-        val fragment1 = fragment1()
+        val fragment1 = fragment3()
         val fragment2 = fragment2()
-        val fragment3 = fragment3()
+        val fragment3 = fragment1()
         val fragment4 = fragment4()
         val fragment5 = fragment5()
         val adapter = pagerAdapter(supportFragmentManager)

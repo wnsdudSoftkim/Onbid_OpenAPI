@@ -7,30 +7,30 @@ import java.io.Serializable
 
 
 @Root(name = "response", strict = false)
-data class CamcoDetailData @JvmOverloads constructor(
+data class CamcoDetailDataMoney @JvmOverloads constructor(
     @field:ElementList(name = "body", inline = true)
     @param:ElementList(name = "body", inline = true)
-    val body: List<CamcoDataDetail>
+    val body: List<CamcoDataDetailMoney>
 ) : Serializable
 
 
 @Root(name = "body", strict = false)
-data class CamcoDataDetail @JvmOverloads constructor(
+data class CamcoDataDetailMoney @JvmOverloads constructor(
     @field:ElementList(name = "items", inline = true)
     @param:ElementList(name = "items", inline = true)
-    val items: List<CamcoData_itemsDetail>
+    val items: List<CamcoData_itemsDetailMoney>
 )
 
 @Root(name = "items", strict = false)
-data class CamcoData_itemsDetail @JvmOverloads constructor(
+data class CamcoData_itemsDetailMoney @JvmOverloads constructor(
     @field:ElementList(name = "item", inline = true)
     @param:ElementList(name = "item", inline = true)
-    val item: List<CamcoData_item_Detail>
+    val item: List<CamcoData_item_DetailMoney>
 
 )
 
 @Root(name = "item", strict = false)
-data class CamcoData_item_Detail @JvmOverloads constructor(
+data class CamcoData_item_DetailMoney @JvmOverloads constructor(
     //물건명
     @field:Element(name = "CLTR_NM", required = false)
     @param:Element(name = "CLTR_NM", required = false)
@@ -97,68 +97,108 @@ data class CamcoData_item_Detail @JvmOverloads constructor(
     @param:Element(name = "BID_MTD_NM", required = false)
     val BID_MTD_NM: String? = "",
 
-    //???
+    //최초공고일자
     @field:Element(name = "TFRT_PLNM_DT", required = false)
     @param:Element(name = "TFRT_PLNM_DT", required = false)
     val TFRT_PLNM_DT: String? = "",
-    //물건상세정보
-    @field:Element(name = "GOODS_NM", required = false)
-    @param:Element(name = "GOODS_NM", required = false)
-    val GOODS_NM: String? = "",
+    //경쟁방식
+    @field:Element(name = "CPTN_MTD_NM", required = false)
+    @param:Element(name = "CPTN_MTD_NM", required = false)
+    val CPTN_MTD_NM: String? = "",
 
-    //위치및 주변부근현황
-    @field:Element(name = "POSI_ENV_PSCD", required = false)
-    @param:Element(name = "POSI_ENV_PSCD", required = false)
-    val POSI_ENV_PSCD: String? = "",
-    //제조사
-    @field:Element(name = "MANF", required = false)
-    @param:Element(name = "MANF", required = false)
-    val MANF: String? = "",
-    //차종
-    @field:Element(name = "VHKN", required = false)
-    @param:Element(name = "VHKN", required = false)
-    val VHKN: String? = "",
-    //모델
-    @field:Element(name = "MDL", required = false)
-    @param:Element(name = "MDL", required = false)
-    val MDL: String? = "",
-    //연월식
-    @field:Element(name = "NRGT", required = false)
-    @param:Element(name = "NRGT", required = false)
-    val NRGT: String? = "",
-    //차량번호
-    @field:Element(name = "VHC_NO", required = false)
-    @param:Element(name = "VHC_NO", required = false)
-    val VHC_NO: String? = "",
-    //보관장소
-    @field:Element(name = "CSTD_PLC", required = false)
-    @param:Element(name = "CSTD_PLC", required = false)
-    val CSTD_PLC: String? = "",
+    //주식종류
+    @field:Element(name = "SCRT_KIND", required = false)
+    @param:Element(name = "SCRT_KIND", required = false)
+    val SCRT_KIND: String? = "",
+    //증권명
+    @field:Element(name = "SCRT_NM", required = false)
+    @param:Element(name = "SCRT_NM", required = false)
+    val SCRT_NM: String? = "",
     //수량
     @field:Element(name = "QNTY", required = false)
     @param:Element(name = "QNTY", required = false)
-    val QNTY :String? = "",
-    //주행거리
-    @field:Element(name = "VHCL_MLGE", required = false)
-    @param:Element(name = "VHCL_MLGE", required = false)
-    val VHCL_MLGE: String? = "",
-    //변속기
-    @field:Element(name = "GRBX", required = false)
-    @param:Element(name = "GRBX", required = false)
-    val GRBX: String? = "",
+    val QNTY: String? = "",
+    //지분율
+    @field:Element(name = "PCOS", required = false)
+    @param:Element(name = "PCOS", required = false)
+    val PCOS: String? = "",
+    //주당액면가
+    @field:Element(name = "STK_PER_DNMT_PRC", required = false)
+    @param:Element(name = "STK_PER_DNMT_PRC", required = false)
+    val STK_PER_DNMT_PRC: String? = "",
+    //액면총액
+    @field:Element(name = "DNMT_TOT_AMT", required = false)
+    @param:Element(name = "DNMT_TOT_AMT", required = false)
+    val DNMT_TOT_AMT: String? = "",
+    //발행주식총수
+    @field:Element(name = "ISU_STK_TOT_CNT", required = false)
+    @param:Element(name = "ISU_STK_TOT_CNT", required = false)
+    val ISU_STK_TOT_CNT: String? = "",
+    //종목명
+    @field:Element(name = "ITM_NM", required = false)
+    @param:Element(name = "ITM_NM", required = false)
+    val ITM_NM: String? = "",
+    //대표자명
+    @field:Element(name = "RPSV_NM", required = false)
+    @param:Element(name = "RPSV_NM", required = false)
+    val RPSV_NM: String? = "",
+    //연락처
+    @field:Element(name = "CTNO", required = false)
+    @param:Element(name = "CTNO", required = false)
+    val CTNO: String? = "",
 
-    //배기량
-    @field:Element(name = "ENDPC", required = false)
-    @param:Element(name = "ENDPC", required = false)
-    val ENDPC: String? = "",
-    //연료
-    @field:Element(name = "FUEL", required = false)
-    @param:Element(name = "FUEL", required = false)
-    val FUEL: String? = "",
-    //인도장소
-    @field:Element(name = "DLVR_PLC", required = false)
-    @param:Element(name = "DLVR_PLC", required = false)
-    val DLVR_PLC: String? = "",
+    //설립일자
+    @field:Element(name = "ETLS_DT", required = false)
+    @param:Element(name = "ETLS_DT", required = false)
+    val ETLS_DT: String? = "",
+    //결산월
+    @field:Element(name = "CSCT_MON", required = false)
+    @param:Element(name = "CSCT_MON", required = false)
+    val CSCT_MON: String? = "",
+    //업종
+    @field:Element(name = "TPBZ", required = false)
+    @param:Element(name = "TPBZ", required = false)
+    val TPBZ: String? = "",
+    //주요제품
+    @field:Element(name = "PRMR_MNFTR_GDS", required = false)
+    @param:Element(name = "PRMR_MNFTR_GDS", required = false)
+    val PRMR_MNFTR_GDS: String? = "",
+    //회원권번호
+    @field:Element(name = "MBS_SCRT_NO", required = false)
+    @param:Element(name = "MBS_SCRT_NO", required = false)
+    val MBS_SCRT_NO: String? = "",
+    //회원권명
+    @field:Element(name = "MMB_RGT_NM", required = false)
+    @param:Element(name = "MMB_RGT_NM", required = false)
+    val MMB_RGT_NM: String? = "",
+    //위치 및 부근현황
+    @field:Element(name = "POSI_ENV_PSCD", required = false)
+    @param:Element(name = "POSI_ENV_PSCD", required = false)
+    val POSI_ENV_PSCD: String? = "",
+    //이용현황
+    @field:Element(name = "UTLZ_PSCD", required = false)
+    @param:Element(name = "UTLZ_PSCD", required = false)
+    val UTLZ_PSCD: String? = "",
+    //기타사항
+    @field:Element(name = "ETC_DTL_CNTN", required = false)
+    @param:Element(name = "ETC_DTL_CNTN", required = false)
+    val ETC_DTL_CNTN: String? = "",
+    //매각금융회사
+    @field:Element(name = "DPSL_FINC_COMP", required = false)
+    @param:Element(name = "DPSL_FINC_COMP", required = false)
+    val DPSL_FINC_COMP: String? = "",
+    //부실채권종류
+    @field:Element(name = "POOR_BOND_KIND", required = false)
+    @param:Element(name = "POOR_BOND_KIND", required = false)
+    val POOR_BOND_KIND: String? = "",
+    //채권금액
+    @field:Element(name = "BOND_AMT", required = false)
+    @param:Element(name = "BOND_AMT", required = false)
+    val BOND_AMT: String? = "",
+    //양도자산확정일시
+    @field:Element(name = "HDOR_AST_FIX_DY", required = false)
+    @param:Element(name = "HDOR_AST_FIX_DY", required = false)
+    val HDOR_AST_FIX_DY: String? = "",
     //입찰시작가
     @field:Element(name = "MIN_BID_PRC", required = false)
     @param:Element(name = "MIN_BID_PRC", required = false)
@@ -170,7 +210,7 @@ data class CamcoData_item_Detail @JvmOverloads constructor(
     //입찰회수
     @field:Element(name = "BID_PRGN_NFT", required = false)
     @param:Element(name = "BID_PRGN_NFT", required = false)
-    val MMB_RGT_NM: String? = "",
+    val BID_PRGN_NFT: String? = "",
     //명도책임
     @field:Element(name = "DLVR_RSBY", required = false)
     @param:Element(name = "DLVR_RSBY", required = false)
@@ -183,8 +223,6 @@ data class CamcoData_item_Detail @JvmOverloads constructor(
     @field:Element(name = "SHR_RQR_EPRT_DT", required = false)
     @param:Element(name = "SHR_RQR_EPRT_DT", required = false)
     val SHR_RQR_EPRT_DT: String? = ""
-
-
 )
 
 
