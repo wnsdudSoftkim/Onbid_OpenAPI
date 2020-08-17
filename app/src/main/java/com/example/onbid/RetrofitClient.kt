@@ -105,7 +105,7 @@ interface DataService {
     fun getThingdetailMoney(
         @Query("CLTR_NO") CLTR_NO: String,
         @Query("PBCT_NO") PBCT_NO:String
-    ):Call<CamcoDataDetailMoney>
+    ):Call<CamcoDetailDataMoney>
     //자동차 /운송장비(grid4) 상위 코드 12000
     @GET("getKamcoPbctCltrList?serviceKey=TqjIDWEFUiSaeznEMiLDt2X05LgJsJWP0Ja9xKpbEIbwBfiGFLQoAXV1kpXjBNLZSQyhHOzF5Vh%2Fm4wZE7XXug%3D%3D&numOfRows=10&pageNo=1&DPSL_MTD_CD=&CTGR_HIRK_ID=12000&CTGR_HIRK_ID_MID=&SIDO=&SGK=&EMD=&GOODS_PRICE_FROM=&GOODS_PRICE_TO=&OPEN_PRICE_FROM=&OPEN_PRICE_TO=&CLTR_NM=&PBCT_BEGN_DTM=&PBCT_CLS_DTM=&CLTR_MNMT_NO=&")
     fun getCargrid4():Call<Camco>
