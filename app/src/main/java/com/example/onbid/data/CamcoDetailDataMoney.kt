@@ -57,7 +57,7 @@ data class CamcoData_item_DetailMoney @JvmOverloads constructor(
     //부서
     @field:Element(name = "RGST_DEPT_NM", required = false)
     @param:Element(name = "RGST_DEPT_NM", required = false)
-    val CLTR_HSTR_NO: String? = "",
+    val RGST_DEPT_NM: String? = "",
     //담당자
     @field:Element(name = "PSCG_NM", required = false)
     @param:Element(name = "PSCG_NM", required = false)
