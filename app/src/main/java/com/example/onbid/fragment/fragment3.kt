@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.core.content.ContentProviderCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
@@ -97,7 +96,10 @@ class fragment3 : Fragment() {
                         onClick = {
                             //여기서 통신을 바로 하고 통신이 완료될 때 까지 dialog 보여준다 통신이 완료되면 상세페이지로 이동하게끔 , data 를 intent 로 보내준다.
                             //물건정보조회 서비스의 상세조회API
-                            startActivity(Intent(context, Home_ShowDetail::class.java))
+                            val intent = Intent(context,Home_ShowDetail::class.java)
+                            intent.putExtra("CLTR_NO",it.CLTR_NO)
+                            intent.putExtra("PBCT_NO",it.PBCT_NO)
+                            startActivity(intent)
                         })
                 recycler_view.adapter = adapter
                 recycler_view.layoutManager = LinearLayoutManager(context)
@@ -128,9 +130,9 @@ class fragment3 : Fragment() {
                         if (body != null) {
                             //viewModel.mysHomeListSetData(body)
                             viewModel.mysHomeListSetData(response.body()!!)
-                            val a = body.body[0].items[0].item as ArrayList<RoomData>
-                            val task = InsertAsyncTask(a, context)
-                            task.execute()
+                            //val a = body.body[0].items[0].item as ArrayList<RoomData>
+                            //val task = InsertAsyncTask(a, context)
+                            //task.execute()
 
                         }
                     }

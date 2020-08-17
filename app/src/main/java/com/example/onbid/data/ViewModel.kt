@@ -7,10 +7,15 @@ class ViewModel : ViewModel() {
     //데이터와 Livedata 선언
     val data = ArrayList<CamcoData_item>()
     val logindata = ArrayList<LoginData>()
-    var grid1fragment1data = ArrayList<CamcoData_item>()
+    val grid1fragment1data = ArrayList<CamcoData_item>()
     val grid1fragment2data = ArrayList<CamcoData_item>()
     val grid1fragment3data = ArrayList<CamcoData_item>()
     val grid1fragment4data = ArrayList<CamcoData_item>()
+    val grid3data = ArrayList<CamcoData_item>()
+    val grid4data = ArrayList<CamcoData_item>()
+    val grid5data = ArrayList<CamcoData_item>()
+    val grid6data = ArrayList<CamcoData_item>()
+    val homedetaildata = ArrayList<CamcoData_item_Detail>()
 
 
     val Livedata = MutableLiveData<ArrayList<CamcoData_item>>()
@@ -19,6 +24,11 @@ class ViewModel : ViewModel() {
     val Livegrid1fragment2data = MutableLiveData<ArrayList<CamcoData_item>>()
     val Livegrid1fragment3data = MutableLiveData<ArrayList<CamcoData_item>>()
     val Livegrid1fragment4data = MutableLiveData<ArrayList<CamcoData_item>>()
+    val Livegrid3data  = MutableLiveData<ArrayList<CamcoData_item>>()
+    val Livegrid4data  = MutableLiveData<ArrayList<CamcoData_item>>()
+    val Livegrid5data  = MutableLiveData<ArrayList<CamcoData_item>>()
+    val Livegrid6data  = MutableLiveData<ArrayList<CamcoData_item>>()
+    val LiveHomedetaildata = MutableLiveData<ArrayList<CamcoData_item_Detail>>()
 
 
     fun mysHomeListSetData(item: Camco) {
@@ -76,5 +86,60 @@ class ViewModel : ViewModel() {
             grid1fragment4data.add(a[i])
         }
         Livegrid1fragment4data.value = grid1fragment4data
+    }
+    fun myGrid3SetData(item:Camco) {
+        grid3data.clear()
+
+        val a = item.body[0].items[0].item
+        for ( i in 0 until a.size ) {
+            grid3data.add(a[i])
+        }
+
+        Livegrid3data.value = grid3data
+
+    }
+    fun myGrid4SetData(item:Camco) {
+        grid4data.clear()
+
+        val a = item.body[0].items[0].item
+        for ( i in 0 until a.size ) {
+            grid4data.add(a[i])
+        }
+
+        Livegrid4data.value = grid4data
+
+    }
+    fun myGrid5SetData(item:Camco) {
+        grid5data.clear()
+
+        val a = item.body[0].items[0].item
+        for ( i in 0 until a.size ) {
+            grid5data.add(a[i])
+        }
+
+        Livegrid5data.value = grid5data
+
+    }
+    fun myGrid6SetData(item:Camco) {
+        grid6data.clear()
+
+        val a = item.body[0].items[0].item
+        for ( i in 0 until a.size ) {
+            grid6data.add(a[i])
+        }
+
+        Livegrid6data.value = grid6data
+
+    }
+    fun myhomedetailData(item:CamcoDetailData) {
+        homedetaildata.clear()
+
+        val a = item.body[0].items[0].item
+        for ( i in 0 until a.size ) {
+            homedetaildata.add(a[i])
+        }
+
+        LiveHomedetaildata.value = homedetaildata
+
     }
 }

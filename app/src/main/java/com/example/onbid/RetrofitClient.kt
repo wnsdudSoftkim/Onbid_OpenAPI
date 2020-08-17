@@ -89,13 +89,13 @@ interface DataService {
     //6-2. 통합 마감임박 목록조회
     @GET("ThingInfoInquireSvc/getUnifyDeadlineCltrList?serviceKey=TqjIDWEFUiSaeznEMiLDt2X05LgJsJWP0Ja9xKpbEIbwBfiGFLQoAXV1kpXjBNLZSQyhHOzF5Vh%2Fm4wZE7XXug%3D%3D&DPSL_MTD_CD=&CTGR_HIRK_ID=&CTGR_HIRK_ID_MID=&SIDO=&SGK=&EMD=&GOODS_PRICE_FROM=&GOODS_PRICE_TO=&OPEN_PRICE_FROM=&OPEN_PRICE_TO=&CLTR_NM=&PBCT_BEGN_DTM=&PBCT_CLS_DTM=&CLTR_MNMT_NO=&numOfRows=10&pageNo=1&")
     fun getemergency():Call<Camco>
-    //6-1-1. 통합용도별 물건 상세조회(물건번호, 공매번호 필수 !!!)
+    //6-1-1. 통합용도별 물건 상세조회(물건번호, 공매번호 필수 !!!,물건코드조회(상위) 1.자동차 = 12000, 2. 권리 증권 = 11000 , )
     @GET("ThingInfoInquireSvc/getUnifyUsageCltrBasicInfoDetail?serviceKey=TqjIDWEFUiSaeznEMiLDt2X05LgJsJWP0Ja9xKpbEIbwBfiGFLQoAXV1kpXjBNLZSQyhHOzF5Vh%2Fm4wZE7XXug%3D%3D&")
     fun getThingdetail(
         @Query("CLTR_NO") CLTR_NO: String,
         @Query("PBCT_NO") PBCT_NO:String
     ):Call<CamcoDetailData>
-    @GET("getUnifyUsageCltrEstimationInfoDetail?serviceKey=TqjIDWEFUiSaeznEMiLDt2X05LgJsJWP0Ja9xKpbEIbwBfiGFLQoAXV1kpXjBNLZSQyhHOzF5Vh%2Fm4wZE7XXug%3D%3D&pageNo=1&numOfRows=10&CLTR_NO=1239199&PBCT_NO=9317012&")
+    @GET("ThingInfoInquireSvc/getUnifyUsageCltrBasicInfoDetail?serviceKey=TqjIDWEFUiSaeznEMiLDt2X05LgJsJWP0Ja9xKpbEIbwBfiGFLQoAXV1kpXjBNLZSQyhHOzF5Vh%2Fm4wZE7XXug%3D%3D&")
     //감정평가서
     fun getTestDetail(
         @Query("CLTR_NO") CLTR_NO: String,
@@ -106,7 +106,13 @@ interface DataService {
         @Query("CLTR_NO") CLTR_NO: String,
         @Query("PBCT_NO") PBCT_NO:String
     ):Call<CamcoDataDetailMoney>
-
+    //자동차 /운송장비(grid4) 상위 코드 12000
+    @GET("getKamcoPbctCltrList?serviceKey=TqjIDWEFUiSaeznEMiLDt2X05LgJsJWP0Ja9xKpbEIbwBfiGFLQoAXV1kpXjBNLZSQyhHOzF5Vh%2Fm4wZE7XXug%3D%3D&numOfRows=10&pageNo=1&DPSL_MTD_CD=&CTGR_HIRK_ID=12000&CTGR_HIRK_ID_MID=&SIDO=&SGK=&EMD=&GOODS_PRICE_FROM=&GOODS_PRICE_TO=&OPEN_PRICE_FROM=&OPEN_PRICE_TO=&CLTR_NM=&PBCT_BEGN_DTM=&PBCT_CLS_DTM=&CLTR_MNMT_NO=&")
+    fun getCargrid4():Call<Camco>
+    //권리 증권(grid6)상위 코드 11000
+    @GET("KamcoPblsalThingInquireSvc/getKamcoPbctCltrList?serviceKey=TqjIDWEFUiSaeznEMiLDt2X05LgJsJWP0Ja9xKpbEIbwBfiGFLQoAXV1kpXjBNLZSQyhHOzF5Vh%2Fm4wZE7XXug%3D%3D&numOfRows=10&pageNo=1&DPSL_MTD_CD=&CTGR_HIRK_ID=11000&CTGR_HIRK_ID_MID=&SIDO=&SGK=&EMD=&GOODS_PRICE_FROM=&GOODS_PRICE_TO=&OPEN_PRICE_FROM=&OPEN_PRICE_TO=&CLTR_NM=&PBCT_BEGN_DTM=&PBCT_CLS_DTM=&CLTR_MNMT_NO=&")
+    fun getMoneygrid6():Call<Camco>
+    //
 }
 
 

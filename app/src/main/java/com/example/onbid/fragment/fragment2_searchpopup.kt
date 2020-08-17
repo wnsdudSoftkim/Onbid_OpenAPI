@@ -5,6 +5,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.ArrayAdapter
 import android.widget.RadioButton
 import com.example.onbid.R
 import kotlinx.android.synthetic.main.activity_fragment2_searchpopup.*
@@ -25,9 +26,11 @@ class fragment2_searchpopup : AppCompatActivity() {
             intent.putExtra("check2",check2)
             setResult(Activity.RESULT_OK,intent)
             finish()
-
         }
-
+        val data = listOf("-전체-", "500만원 이하", "500만원", "1000만원", "5000만원", "1억원")
+        val adapter = ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, data)
+        spinner.adapter = adapter
+        spinner2.adapter = adapter
 
     }
     //라디오 체크 시 텍스트 값을 넘겨줌

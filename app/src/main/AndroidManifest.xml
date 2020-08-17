@@ -16,7 +16,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".menu.newList"></activity>
+        <activity android:name=".Home_Detail_machine"></activity>
+        <activity android:name=".Home_Detail_things" />
+        <activity android:name=".Home_Detail_Car" />
+        <activity android:name=".menu.newList" />
         <activity android:name=".menu.emargyTop" />
         <activity android:name=".SearchActivity" />
         <activity android:name=".SignUp" />

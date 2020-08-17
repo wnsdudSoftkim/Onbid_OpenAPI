@@ -34,23 +34,13 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:weightSum="100">
+                    android:orientation="horizontal">
 
                     <Button
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="50"
                         android:drawableLeft="@drawable/ic_baseline_local_see_24"
                         android:text="감정평가서"
-                        android:textSize="20dp" />
-
-                    <Button
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="50"
-                        android:drawableLeft="@drawable/ic_baseline_list_alt_24"
-                        android:text="사고이력조회"
                         android:textSize="20dp" />
                 </LinearLayout>
 
@@ -142,7 +132,7 @@
                             android:background="@drawable/login_borderbox"
                             android:backgroundTint="#4585FF"
                             android:padding="4dp"
-                            android:text="물건 종류"
+                            android:text="물건명"
                             android:textColor="#FFF"
                             android:textSize="20dp" />
 
@@ -156,6 +146,35 @@
                             android:text="정보"
                             android:textSize="20dp" />
 
+                    </TableRow>
+                    <TableRow
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:weightSum="100">
+
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="10dp"
+                            android:layout_weight="35"
+                            android:background="@drawable/login_borderbox"
+                            android:backgroundTint="#4585FF"
+                            android:padding="4dp"
+                            android:text="물건 종류"
+                            android:textColor="#FFF"
+                            android:textSize="20dp" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="10dp"
+                            android:layout_weight="65"
+                            android:background="@drawable/tablelayout_line"
+                            android:gravity="center"
+                            android:text="정보"
+                            android:textSize="20dp" />
                     </TableRow>
 
                     <TableRow
@@ -643,7 +662,7 @@
                         android:background="@drawable/login_borderbox"
                         android:backgroundTint="#4585FF"
                         android:padding="4dp"
-                        android:text="제조사"
+                        android:text="제조사명"
                         android:textColor="#FFF"
                         android:textSize="20dp" />
 
@@ -703,7 +722,7 @@
                         android:background="@drawable/login_borderbox"
                         android:backgroundTint="#4585FF"
                         android:padding="4dp"
-                        android:text="차종"
+                        android:text="제조년도"
                         android:textColor="#FFF"
                         android:textSize="20dp" />
 
@@ -733,7 +752,7 @@
                         android:background="@drawable/login_borderbox"
                         android:backgroundTint="#4585FF"
                         android:padding="4dp"
-                        android:text="연식"
+                        android:text="규격"
                         android:textColor="#FFF"
                         android:textSize="20dp" />
 
@@ -763,7 +782,7 @@
                         android:background="@drawable/login_borderbox"
                         android:backgroundTint="#4585FF"
                         android:padding="4dp"
-                        android:text="차량 번호"
+                        android:text="크기"
                         android:textColor="#FFF"
                         android:textSize="20dp" />
 
@@ -793,8 +812,67 @@
                         android:background="@drawable/login_borderbox"
                         android:backgroundTint="#4585FF"
                         android:padding="4dp"
-                        android:text="보관 장소
-                        소재지,도로명"
+                        android:text="생산 원산지"
+                        android:textColor="#FFF"
+                        android:textSize="20dp" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="10dp"
+                        android:layout_weight="65"
+                        android:background="@drawable/tablelayout_line"
+                        android:gravity="center"
+                        android:text="정보"
+                        android:textSize="20dp" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:weightSum="100">
+
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="10dp"
+                        android:layout_weight="35"
+                        android:background="@drawable/login_borderbox"
+                        android:backgroundTint="#4585FF"
+                        android:padding="4dp"
+                        android:text="사용 기간"
+                        android:textColor="#FFF"
+                        android:textSize="20dp" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="10dp"
+                        android:layout_weight="65"
+                        android:background="@drawable/tablelayout_line"
+                        android:gravity="center"
+                        android:text="정보"
+                        android:textSize="20dp" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:weightSum="100">
+
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="10dp"
+                        android:layout_weight="35"
+                        android:background="@drawable/login_borderbox"
+                        android:backgroundTint="#4585FF"
+                        android:padding="4dp"
+                        android:text="가중량"
                         android:textColor="#FFF"
                         android:textSize="20dp" />
 
@@ -854,7 +932,7 @@
                         android:background="@drawable/login_borderbox"
                         android:backgroundTint="#4585FF"
                         android:padding="4dp"
-                        android:text="주행 거리"
+                        android:text="보관 장소"
                         android:textColor="#FFF"
                         android:textSize="20dp" />
 
@@ -884,97 +962,7 @@
                         android:background="@drawable/login_borderbox"
                         android:backgroundTint="#4585FF"
                         android:padding="4dp"
-                        android:text="변속기"
-                        android:textColor="#FFF"
-                        android:textSize="20dp" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginTop="10dp"
-                        android:layout_weight="65"
-                        android:background="@drawable/tablelayout_line"
-                        android:gravity="center"
-                        android:text="정보"
-                        android:textSize="20dp" />
-                </TableRow>
-
-                <TableRow
-                    android:layout_width="wrap_content"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:weightSum="100">
-
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginTop="10dp"
-                        android:layout_weight="35"
-                        android:background="@drawable/login_borderbox"
-                        android:backgroundTint="#4585FF"
-                        android:padding="4dp"
-                        android:text="배기량"
-                        android:textColor="#FFF"
-                        android:textSize="20dp" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginTop="10dp"
-                        android:layout_weight="65"
-                        android:background="@drawable/tablelayout_line"
-                        android:gravity="center"
-                        android:text="정보"
-                        android:textSize="20dp" />
-                </TableRow>
-
-                <TableRow
-                    android:layout_width="wrap_content"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:weightSum="100">
-
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginTop="10dp"
-                        android:layout_weight="35"
-                        android:background="@drawable/login_borderbox"
-                        android:backgroundTint="#4585FF"
-                        android:padding="4dp"
-                        android:text="연료"
-                        android:textColor="#FFF"
-                        android:textSize="20dp" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginTop="10dp"
-                        android:layout_weight="65"
-                        android:background="@drawable/tablelayout_line"
-                        android:gravity="center"
-                        android:text="정보"
-                        android:textSize="20dp" />
-                </TableRow>
-
-                <TableRow
-                    android:layout_width="wrap_content"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:weightSum="100">
-
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginTop="10dp"
-                        android:layout_weight="35"
-                        android:background="@drawable/login_borderbox"
-                        android:backgroundTint="#4585FF"
-                        android:padding="4dp"
-                        android:text="인도 장소"
+                        android:text="기타 상세 내용"
                         android:textColor="#FFF"
                         android:textSize="20dp" />
 
@@ -1078,7 +1066,6 @@
                         android:text="정보"
                         android:textSize="20dp" />
                 </TableRow>
-
                 <TableRow
                     android:layout_width="wrap_content"
                     android:layout_height="0dp"
@@ -1327,8 +1314,6 @@
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
-
-
                 <TableRow
                     android:layout_width="wrap_content"
                     android:layout_height="0dp"
@@ -1344,43 +1329,19 @@
                         android:background="@drawable/login_borderbox"
                         android:backgroundTint="#4585FF"
                         android:padding="4dp"
-                        android:text="물건 상세정보"
-                        android:textColor="#FFF"
-                        android:textSize="20dp" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginTop="10dp"
-                        android:layout_weight="65"
-                        android:background="@drawable/tablelayout_line"
-                        android:gravity="center"
-                        android:text="정보"
-                        android:textSize="20dp" />
-                </TableRow>
-
-                <TableRow
-                    android:layout_width="wrap_content"
-                    android:layout_height="0dp"
-                    android:layout_weight="1">
-
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_marginTop="10dp"
-                        android:background="#4585FF"
                         android:text="명도 이전 책임"
                         android:textColor="#FFF"
-                        android:textSize="30dp" />
+                        android:textSize="20dp" />
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_gravity="center"
                         android:layout_marginTop="10dp"
-                        android:text="정보"
-                        android:textSize="30dp" />
+                        android:layout_weight="65"
+                        android:background="@drawable/tablelayout_line"
+                        android:gravity="center"
+                        android:text="매수자"
+                        android:textSize="20dp" />
                 </TableRow>
 
                 <TableRow
@@ -1398,7 +1359,7 @@
                         android:background="@drawable/login_borderbox"
                         android:backgroundTint="#4585FF"
                         android:padding="4dp"
-                        android:text="인도 장소"
+                        android:text="부대 조건"
                         android:textColor="#FFF"
                         android:textSize="20dp" />
 
@@ -1407,9 +1368,9 @@
                         android:layout_height="match_parent"
                         android:layout_marginTop="10dp"
                         android:layout_weight="65"
-                        android:background="@drawable/tablelayout_line"
                         android:gravity="center"
                         android:text="정보"
+                        android:background="@drawable/tablelayout_line"
                         android:textSize="20dp" />
                 </TableRow>
             </TableLayout>

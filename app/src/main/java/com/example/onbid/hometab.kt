@@ -16,9 +16,9 @@ class hometab : AppCompatActivity() {
     }
 
     fun initView() {
-        val fragment1 = fragment3()
+        val fragment1 = fragment1()
         val fragment2 = fragment2()
-        val fragment3 = fragment1()
+        val fragment3 = fragment3()
         val fragment4 = fragment4()
         val fragment5 = fragment5()
         val adapter = pagerAdapter(supportFragmentManager)

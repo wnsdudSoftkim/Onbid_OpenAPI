@@ -68,12 +68,12 @@
                     android:weightSum="3">
 
                     <RadioButton
-                        android:checked="true"
                         android:id="@+id/how_total"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:buttonTint="@color/ourcolor"
+                        android:checked="true"
                         android:clickable="true"
                         android:duplicateParentState="true"
                         android:onClick="onRadioButtonClicked"
@@ -131,12 +131,12 @@
                     android:weightSum="4">
 
                     <RadioButton
-                        android:checked="true"
                         android:id="@+id/thing_total"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:buttonTint="@color/ourcolor"
+                        android:checked="true"
                         android:clickable="true"
                         android:contextClickable="true"
                         android:duplicateParentState="true"
@@ -173,8 +173,8 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:clickable="true"
                         android:buttonTint="@color/ourcolor"
+                        android:clickable="true"
                         android:duplicateParentState="true"
                         android:onClick="onRadioButtonClicked"
                         android:text="권리/증권"
@@ -183,6 +183,47 @@
 
 
             </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:padding="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/login_borderbox"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="입찰가"
+                android:textColor="#000" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <Spinner
+                    android:id="@+id/spinner"
+                    android:layout_width="140dp"
+                    android:layout_height="50dp" />
+                <TextView
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:textColor="#000"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="~"
+                    android:textSize="20dp"/>
+                <Spinner
+                    android:layout_marginLeft="12dp"
+                    android:id="@+id/spinner2"
+                    android:layout_width="140dp"
+                    android:layout_height="50dp" />
+            </LinearLayout>
+
         </LinearLayout>
 
         <Button

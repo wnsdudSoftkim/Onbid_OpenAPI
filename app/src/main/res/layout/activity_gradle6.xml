@@ -14,6 +14,7 @@
         android:background="@color/ourcolor"
         android:orientation="horizontal">
         <ImageView
+            android:id="@+id/btn_grid6_backpress"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -36,6 +37,10 @@
         android:layout_weight="90"
         android:layout_width="match_parent"
         android:layout_height="0dp">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view_grid6"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
     </LinearLayout>
 
 </LinearLayout>

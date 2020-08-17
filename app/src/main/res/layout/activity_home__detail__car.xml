@@ -22,6 +22,7 @@
 
 
                 <ImageView
+                    android:id="@+id/btn_cardetail_backpress"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/ic_baseline_keyboard_arrow_left_24" />
@@ -147,6 +148,7 @@
                             android:textSize="20dp" />
 
                         <TextView
+                            android:id="@+id/car_CLTR_NM"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_marginTop="10dp"
@@ -178,6 +180,7 @@
                             android:textSize="20dp" />
 
                         <TextView
+                            android:id="@+id/car_DPSL_MTD_NM"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_marginTop="10dp"
@@ -207,6 +210,7 @@
                             android:textSize="20dp" />
 
                         <TextView
+                            android:id="@+id/car_PBCT_CLTR_STAT_NM"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_marginTop="10dp"
@@ -236,6 +240,7 @@
                             android:textSize="20dp" />
 
                         <TextView
+                            android:id="@+id/car_ORG_NM"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_marginTop="10dp"

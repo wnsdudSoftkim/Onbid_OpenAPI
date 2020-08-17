@@ -35,11 +35,11 @@ class gradle3 : AppCompatActivity() {
         btn_grid3_backpress.setOnClickListener {
             onBackPressed()
         }
-        viewModel.Livegrid1fragment1data.observe(this, Observer {
-            if (viewModel.grid1fragment1data.size == 0) {
+        viewModel.Livegrid3data.observe(this, Observer {
+            if (viewModel.grid3data.size == 0) {
                 val adapter =
                     RecyclerAdapter(
-                        viewModel.grid1fragment1data,
+                        viewModel.grid3data,
                         LayoutInflater.from(this),
                         onClick = {
                             //여기서 통신을 바로 하고 통신이 완료될 때 까지 dialog 보여준다 통신이 완료되면 상세페이지로 이동하게끔 , data 를 intent 로 보내준다.
@@ -58,7 +58,7 @@ class gradle3 : AppCompatActivity() {
 
 
     fun initview() {
-        if (viewModel.grid1fragment1data.size==0) {
+        if (viewModel.grid3data.size==0) {
             RetrofitClient.dataservice.get50()
                 .enqueue(object : retrofit2.Callback<Camco> {
                     override fun onFailure(call: retrofit2.Call<Camco>, t: Throwable) {
@@ -72,7 +72,7 @@ class gradle3 : AppCompatActivity() {
                         val body = response.body()
                         //viewModel로 데이터를 보내줌.
                         if (body != null) {
-                            viewModel.myGrid1Fragment1SetData(body)
+                            viewModel.myGrid3SetData(body)
                             Toast.makeText(applicationContext,"성공"+body,Toast.LENGTH_LONG).show()
 
 

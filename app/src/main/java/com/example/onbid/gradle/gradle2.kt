@@ -7,10 +7,7 @@ import android.view.View
 import android.widget.LinearLayout
 import android.widget.TextView
 import com.example.onbid.R
-import com.example.onbid.fragment.grid1_fragment1
-import com.example.onbid.fragment.grid1_fragment2
-import com.example.onbid.fragment.grid1_fragment3
-import com.example.onbid.fragment.grid1_fragment4
+import com.example.onbid.fragment.*
 import com.example.onbid.pagerAdapter
 import com.google.android.material.tabs.TabLayout
 import kotlinx.android.synthetic.main.activity_gradle1.*
@@ -28,10 +25,10 @@ class gradle2 : AppCompatActivity() {
     }
 
     fun initView() {
-        val fragment1 = grid1_fragment1()
-        val fragment2 = grid1_fragment2()
-        val fragment3 = grid1_fragment3()
-        val fragment4 = grid1_fragment4()
+        val fragment1 = grid2_fragment1()
+        val fragment2 = grid2_fragment2()
+        val fragment3 = grid2_fragment3()
+        val fragment4 = grid2_fragment4()
         val adapter = pagerAdapter(supportFragmentManager)
         adapter.addItems(fragment1)    // adapter는 지원
         adapter.addItems(fragment2)
