@@ -7,30 +7,30 @@ import java.io.Serializable
 
 
 @Root(name = "response", strict = false)
-data class CamcoDetailData @JvmOverloads constructor(
+data class CamcoDetailDataMachine @JvmOverloads constructor(
     @field:ElementList(name = "body", inline = true)
     @param:ElementList(name = "body", inline = true)
-    val body: List<CamcoDataDetail>
+    val body: List<CamcoDataDetailMachine>
 ) : Serializable
 
 
 @Root(name = "body", strict = false)
-data class CamcoDataDetail @JvmOverloads constructor(
+data class CamcoDataDetailMachine @JvmOverloads constructor(
     @field:ElementList(name = "items", inline = true)
     @param:ElementList(name = "items", inline = true)
-    val items: List<CamcoData_itemsDetail>
+    val items: List<CamcoData_itemsDetailMachine>
 )
 
 @Root(name = "items", strict = false)
-data class CamcoData_itemsDetail @JvmOverloads constructor(
+data class CamcoData_itemsDetailMachine @JvmOverloads constructor(
     @field:ElementList(name = "item", inline = true)
     @param:ElementList(name = "item", inline = true)
-    val item: List<CamcoData_item_Detail>
+    val item: List<CamcoData_item_DetailMachine>
 
 )
 
 @Root(name = "item", strict = false)
-data class CamcoData_item_Detail @JvmOverloads constructor(
+data class CamcoData_item_DetailMachine @JvmOverloads constructor(
     //물건명
     @field:Element(name = "CLTR_NM", required = false)
     @param:Element(name = "CLTR_NM", required = false)
@@ -97,7 +97,7 @@ data class CamcoData_item_Detail @JvmOverloads constructor(
     @param:Element(name = "BID_MTD_NM", required = false)
     val BID_MTD_NM: String? = "",
 
-    //???
+    //최초공고일자
     @field:Element(name = "TFRT_PLNM_DT", required = false)
     @param:Element(name = "TFRT_PLNM_DT", required = false)
     val TFRT_PLNM_DT: String? = "",
@@ -114,51 +114,47 @@ data class CamcoData_item_Detail @JvmOverloads constructor(
     @field:Element(name = "MANF", required = false)
     @param:Element(name = "MANF", required = false)
     val MANF: String? = "",
-    //차종
-    @field:Element(name = "VHKN", required = false)
-    @param:Element(name = "VHKN", required = false)
-    val VHKN: String? = "",
     //모델
     @field:Element(name = "MDL", required = false)
     @param:Element(name = "MDL", required = false)
     val MDL: String? = "",
-    //연월식
+    //제조년도
     @field:Element(name = "NRGT", required = false)
     @param:Element(name = "NRGT", required = false)
     val NRGT: String? = "",
-    //차량번호
-    @field:Element(name = "VHC_NO", required = false)
-    @param:Element(name = "VHC_NO", required = false)
-    val VHC_NO: String? = "",
+    //규격
+    @field:Element(name = "STND", required = false)
+    @param:Element(name = "STND", required = false)
+    val STND: String? = "",
+    //크기
+    @field:Element(name = "PSNS_SIZE", required = false)
+    @param:Element(name = "PSNS_SIZE", required = false)
+    val PSNS_SIZE: String? = "",
+    //생산원산지
+    @field:Element(name = "PRDN_PLC_CTFR", required = false)
+    @param:Element(name = "PRDN_PLC_CTFR", required = false)
+    val PRDN_PLC_CTFR :String? = "",
+    //사용기간
+    @field:Element(name = "USE_TERM", required = false)
+    @param:Element(name = "USE_TERM", required = false)
+    val USE_TERM: String? = "",
+    //가중량
+    @field:Element(name = "WGHT_QNTY", required = false)
+    @param:Element(name = "WGHT_QNTY", required = false)
+    val WGHT_QNTY: String? = "",
+
+    //수량
+    @field:Element(name = "QNTY", required = false)
+    @param:Element(name = "QNTY", required = false)
+    val QNTY: String? = "",
     //보관장소
     @field:Element(name = "CSTD_PLC", required = false)
     @param:Element(name = "CSTD_PLC", required = false)
     val CSTD_PLC: String? = "",
-    //수량
-    @field:Element(name = "QNTY", required = false)
-    @param:Element(name = "QNTY", required = false)
-    val QNTY :String? = "",
-    //주행거리
-    @field:Element(name = "VHCL_MLGE", required = false)
-    @param:Element(name = "VHCL_MLGE", required = false)
-    val VHCL_MLGE: String? = "",
-    //변속기
-    @field:Element(name = "GRBX", required = false)
-    @param:Element(name = "GRBX", required = false)
-    val GRBX: String? = "",
-
-    //배기량
-    @field:Element(name = "ENDPC", required = false)
-    @param:Element(name = "ENDPC", required = false)
-    val ENDPC: String? = "",
-    //연료
-    @field:Element(name = "FUEL", required = false)
-    @param:Element(name = "FUEL", required = false)
-    val FUEL: String? = "",
-    //인도장소
-    @field:Element(name = "DLVR_PLC", required = false)
-    @param:Element(name = "DLVR_PLC", required = false)
-    val DLVR_PLC: String? = "",
+    //기타상세내용
+    @field:Element(name = "ETC_DTL_CNTN", required = false)
+    @param:Element(name = "ETC_DTL_CNTN", required = false)
+    val ETC_DTL_CNTN: String? = "",
     //입찰시작가
     @field:Element(name = "MIN_BID_PRC", required = false)
     @param:Element(name = "MIN_BID_PRC", required = false)

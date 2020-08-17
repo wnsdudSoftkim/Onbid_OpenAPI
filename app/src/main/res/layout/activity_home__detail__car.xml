@@ -87,23 +87,23 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
-                android:weightSum="100"
                 android:backgroundTint="#f8f5e9"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:weightSum="100">
 
                 <ImageView
 
                     android:layout_width="0dp"
-                    android:layout_weight="30"
                     android:layout_height="60dp"
+                    android:layout_weight="30"
                     android:background="#f8f5e9"
-                    android:src="@drawable/pngwing"/>
+                    android:src="@drawable/pngwing" />
 
                 <Button
-                    android:layout_weight="70"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="right"
+                    android:layout_weight="70"
                     android:background="@drawable/login_borderbox"
                     android:backgroundTint="#f8f5e9"
                     android:padding="10dp"
@@ -270,6 +270,7 @@
                             android:textSize="20dp" />
 
                         <TextView
+                            android:id="@+id/car_RGST_DEPT_NM"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_marginTop="10dp"
@@ -299,6 +300,7 @@
                             android:textSize="20dp" />
 
                         <TextView
+                            android:id="@+id/car_PSCG_NM"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_marginTop="10dp"
@@ -328,6 +330,7 @@
                             android:textSize="20dp" />
 
                         <TextView
+                            android:id="@+id/car_PSCG_TPNO"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_marginTop="10dp"
@@ -358,6 +361,7 @@
                             android:textSize="20dp" />
 
                         <TextView
+                            android:id="@+id/car_LDNM_ADRS"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_marginTop="10dp"
@@ -388,6 +392,7 @@
                             android:textSize="20dp" />
 
                         <TextView
+                            android:id="@+id/car_NMRD_ADRS"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_marginTop="10dp"
@@ -417,6 +422,7 @@
                             android:textSize="20dp" />
 
                         <TextView
+                            android:id="@+id/car_CLTR_MNMT_NO"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_marginTop="10dp"
@@ -447,6 +453,7 @@
                             android:textSize="20dp" />
 
                         <TextView
+                            android:id="@+id/car_PRPT_DVSN_NM"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_marginTop="10dp"
@@ -477,6 +484,7 @@
                             android:textSize="20dp" />
 
                         <TextView
+                            android:id="@+id/car_DLGT_ORG_NM"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_marginTop="10dp"
@@ -507,6 +515,7 @@
                             android:textSize="20dp" />
 
                         <TextView
+                            android:id="@+id/car_CTGR_FULL_NM"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_marginTop="10dp"
@@ -537,6 +546,7 @@
                             android:textSize="20dp" />
 
                         <TextView
+                            android:id="@+id/car_BID_MTD_NM"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_marginTop="10dp"
@@ -567,6 +577,7 @@
                             android:textSize="20dp" />
 
                         <TextView
+                            android:id="@+id/car_GOODS_NM"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_marginTop="10dp"
@@ -598,6 +609,7 @@
                             android:textSize="20dp" />
 
                         <TextView
+                            android:id="@+id/car_POSI_ENV_PSCD"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_marginTop="10dp"
@@ -653,6 +665,7 @@
                         android:textSize="20dp" />
 
                     <TextView
+                        android:id="@+id/car_MANF"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_marginTop="10dp"
@@ -683,6 +696,7 @@
                         android:textSize="20dp" />
 
                     <TextView
+                        android:id="@+id/car_MDL"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_marginTop="10dp"
@@ -713,6 +727,7 @@
                         android:textSize="20dp" />
 
                     <TextView
+                        android:id="@+id/car_VHKN"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_marginTop="10dp"
@@ -743,6 +758,7 @@
                         android:textSize="20dp" />
 
                     <TextView
+                        android:id="@+id/car_NRGT"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_marginTop="10dp"
@@ -773,6 +789,7 @@
                         android:textSize="20dp" />
 
                     <TextView
+                        android:id="@+id/car_VHC_NO"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_marginTop="10dp"
@@ -804,6 +821,7 @@
                         android:textSize="20dp" />
 
                     <TextView
+                        android:id="@+id/car_CSTD_PLC"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_marginTop="10dp"
@@ -834,6 +852,7 @@
                         android:textSize="20dp" />
 
                     <TextView
+                        android:id="@+id/car_QNTY"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_marginTop="10dp"
@@ -864,6 +883,7 @@
                         android:textSize="20dp" />
 
                     <TextView
+                        android:id="@+id/car_VHCL_MLGE"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_marginTop="10dp"
@@ -894,6 +914,7 @@
                         android:textSize="20dp" />
 
                     <TextView
+                        android:id="@+id/car_GRBX"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_marginTop="10dp"
@@ -924,6 +945,7 @@
                         android:textSize="20dp" />
 
                     <TextView
+                        android:id="@+id/car_ENDPC"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_marginTop="10dp"
@@ -954,6 +976,7 @@
                         android:textSize="20dp" />
 
                     <TextView
+                        android:id="@+id/car_FUEL"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_marginTop="10dp"
@@ -984,6 +1007,7 @@
                         android:textSize="20dp" />
 
                     <TextView
+                        android:id="@+id/car_DLVR_PLC"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_marginTop="10dp"
@@ -1014,6 +1038,7 @@
                         android:textSize="20dp" />
 
                     <TextView
+                        android:id="@+id/car_MIN_BID_PRC"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_marginTop="10dp"
@@ -1044,6 +1069,7 @@
                         android:textSize="20dp" />
 
                     <TextView
+                        android:id="@+id/car_PCMT_PYMT_EPDT_CNTN"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_marginTop="10dp"
@@ -1074,6 +1100,7 @@
                         android:textSize="20dp" />
 
                     <TextView
+                        android:id="@+id/car_BID_PRGN_NFT"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_marginTop="10dp"
@@ -1104,6 +1131,7 @@
                         android:textSize="20dp" />
 
                     <TextView
+                        android:id="@+id/car_DLVR_RSBY"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_marginTop="10dp"
@@ -1134,6 +1162,7 @@
                         android:textSize="20dp" />
 
                     <TextView
+                        android:id="@+id/car_ICDL_CDTN"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_marginTop="10dp"
@@ -1164,6 +1193,7 @@
                         android:textSize="20dp" />
 
                     <TextView
+                        android:id="@+id/car_SHR_RQR_EPRT_DT"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_marginTop="10dp"
@@ -1175,249 +1205,6 @@
                 </TableRow>
             </TableLayout>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="20dp"
-                android:text="감정 평가 정보"
-                android:textSize="30dp"
-                android:textStyle="bold" />
-
-            <TableLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_margin="8dp"
-                android:padding="8dp"
-                android:stretchColumns="*"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp" />
-
-                <TableRow
-                    android:layout_width="wrap_content"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:background="#FFFFFF">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="1dp"
-                        android:layout_marginLeft="1dp"
-                        android:layout_marginTop="20dp"
-                        android:layout_marginBottom="1dp"
-                        android:background="#4585FF"
-                        android:text="감정 평가기관"
-                        android:textColor="#FFF"
-                        android:textSize="20dp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="1dp"
-                        android:layout_marginLeft="1dp"
-                        android:layout_marginTop="20dp"
-                        android:layout_marginBottom="1dp"
-                        android:background="#4585FF"
-                        android:gravity="center"
-                        android:text="평가일"
-                        android:textColor="#FFF"
-                        android:textSize="20dp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="1dp"
-                        android:layout_marginLeft="1dp"
-                        android:layout_marginTop="20dp"
-                        android:layout_marginBottom="1dp"
-                        android:background="#4585FF"
-                        android:text="평가금액(원)"
-                        android:textColor="#FFF"
-                        android:textSize="20dp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="1dp"
-                        android:layout_marginLeft="1dp"
-                        android:layout_marginTop="20dp"
-                        android:layout_marginBottom="1dp"
-                        android:background="#4585FF"
-                        android:text="감정평가서"
-                        android:textColor="#FFF"
-                        android:textSize="20dp" />
-                </TableRow>
-
-                <TableRow
-                    android:layout_width="wrap_content"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:background="#f8f5e9">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_margin="1dp"
-                        android:layout_marginLeft="1dp"
-                        android:layout_marginTop="20dp"
-                        android:layout_marginBottom="10dp"
-                        android:background="#FFFFFF"
-                        android:text="평가기관"
-                        android:textSize="20dp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_margin="1dp"
-                        android:layout_marginLeft="1dp"
-                        android:layout_marginTop="20dp"
-                        android:layout_marginBottom="1dp"
-                        android:background="#FFFFFF"
-                        android:text="평가일"
-                        android:textSize="20dp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="right"
-                        android:layout_margin="1dp"
-                        android:layout_marginLeft="1dp"
-                        android:layout_marginTop="20dp"
-                        android:layout_marginRight="15dp"
-                        android:layout_marginBottom="1dp"
-                        android:background="#FFFFFF"
-                        android:text="숫자(원)"
-                        android:textSize="20dp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="1dp"
-                        android:layout_marginLeft="1dp"
-                        android:layout_marginTop="20dp"
-                        android:layout_marginBottom="1dp"
-                        android:background="#FFFFFF"
-                        android:text="평가서"
-                        android:textSize="20dp" />
-
-                </TableRow>
-            </TableLayout>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="20dp"
-                android:text="명도 이전 책임"
-                android:textSize="30dp"
-                android:textStyle="bold" />
-
-
-            <TableLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="8dp"
-                android:padding="8dp"
-                android:stretchColumns="*"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-
-                <TableRow
-                    android:layout_width="wrap_content"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:weightSum="100">
-
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginTop="10dp"
-                        android:layout_weight="35"
-                        android:background="@drawable/login_borderbox"
-                        android:backgroundTint="#4585FF"
-                        android:padding="4dp"
-                        android:text="물건 상세정보"
-                        android:textColor="#FFF"
-                        android:textSize="20dp" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginTop="10dp"
-                        android:layout_weight="65"
-                        android:background="@drawable/tablelayout_line"
-                        android:gravity="center"
-                        android:text="정보"
-                        android:textSize="20dp" />
-                </TableRow>
-
-                <TableRow
-                    android:layout_width="wrap_content"
-                    android:layout_height="0dp"
-                    android:layout_weight="1">
-
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_marginTop="10dp"
-                        android:background="#4585FF"
-                        android:text="명도 이전 책임"
-                        android:textColor="#FFF"
-                        android:textSize="30dp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="center"
-                        android:layout_marginTop="10dp"
-                        android:text="정보"
-                        android:textSize="30dp" />
-                </TableRow>
-
-                <TableRow
-                    android:layout_width="wrap_content"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:weightSum="100">
-
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginTop="10dp"
-                        android:layout_weight="35"
-                        android:background="@drawable/login_borderbox"
-                        android:backgroundTint="#4585FF"
-                        android:padding="4dp"
-                        android:text="인도 장소"
-                        android:textColor="#FFF"
-                        android:textSize="20dp" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginTop="10dp"
-                        android:layout_weight="65"
-                        android:background="@drawable/tablelayout_line"
-                        android:gravity="center"
-                        android:text="정보"
-                        android:textSize="20dp" />
-                </TableRow>
-            </TableLayout>
 
         </LinearLayout>
 
