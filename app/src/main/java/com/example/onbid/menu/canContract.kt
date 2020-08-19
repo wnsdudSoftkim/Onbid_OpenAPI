@@ -29,7 +29,7 @@ class canContract : AppCompatActivity() {
         }
         initview()
         viewModel.Livecancontractdata.observe(this, Observer {
-            if (viewModel.cancontractdata.size == 0) {
+            if (viewModel.cancontractdata.size != 0) {
                 val adapter =
                     RecyclerAdapter(
                         viewModel.cancontractdata,

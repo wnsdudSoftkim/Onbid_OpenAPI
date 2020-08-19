@@ -15,7 +15,6 @@ import kotlinx.android.synthetic.main.activity_fragment2.*
 
 class fragment2 : Fragment() {
     var result1 :String?=""
-    var result2 : String?=""
     var result3 : String?=""
     var result4 : String?=""
     override fun onCreateView(
@@ -54,9 +53,17 @@ class fragment2 : Fragment() {
         if(requestCode==200) {
             if(resultCode==Activity.RESULT_OK) {
                 result1 = data?.getStringExtra("check1")
-                result2 = data?.getStringExtra("check2")
                 result3 = data?.getStringExtra("selectedValue")
                 result4 = data?.getStringExtra("selectedValue2")
+                if(result1 =="전체") {
+                    result1=""
+                }
+                if(result3=="전체"){
+                    result3=""
+                }
+                if(result4=="전체"){
+                    result4=""
+                }
                 text_search_result1.setText(result1)
                 text_search_select1.setText(result3)
                 text_search_select2.setText(result4)

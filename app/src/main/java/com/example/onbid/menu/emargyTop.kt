@@ -28,7 +28,7 @@ class emargyTop : AppCompatActivity() {
         }
         initview()
         viewModel.Liveemargydata.observe(this, Observer {
-            if (viewModel.emargytopdata.size == 0) {
+            if (viewModel.emargytopdata.size != 0) {
                 val adapter =
                     RecyclerAdapter(
                         viewModel.emargytopdata,

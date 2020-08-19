@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
+import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -29,7 +30,7 @@ class newList : AppCompatActivity() {
         }
         initview()
         viewModel.Livenewlistdata.observe(this, Observer {
-            if (viewModel.newlistdata.size == 0) {
+            if (viewModel.newlistdata.size != 0) {
                 val adapter =
                     RecyclerAdapter(
                         viewModel.newlistdata,

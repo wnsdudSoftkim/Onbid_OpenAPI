@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.View
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.fragment.app.viewModels
@@ -31,17 +32,11 @@ class SearchActivity : AppCompatActivity() {
         search = intent.getStringExtra("search")
         result3 = intent.getStringExtra("result3")
         result4 = intent.getStringExtra("result4")
-        //매각 or 임대 (처분방식)
-        //DPSL_MTD_CD
-        //물건명
-        //CLTR_NM
-        //물건종류(코드조회 상위)(11000 권리/증권 12000 자동차 13000 농축산 1400 어업 등등)
-        //CTGR_HIRK_ID
-        if(result1 !=null && search!=null && result3 !=null && result4!=null) {
-            initview()
-        }
+
+        initview()
+
         viewModel.Livesearchdata.observe(this, Observer {
-            if (viewModel.data != null) {
+            if (viewModel.searchdata != null) {
                 val adapter =
                     RecyclerAdapter(
                         viewModel.searchdata,
@@ -62,11 +57,13 @@ class SearchActivity : AppCompatActivity() {
         })
     }
     fun initview() {
-        if(viewModel.searchdata!=null) {
-            RetrofitClient.dataservice.getSearch(result1!!,search!!,result3!!,result4!!)
+        if(viewModel.searchdata.size==0) {
+            animation_view_search.visibility = View.VISIBLE
+            RetrofitClient.dataservice.getSearch(result1?:"",search?:"",result3?:"",result4?:"")
                 .enqueue(object : retrofit2.Callback<Camco> {
                     override fun onFailure(call: retrofit2.Call<Camco>, t: Throwable) {
-                        Toast.makeText(applicationContext, "리스트를 읽어오는데 실패하였습니다"+t.message, Toast.LENGTH_SHORT).show()
+                        Toast.makeText(applicationContext, "리스트를 읽어오는데 실패하였습니다"+t.message, Toast.LENGTH_LONG).show()
+                        asd.setText(t.message)
                     }
 
                     override fun onResponse(
@@ -77,7 +74,8 @@ class SearchActivity : AppCompatActivity() {
                         //viewModel로 데이터를 보내줌.
                         if (body != null) {
                             viewModel.mySearchData(response.body()!!)
-
+                            Toast.makeText(applicationContext,""+body,Toast.LENGTH_LONG).show()
+                            animation_view_search.visibility = View.GONE
                         }
                     }
 

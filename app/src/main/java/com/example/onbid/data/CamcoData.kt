@@ -108,7 +108,7 @@ data class CamcoData_item @JvmOverloads constructor(
     //감정가
     @field:Element(name = "APSL_ASES_AVG_AMT", required = false)
     @param:Element(name = "APSL_ASES_AVG_AMT", required = false)
-    val APSL_ASES_AVG_AMT: String? = "-",
+    val APSL_ASES_AVG_AMT: String? = "",
     //최저입찰가율
     @field:Element(name = "FEE_RATE", required = false)
     @param:Element(name = "FEE_RATE", required = false)
