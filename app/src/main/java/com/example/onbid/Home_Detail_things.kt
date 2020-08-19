@@ -19,7 +19,7 @@ class Home_Detail_things : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home__detail_things)
-        btn_cardetail_backpress.setOnClickListener {
+        btn_things_backpress.setOnClickListener {
             onBackPressed()
         }
         btn_things_popup.setOnClickListener {

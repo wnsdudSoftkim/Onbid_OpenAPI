@@ -18,12 +18,7 @@ object RetrofitClient {
         .client (OkHttpClient ())
         .build()
     val dataservice: DataService = retrofit.create(DataService::class.java)
-    //로그인,회원가입 retrofit
-    val retrofitforlogin = Retrofit.Builder()
-        .baseUrl("http://openapi.onbid.co.kr/openapi/services/")
-        .addConverterFactory(GsonConverterFactory.create())
-        .build()
-    val loginservice :DataService = retrofitforlogin.create(DataService::class.java)
+
     //상세조회 Retrofit
     val retrofitDetail = Retrofit.Builder()
         .baseUrl("http://openapi.onbid.co.kr/openapi/services/")
@@ -124,7 +119,15 @@ interface DataService {
     //권리 증권(grid6)상위 코드 11000
     @GET("KamcoPblsalThingInquireSvc/getKamcoPbctCltrList?serviceKey=TqjIDWEFUiSaeznEMiLDt2X05LgJsJWP0Ja9xKpbEIbwBfiGFLQoAXV1kpXjBNLZSQyhHOzF5Vh%2Fm4wZE7XXug%3D%3D&numOfRows=10&pageNo=1&DPSL_MTD_CD=&CTGR_HIRK_ID=11000&CTGR_HIRK_ID_MID=&SIDO=&SGK=&EMD=&GOODS_PRICE_FROM=&GOODS_PRICE_TO=&OPEN_PRICE_FROM=&OPEN_PRICE_TO=&CLTR_NM=&PBCT_BEGN_DTM=&PBCT_CLS_DTM=&CLTR_MNMT_NO=&")
     fun getMoneygrid6():Call<Camco>
-    //
+    //검색통신
+    @GET("KamcoPblsalThingInquireSvc/getKamcoPbctCltrList?serviceKey=TqjIDWEFUiSaeznEMiLDt2X05LgJsJWP0Ja9xKpbEIbwBfiGFLQoAXV1kpXjBNLZSQyhHOzF5Vh%2Fm4wZE7XXug%3D%3D&numOfRows=10&pageNo=1&CTGR_HIRK_ID=&CTGR_HIRK_ID_MID=&SIDO=&SGK=&EMD=&OPEN_PRICE_FROM=&OPEN_PRICE_TO=&PBCT_BEGN_DTM=&PBCT_CLS_DTM=&CLTR_MNMT_NO=&")
+    fun getSearch(
+        @Query("DPSL_MTD_CD")  DPSL_MTD_CD:String,
+        @Query("CLTR_NM")  CLTR_NM:String,
+        @Query("GOODS_PRICE_FROM")  GOODS_PRICE_FROM:String,
+        @Query("GOODS_PRICE_TO")  GOODS_PRICE_TO:String
+
+    ):Call<Camco>
 }
 
 
