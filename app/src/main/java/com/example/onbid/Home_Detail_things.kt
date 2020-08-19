@@ -1,11 +1,11 @@
 package com.example.onbid
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.lifecycle.Observer
-import com.example.onbid.data.CamcoDetailData
 import com.example.onbid.data.CamcoDetailDataMoney
 import com.example.onbid.data.ViewModel
 import kotlinx.android.synthetic.main.activity_home__detail__car.*
@@ -21,6 +21,9 @@ class Home_Detail_things : AppCompatActivity() {
         setContentView(R.layout.activity_home__detail_things)
         btn_cardetail_backpress.setOnClickListener {
             onBackPressed()
+        }
+        btn_things_popup.setOnClickListener {
+            startActivity(Intent(this,Appraisal_report::class.java))
         }
         CLTR_NO = intent.getStringExtra("CLTR_NO")
         PBCT_NO = intent.getStringExtra("PBCT_NO")

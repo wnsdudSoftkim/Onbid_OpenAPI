@@ -7,12 +7,15 @@ import android.widget.Toast
 import androidx.activity.viewModels
 import com.example.onbid.data.LoginData
 import com.example.onbid.data.ViewModel
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.activity_sign_up.*
 import retrofit2.Call
 import retrofit2.Response
 
 class Login : AppCompatActivity() {
+    private lateinit var auth: FirebaseAuth
     val viewModel: ViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,29 +28,41 @@ class Login : AppCompatActivity() {
             startActivity(Intent(this,SignUp::class.java))
         }
         btn_login.setOnClickListener {
-            login()
+            if (edit_login_email.text.toString().length <= 0 && edit_login_password.text.toString().length <= 0) {
+                Toast.makeText(this, "이메일과 비밀번호를 기입해주세요", Toast.LENGTH_LONG).show()
+            }else {
+                getLogin()
+
+            }
         }
     }
-    fun login() {
-        if (edit_login_email.toString() != null && edit_login_password.toString() != null ) {
-            RetrofitClient.loginservice.SignUp(
-                edit_signup_email.toString(),
-                edit_signup_password.toString(),
-                edit_signup_name.toString()
-            ).enqueue(object : retrofit2.Callback<LoginData>{
-                override fun onFailure(call: Call<LoginData>, t: Throwable) {
-                    Toast.makeText(applicationContext,"에러", Toast.LENGTH_SHORT).show()
+    private fun getLogin() {
+        val loginEmail = edit_login_email.text.toString()
+        val loginPassword = edit_login_password.text.toString()
+        auth.signInWithEmailAndPassword(loginEmail ,loginPassword)
+            .addOnCompleteListener(this) { task ->
+                Toast.makeText(this,"로그인에러:"+task.exception,Toast.LENGTH_LONG).show()
+                if (task.isSuccessful==true) {
+                    // Sign in success, update UI with the signed-in user's information
+                    Toast.makeText(this,"성공",Toast.LENGTH_LONG).show()
+                    val user = auth.currentUser
+                    updateUI(user)
+
+                } else {
+                    // If sign in fails, display a message to the user.
+                    Toast.makeText(this,"아이디와 비밀번호 양식을 정확히 기입해주세요",Toast.LENGTH_SHORT)
+                    // ...
                 }
 
-                override fun onResponse(call: Call<LoginData>, response: Response<LoginData>) {
-                    //여기선 로그인 성공시 Hometab 으로 이동해야 한다.
-                    viewModel.setLoginData(response.body()!!)
-
-                }
-            })
-
+                // ...
+            }
+    }
+    fun updateUI(account: FirebaseUser?) {
+        if (account != null) {
+            Toast.makeText(this, "홈 화면으로 이동합니다.", Toast.LENGTH_LONG).show()
+            startActivity(Intent(this, hometab::class.java))
         } else {
-            Toast.makeText(this, "정확히 기입해주세요", Toast.LENGTH_SHORT).show()
+
         }
     }
 }

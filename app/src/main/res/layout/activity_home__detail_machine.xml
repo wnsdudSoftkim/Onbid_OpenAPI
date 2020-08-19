@@ -22,6 +22,7 @@
 
 
                 <ImageView
+                    android:id="@+id/btn_machine_backpress"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/ic_baseline_keyboard_arrow_left_24" />
@@ -37,6 +38,7 @@
                     android:orientation="horizontal">
 
                     <Button
+                        android:id="@+id/btn_machine_popup"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:drawableLeft="@drawable/ic_baseline_local_see_24"

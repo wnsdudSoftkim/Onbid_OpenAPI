@@ -16,7 +16,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Home_Detail_machine"></activity>
+        <activity android:name=".Appraisal_report"></activity>
+        <activity android:name=".menu.canContract" />
+        <activity android:name=".Home_Detail_machine" />
         <activity android:name=".Home_Detail_things" />
         <activity android:name=".Home_Detail_Car" />
         <activity android:name=".menu.newList" />

@@ -9,10 +9,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.onbid.Home_ShowDetail
-import com.example.onbid.R
-import com.example.onbid.RecyclerAdapter
-import com.example.onbid.RetrofitClient
+import com.example.onbid.*
 import com.example.onbid.data.Camco
 import com.example.onbid.data.ViewModel
 import kotlinx.android.synthetic.main.grid_fragment1.*
@@ -46,7 +43,10 @@ class grid1_fragment3 : Fragment() {
                         onClick = {
                             //여기서 통신을 바로 하고 통신이 완료될 때 까지 dialog 보여준다 통신이 완료되면 상세페이지로 이동하게끔 , data 를 intent 로 보내준다.
                             //물건정보조회 서비스의 상세조회API
-                            startActivity(Intent(context, Home_ShowDetail::class.java))
+                            val intent = Intent(context, Home_Detail_machine::class.java)
+                            intent.putExtra("CLTR_NO",it.CLTR_NO)
+                            intent.putExtra("PBCT_NO",it.PBCT_NO)
+                            startActivity(intent)
                         })
                 recycler_view_grid1.adapter = adapter
                 recycler_view_grid1.layoutManager = LinearLayoutManager(context)

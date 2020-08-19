@@ -56,7 +56,6 @@ interface DataService {
     //캠코공매물건목록조회(상세)
     @GET("KamcoPblsalThingInquireSvc/getKamcoPbctCltrList?serviceKey=TqjIDWEFUiSaeznEMiLDt2X05LgJsJWP0Ja9xKpbEIbwBfiGFLQoAXV1kpXjBNLZSQyhHOzF5Vh%2Fm4wZE7XXug%3D%3D&numOfRows=10&pageNo=1&DPSL_MTD_CD=&CTGR_HIRK_ID=&CTGR_HIRK_ID_MID=&SIDO=&SGK=&EMD=&GOODS_PRICE_FROM=&GOODS_PRICE_TO=&OPEN_PRICE_FROM=&OPEN_PRICE_TO=&CLTR_NM=&PBCT_BEGN_DTM=&PBCT_CLS_DTM=&CLTR_MNMT_NO=&")
     fun getdata(): Call<Camco>
-
     //1.통합관심탑20물건목록조회(0001부동산/0002자동차,운송장비 / 0003물품[기계] / 0004 물품(기타) / 0005 권리,증권
     @GET("ThingInfoInquireSvc/getUnifyInterestTop20CltrList?serviceKey=TqjIDWEFUiSaeznEMiLDt2X05LgJsJWP0Ja9xKpbEIbwBfiGFLQoAXV1kpXjBNLZSQyhHOzF5Vh%2Fm4wZE7XXug%3D%3D&")
     fun getTop20(
@@ -82,6 +81,7 @@ interface DataService {
     fun getsellcalender():Call<Camco>
     //6.통합새로운목록조회
     @GET("ThingInfoInquireSvc/getUnifyNewCltrList?serviceKey=TqjIDWEFUiSaeznEMiLDt2X05LgJsJWP0Ja9xKpbEIbwBfiGFLQoAXV1kpXjBNLZSQyhHOzF5Vh%2Fm4wZE7XXug%3D%3D&DPSL_MTD_CD=&CTGR_HIRK_ID=&CTGR_HIRK_ID_MID=&SIDO=&SGK=&EMD=&GOODS_PRICE_FROM=&GOODS_PRICE_TO=&OPEN_PRICE_FROM=&OPEN_PRICE_TO=&CLTR_NM=&PBCT_BEGN_DTM=&PBCT_CLS_DTM=&CLTR_MNMT_NO=&numOfRows=10&pageNo=1&")
+
     fun getnewlist():Call<Camco>
     //6-1.통합 용도별 목록 조회(0001 임대 / 0002 매각)
     @GET("ThingInfoInquireSvc/getUnifyUsageCltr?serviceKey=TqjIDWEFUiSaeznEMiLDt2X05LgJsJWP0Ja9xKpbEIbwBfiGFLQoAXV1kpXjBNLZSQyhHOzF5Vh%2Fm4wZE7XXug%3D%3D&DPSL_MTD_CD=&CTGR_HIRK_ID=&CTGR_HIRK_ID_MID=&SIDO=&SGK=&EMD=&GOODS_PRICE_FROM=&GOODS_PRICE_TO=&OPEN_PRICE_FROM=&OPEN_PRICE_TO=&CLTR_NM=&PBCT_BEGN_DTM=&PBCT_CLS_DTM=&ORG_NM=&ORG_BASE_NO=&CLTR_MNMT_NO=&numOfRows=10&pageNo=1&")
@@ -95,12 +95,18 @@ interface DataService {
         @Query("CLTR_NO") CLTR_NO: String,
         @Query("PBCT_NO") PBCT_NO:String
     ):Call<CamcoDetailData>
+
+    //통합수의계약가능목록조회
+    @GET("ThingInfoInquireSvc/getUnifyPrivateContractCltrList?serviceKey=TqjIDWEFUiSaeznEMiLDt2X05LgJsJWP0Ja9xKpbEIbwBfiGFLQoAXV1kpXjBNLZSQyhHOzF5Vh%2Fm4wZE7XXug%3D%3D&DPSL_MTD_CD=0001&CTGR_HIRK_ID=&CTGR_HIRK_ID_MID=&SIDO=&SGK=&EMD=&GOODS_PRICE_FROM=&GOODS_PRICE_TO=&OPEN_PRICE_FROM=&OPEN_PRICE_TO=&CLTR_NM=&CLTR_MNMT_NO=&numOfRows=10&pageNo=1&")
+    fun getcontract():Call<Camco>
+
     @GET("ThingInfoInquireSvc/getUnifyUsageCltrBasicInfoDetail?serviceKey=TqjIDWEFUiSaeznEMiLDt2X05LgJsJWP0Ja9xKpbEIbwBfiGFLQoAXV1kpXjBNLZSQyhHOzF5Vh%2Fm4wZE7XXug%3D%3D&")
     //감정평가서
     fun getTestDetail(
         @Query("CLTR_NO") CLTR_NO: String,
         @Query("PBCT_NO") PBCT_NO:String
     ):Call<CamcoDetailTestData>
+
     //회원권 및 유가증권
     fun getThingdetailMoney(
         @Query("CLTR_NO") CLTR_NO: String,

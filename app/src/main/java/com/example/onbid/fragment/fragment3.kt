@@ -10,7 +10,6 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.room.Room
 import com.example.onbid.*
 import com.example.onbid.data.*
 import kotlinx.android.synthetic.main.activity_fragment3.*
@@ -96,7 +95,7 @@ class fragment3 : Fragment() {
                         onClick = {
                             //여기서 통신을 바로 하고 통신이 완료될 때 까지 dialog 보여준다 통신이 완료되면 상세페이지로 이동하게끔 , data 를 intent 로 보내준다.
                             //물건정보조회 서비스의 상세조회API
-                            val intent = Intent(context,Home_ShowDetail::class.java)
+                            val intent = Intent(context,Home_Detail_Car::class.java)
                             intent.putExtra("CLTR_NO",it.CLTR_NO)
                             intent.putExtra("PBCT_NO",it.PBCT_NO)
                             startActivity(intent)

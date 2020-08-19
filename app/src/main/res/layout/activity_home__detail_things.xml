@@ -37,6 +37,7 @@
                     android:orientation="horizontal">
 
                     <Button
+                        android:id="@+id/btn_things_popup"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:drawableLeft="@drawable/ic_baseline_local_see_24"
