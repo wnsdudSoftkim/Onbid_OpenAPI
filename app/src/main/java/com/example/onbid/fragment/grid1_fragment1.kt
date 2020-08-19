@@ -72,9 +72,6 @@ class grid1_fragment1 : Fragment() {
                         //viewModel로 데이터를 보내줌.
                         if (body != null) {
                             viewModel.myGrid1Fragment1SetData(body)
-
-
-
                         }
                     }
 

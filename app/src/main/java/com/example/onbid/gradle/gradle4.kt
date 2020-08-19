@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.widget.Toast
 import androidx.activity.viewModels
-import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.onbid.Home_ShowDetail
@@ -14,10 +13,7 @@ import com.example.onbid.R
 import com.example.onbid.RecyclerAdapter
 import com.example.onbid.RetrofitClient
 import com.example.onbid.data.Camco
-import com.example.onbid.data.InsertAsyncTask
-import com.example.onbid.data.RoomData
 import com.example.onbid.data.ViewModel
-import kotlinx.android.synthetic.main.activity_gradle3.*
 import kotlinx.android.synthetic.main.activity_gradle4.*
 import retrofit2.Response
 

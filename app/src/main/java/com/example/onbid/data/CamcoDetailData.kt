@@ -57,7 +57,7 @@ data class CamcoData_item_Detail @JvmOverloads constructor(
     //부서
     @field:Element(name = "RGST_DEPT_NM", required = false)
     @param:Element(name = "RGST_DEPT_NM", required = false)
-    val CLTR_HSTR_NO: String? = "",
+    val RGST_DEPT_NM: String? = "",
     //담당자
     @field:Element(name = "PSCG_NM", required = false)
     @param:Element(name = "PSCG_NM", required = false)
@@ -170,7 +170,7 @@ data class CamcoData_item_Detail @JvmOverloads constructor(
     //입찰회수
     @field:Element(name = "BID_PRGN_NFT", required = false)
     @param:Element(name = "BID_PRGN_NFT", required = false)
-    val MMB_RGT_NM: String? = "",
+    val BID_PRGN_NFT: String? = "",
     //명도책임
     @field:Element(name = "DLVR_RSBY", required = false)
     @param:Element(name = "DLVR_RSBY", required = false)
