@@ -12,7 +12,6 @@
         android:icon="@mipmap/ic_launcher_onbidemade"
         android:label="@string/app_name"
         android:networkSecurityConfig="@xml/network"
-        android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
@@ -35,7 +34,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".hometab" />
         <activity android:name=".fragment.fragment2_searchpopup" />
         <activity android:name=".fragment.fragment5" />
         <activity android:name=".gradle.gradle1" />

@@ -244,7 +244,6 @@ class ViewModel : ViewModel() {
 
     fun mynewlistSetData(item: Camco) {
         newlistdata.clear()
-
         val a = item.body[0].items[0].item
         for (i in 0 until a.size) {
             newlistdata.add(a[i])
@@ -283,18 +282,8 @@ class ViewModel : ViewModel() {
         }
 
         Livenoticedata.value = noticedata
-
-    fun myNoticeData(item: CamcoNotice) {
-        noticedata.clear()
-
-
-        val a = item.body[0].items[0].item
-        for (i in 0 until a.size) {
-            noticedata.add(a[i])
-        }
-
-        Livenoticedata.value = noticedata
     }
+
     fun mySearchData(item: Camco) {
         searchdata.clear()
 
@@ -305,20 +294,20 @@ class ViewModel : ViewModel() {
         Livesearchdata.value = searchdata
     }
 
-        fun mymachineData(item: CamcoDetailDataMachine) {
-            homedetailmachine.clear()
+    fun mymachineData(item: CamcoDetailDataMachine) {
+        homedetailmachine.clear()
 
 
-            val a = item.body[0].item
-            for (i in 0 until a.size) {
-                homedetailmachine.add(a[i])
-            }
-
-            Livemachinedata.value = homedetailmachine
-
-
+        val a = item.body[0].item
+        for (i in 0 until a.size) {
+            homedetailmachine.add(a[i])
         }
+
+        Livemachinedata.value = homedetailmachine
+
+
     }
+
 }
 
 

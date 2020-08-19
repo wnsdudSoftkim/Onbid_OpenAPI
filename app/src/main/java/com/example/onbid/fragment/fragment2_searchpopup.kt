@@ -13,7 +13,6 @@ import kotlinx.android.synthetic.main.activity_fragment2_searchpopup.*
 
 class fragment2_searchpopup : AppCompatActivity() {
     private var check1 :String?="전체"
-    private var check2 :String?="전체"
     private var selectedValue:String?="-전체-"
     private var selectedValue2:String?="-전체-"
 
@@ -27,13 +26,12 @@ class fragment2_searchpopup : AppCompatActivity() {
         btn_popupsave.setOnClickListener {
             val intent = Intent()
             intent.putExtra("check1",check1)
-            intent.putExtra("check2",check2)
             intent.putExtra("selectedValue",selectedValue)
             intent.putExtra("selectedValue2",selectedValue2)
             setResult(Activity.RESULT_OK,intent)
             finish()
         }
-        val data = listOf("-전체-", "500000", "1000000", "2000000", "5000000", "10000000")
+        val data = listOf("전체", "500000", "1000000", "2000000", "5000000", "10000000")
         val adapter = ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, data)
         spinner.adapter = adapter
         spinner2.adapter = adapter
