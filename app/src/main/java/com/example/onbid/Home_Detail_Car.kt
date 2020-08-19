@@ -22,7 +22,10 @@ class Home_Detail_Car : AppCompatActivity() {
             onBackPressed()
         }
         btn_car_popup.setOnClickListener {
-            startActivity(Intent(this,Appraisal_report::class.java))
+            val intent = Intent(this,Appraisal_report::class.java)
+            intent.putExtra("CLTR_NO",CLTR_NO)
+            intent.putExtra("PBCT_NO",PBCT_NO)
+            startActivity(intent)
         }
         CLTR_NO = intent.getStringExtra("CLTR_NO")
         PBCT_NO = intent.getStringExtra("PBCT_NO")
@@ -83,6 +86,8 @@ class Home_Detail_Car : AppCompatActivity() {
                             "리스트를 읽어오는데 실패하였습니다" + t.message,
                             Toast.LENGTH_LONG
                         ).show()
+                        car_CLTR_NM.setText("" +t.message)
+
                     }
 
                     override fun onResponse(

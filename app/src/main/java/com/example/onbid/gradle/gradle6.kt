@@ -26,7 +26,7 @@ class gradle6 : AppCompatActivity() {
             onBackPressed()
         }
         viewModel.Livegrid6data.observe(this, Observer {
-            if (viewModel.grid6data.size == 0) {
+            if (viewModel.grid6data.size != null) {
                 val adapter =
                     RecyclerAdapter(
                         viewModel.grid6data,

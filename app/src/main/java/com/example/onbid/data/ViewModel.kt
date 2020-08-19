@@ -24,6 +24,7 @@ class ViewModel : ViewModel() {
     val emargytopdata = ArrayList<CamcoData_item>()
     val newlistdata = ArrayList<CamcoData_item>()
     val cancontractdata = ArrayList<CamcoData_item>()
+    val appraisaldata = ArrayList<CamcoData_item_TestDetail>()
 
 
     val Livedata = MutableLiveData<ArrayList<CamcoData_item>>()
@@ -45,6 +46,7 @@ class ViewModel : ViewModel() {
     val Liveemargydata  = MutableLiveData<ArrayList<CamcoData_item>>()
     val Livenewlistdata  = MutableLiveData<ArrayList<CamcoData_item>>()
     val Livecancontractdata  = MutableLiveData<ArrayList<CamcoData_item>>()
+    val Liveappraisaldata  = MutableLiveData<ArrayList<CamcoData_item_TestDetail>>()
 
 
 
@@ -191,18 +193,16 @@ class ViewModel : ViewModel() {
     fun myhomedetailData(item:CamcoDetailData) {
         homedetaildata.clear()
 
-        val a = item.body[0].items[0].item
+        val a = item.body[0].item
         for ( i in 0 until a.size ) {
             homedetaildata.add(a[i])
         }
-
         LiveHomedetaildata.value = homedetaildata
-
     }
     fun myhomedetailMoneyData(item:CamcoDetailDataMoney) {
         homedetaildatamoney.clear()
 
-        val a = item.body[0].items[0].item
+        val a = item.body[0].item
         for ( i in 0 until a.size ) {
             homedetaildatamoney.add(a[i])
         }
@@ -230,7 +230,6 @@ class ViewModel : ViewModel() {
         }
 
         Livenewlistdata.value = newlistdata
-
     }
     fun mycancontractSetData(item:Camco) {
         cancontractdata.clear()
@@ -241,6 +240,17 @@ class ViewModel : ViewModel() {
         }
 
         Livecancontractdata.value = cancontractdata
+
+    }
+    fun myappraisalSetData(item:CamcoDetailTestData) {
+        appraisaldata.clear()
+
+        val a = item.body[0].items[0].item
+        for ( i in 0 until a.size ) {
+            appraisaldata.add(a[i])
+        }
+
+        Liveappraisaldata.value = appraisaldata
 
     }
 }

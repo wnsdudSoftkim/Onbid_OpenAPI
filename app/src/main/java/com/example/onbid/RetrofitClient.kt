@@ -89,7 +89,8 @@ interface DataService {
     //6-2. 통합 마감임박 목록조회
     @GET("ThingInfoInquireSvc/getUnifyDeadlineCltrList?serviceKey=TqjIDWEFUiSaeznEMiLDt2X05LgJsJWP0Ja9xKpbEIbwBfiGFLQoAXV1kpXjBNLZSQyhHOzF5Vh%2Fm4wZE7XXug%3D%3D&DPSL_MTD_CD=&CTGR_HIRK_ID=&CTGR_HIRK_ID_MID=&SIDO=&SGK=&EMD=&GOODS_PRICE_FROM=&GOODS_PRICE_TO=&OPEN_PRICE_FROM=&OPEN_PRICE_TO=&CLTR_NM=&PBCT_BEGN_DTM=&PBCT_CLS_DTM=&CLTR_MNMT_NO=&numOfRows=10&pageNo=1&")
     fun getemergency():Call<Camco>
-    //6-1-1. 통합용도별 물건 상세조회(물건번호, 공매번호 필수 !!!,물건코드조회(상위) 1.자동차 = 12000, 2. 권리 증권 = 11000 , )
+    //6-1-1. (자동차 상세조회 )
+
     @GET("ThingInfoInquireSvc/getUnifyUsageCltrBasicInfoDetail?serviceKey=TqjIDWEFUiSaeznEMiLDt2X05LgJsJWP0Ja9xKpbEIbwBfiGFLQoAXV1kpXjBNLZSQyhHOzF5Vh%2Fm4wZE7XXug%3D%3D&")
     fun getThingdetail(
         @Query("CLTR_NO") CLTR_NO: String,
@@ -107,7 +108,7 @@ interface DataService {
         @Query("PBCT_NO") PBCT_NO:String
     ):Call<CamcoDetailTestData>
 
-    //회원권 및 유가증권
+    //회원권 및 유가증권 상세조회
     fun getThingdetailMoney(
         @Query("CLTR_NO") CLTR_NO: String,
         @Query("PBCT_NO") PBCT_NO:String

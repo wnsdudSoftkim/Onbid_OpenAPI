@@ -36,7 +36,7 @@ class gradle3 : AppCompatActivity() {
             onBackPressed()
         }
         viewModel.Livegrid3data.observe(this, Observer {
-            if (viewModel.grid3data.size == 0) {
+            if (viewModel.grid3data.size != null) {
                 val adapter =
                     RecyclerAdapter(
                         viewModel.grid3data,
@@ -73,7 +73,6 @@ class gradle3 : AppCompatActivity() {
                         //viewModel로 데이터를 보내줌.
                         if (body != null) {
                             viewModel.myGrid3SetData(body)
-                            Toast.makeText(applicationContext,"성공"+body,Toast.LENGTH_LONG).show()
 
 
                         }

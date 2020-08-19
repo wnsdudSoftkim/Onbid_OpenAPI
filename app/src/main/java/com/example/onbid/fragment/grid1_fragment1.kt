@@ -37,7 +37,7 @@ class grid1_fragment1 : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel.Livegrid1fragment1data.observe(viewLifecycleOwner, Observer {
-            if (viewModel.grid1fragment1data.size == 0) {
+            if (viewModel.grid1fragment1data.size != null) {
                 val adapter =
                     RecyclerAdapter(
                         viewModel.grid1fragment1data,
