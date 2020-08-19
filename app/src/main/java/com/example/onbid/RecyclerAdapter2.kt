@@ -7,6 +7,9 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.onbid.data.CamcoData_item
 import com.example.onbid.data.CamcoData_itemNoticeData
+import java.text.DecimalFormat
+import java.text.SimpleDateFormat
+import java.time.format.DateTimeFormatter
 
 class RecyclerAdapter2(                  // 존나 어렵다 viewholder라는 놈을 꼭 쓴단는걸 기억하자
     var list: ArrayList<CamcoData_itemNoticeData>,
@@ -33,11 +36,18 @@ class RecyclerAdapter2(                  // 존나 어렵다 viewholder라는 �
     }
 
     override fun onBindViewHolder(holder: RecyclerAdapter2.ViewHolder, position: Int) {
+        val item = list[position]
+        val items = list[position]
         holder.notice_number.setText(list[position].PLNM_NO)
         holder.notice_name.setText(list[position].PLNM_NM)
         holder.notice_companyname.setText(list[position].RSBY_DEPT)
         holder.notice_1.setText(list[position].PRPT_DVSN_NM)
-        holder.notice_day1.setText(list[position].PLNM_DT)
+        val a= items.PLNM_DT?.toLong()
+        val formatter = SimpleDateFormat("yyyy/MM/dd")
+        val num = formatter.format(a)
+        holder.notice_day1.setText(num.toString())
+        //holder.notice_day1.setText(list[position].PLNM_DT)
         holder.notice_day2.setText(list[position].PBCT_EXCT_DTM)
+
     }
 }

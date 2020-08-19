@@ -139,6 +139,7 @@
                             android:textSize="20dp" />
 
                         <TextView
+                            android:id="@+id/machine_CLTR_NM"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_marginTop="10dp"
@@ -169,6 +170,7 @@
                             android:textSize="20dp" />
 
                         <TextView
+                            android:id="@+id/machine_CTGR_TYPE_NM"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_marginTop="10dp"
@@ -199,6 +201,7 @@
                             android:textSize="20dp" />
 
                         <TextView
+                            android:id="@+id/machine_DPSL_MTD_NM"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_marginTop="10dp"
@@ -228,6 +231,7 @@
                             android:textSize="20dp" />
 
                         <TextView
+                            android:id="@+id/machine_PBCT_CLTR_STAT_NM"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_marginTop="10dp"
@@ -257,6 +261,7 @@
                             android:textSize="20dp" />
 
                         <TextView
+                            android:id="@+id/machine_ORG_NM"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_marginTop="10dp"
@@ -286,6 +291,7 @@
                             android:textSize="20dp" />
 
                         <TextView
+                            android:id="@+id/machine_RGST_DEPT_NM"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_marginTop="10dp"
@@ -315,6 +321,7 @@
                             android:textSize="20dp" />
 
                         <TextView
+                            android:id="@+id/machine_PSCG_NM"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_marginTop="10dp"
@@ -344,6 +351,7 @@
                             android:textSize="20dp" />
 
                         <TextView
+                            android:id="@+id/machine_PSCG_TPNO"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_marginTop="10dp"
@@ -374,6 +382,7 @@
                             android:textSize="20dp" />
 
                         <TextView
+                            android:id="@+id/machine_LDNM_ADRS"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_marginTop="10dp"
@@ -404,6 +413,7 @@
                             android:textSize="20dp" />
 
                         <TextView
+                            android:id="@+id/machine_NMRD_ADRS"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_marginTop="10dp"
@@ -433,6 +443,7 @@
                             android:textSize="20dp" />
 
                         <TextView
+                            android:id="@+id/machine_CLTR_MNMT_NO"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_marginTop="10dp"
@@ -463,6 +474,7 @@
                             android:textSize="20dp" />
 
                         <TextView
+                            android:id="@+id/machine_PRPT_DVSN_NM"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_marginTop="10dp"
@@ -493,6 +505,7 @@
                             android:textSize="20dp" />
 
                         <TextView
+                            android:id="@+id/machine_DLGT_ORG_NM"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_marginTop="10dp"
@@ -523,6 +536,7 @@
                             android:textSize="20dp" />
 
                         <TextView
+                            android:id="@+id/machine_CTGR_FULL_NM"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_marginTop="10dp"
@@ -553,6 +567,37 @@
                             android:textSize="20dp" />
 
                         <TextView
+                            android:id="@+id/machine_BID_MTD_NM"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="10dp"
+                            android:layout_weight="65"
+                            android:background="@drawable/tablelayout_line"
+                            android:gravity="center"
+                            android:text="정보"
+                            android:textSize="20dp" />
+                    </TableRow>
+                    <TableRow
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:weightSum="100">
+
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="10dp"
+                            android:layout_weight="35"
+                            android:background="@drawable/login_borderbox"
+                            android:backgroundTint="#4585FF"
+                            android:padding="4dp"
+                            android:text="최초 공고 일자"
+                            android:textColor="#FFF"
+                            android:textSize="20dp" />
+
+                        <TextView
+                            android:id="@+id/machine_TFRT_PLNM_DT"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_marginTop="10dp"
@@ -583,6 +628,7 @@
                             android:textSize="20dp" />
 
                         <TextView
+                            android:id="@+id/machine_GOODS_NM"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_marginTop="10dp"
@@ -601,6 +647,7 @@
 
 
                         <TextView
+                            android:id="@+id/machine_POSI_ENV_PSCD"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_marginTop="10dp"
@@ -669,6 +716,7 @@
                         android:textSize="20dp" />
 
                     <TextView
+                        android:id="@+id/machine_MANF"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_marginTop="10dp"
@@ -687,6 +735,7 @@
 
 
                     <TextView
+                        android:id="@+id/machine_MDL"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_marginTop="10dp"
@@ -729,6 +778,7 @@
                         android:textSize="20dp" />
 
                     <TextView
+                        android:id="@+id/machine_NRGT"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_marginTop="10dp"
@@ -759,6 +809,7 @@
                         android:textSize="20dp" />
 
                     <TextView
+                        android:id="@+id/machine_STND"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_marginTop="10dp"
@@ -777,6 +828,7 @@
 
 
                     <TextView
+                        android:id="@+id/machine_PSNS_SIZE"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_marginTop="10dp"
@@ -819,6 +871,7 @@
                         android:textSize="20dp" />
 
                     <TextView
+                        android:id="@+id/machine_PRDN_PLC_CTFR"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_marginTop="10dp"
@@ -849,6 +902,7 @@
                         android:textSize="20dp" />
 
                     <TextView
+                        android:id="@+id/machine_USE_TERM"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_marginTop="10dp"
@@ -879,6 +933,7 @@
                         android:textSize="20dp" />
 
                     <TextView
+                        android:id="@+id/machine_WGHT_QNTY"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_marginTop="10dp"
@@ -909,6 +964,7 @@
                         android:textSize="20dp" />
 
                     <TextView
+                        android:id="@+id/machine_QNTY"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_marginTop="10dp"
@@ -939,6 +995,7 @@
                         android:textSize="20dp" />
 
                     <TextView
+                        android:id="@+id/machine_CSTD_PLC"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_marginTop="10dp"
@@ -969,6 +1026,7 @@
                         android:textSize="20dp" />
 
                     <TextView
+                        android:id="@+id/machine_ETC_DTL_CNTN"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_marginTop="10dp"
@@ -999,6 +1057,7 @@
                         android:textSize="20dp" />
 
                     <TextView
+                        android:id="@+id/machine_MIN_BID_PRC"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_marginTop="10dp"
@@ -1029,6 +1088,7 @@
                         android:textSize="20dp" />
 
                     <TextView
+                        android:id="@+id/machine_PCMT_PYMT_EPDT_CNTN"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_marginTop="10dp"
@@ -1059,6 +1119,7 @@
                         android:textSize="20dp" />
 
                     <TextView
+                        android:id="@+id/machine_BID_PRGN_NFT"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_marginTop="10dp"
@@ -1088,6 +1149,7 @@
                         android:textSize="20dp" />
 
                     <TextView
+                        android:id="@+id/machine_DLVR_RSBY"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_marginTop="10dp"
@@ -1118,6 +1180,7 @@
                         android:textSize="20dp" />
 
                     <TextView
+                        android:id="@+id/machine_ICDL_CDTN"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_marginTop="10dp"
@@ -1148,6 +1211,7 @@
                         android:textSize="20dp" />
 
                     <TextView
+                        android:id="@+id/machine_SHR_RQR_EPRT_DT"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_marginTop="10dp"

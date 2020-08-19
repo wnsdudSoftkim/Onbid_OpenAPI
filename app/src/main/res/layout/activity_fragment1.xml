@@ -34,7 +34,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
-            android:layout_weight="100"
+            android:weightSum="100"
             android:background="@drawable/login_borderbox"
             android:orientation="horizontal"
             android:padding="15dp">
