@@ -17,6 +17,7 @@ class ViewModel : ViewModel() {
     val grid6data = ArrayList<CamcoData_item>()
     val homedetaildata = ArrayList<CamcoData_item_Detail>()
     val homedetaildatamoney = ArrayList<CamcoData_item_DetailMoney>()
+    val noticedata = ArrayList<CamcoData_itemNoticeData>()
 
 
     val Livedata = MutableLiveData<ArrayList<CamcoData_item>>()
@@ -31,6 +32,7 @@ class ViewModel : ViewModel() {
     val Livegrid6data  = MutableLiveData<ArrayList<CamcoData_item>>()
     val LiveHomedetaildata = MutableLiveData<ArrayList<CamcoData_item_Detail>>()
     val LiveHomedetailmoneydata = MutableLiveData<ArrayList<CamcoData_item_DetailMoney>>()
+    val Livenoticedata  = MutableLiveData<ArrayList<CamcoData_itemNoticeData>>()
 
 
 
@@ -154,6 +156,17 @@ class ViewModel : ViewModel() {
         }
 
         LiveHomedetailmoneydata.value = homedetaildatamoney
+
+    }
+    fun myNoticeData(item:CamcoNotice) {
+        noticedata.clear()
+
+        val a = item.body[0].items[0].item
+        for ( i in 0 until a.size ) {
+            noticedata.add(a[i])
+        }
+
+        Livenoticedata.value = noticedata
 
     }
 }

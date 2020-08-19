@@ -1,5 +1,6 @@
 package com.example.onbid
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
@@ -22,6 +23,7 @@ class MainActivity : AppCompatActivity() {
 
 
         Handler().postDelayed({
+            startActivity(Intent(this,hometab::class.java))
 
         }, 3000)
     }

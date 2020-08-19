@@ -76,7 +76,7 @@ interface DataService {
     fun get50 ():Call<Camco>
     //4.캠코공매공고목록조회(0001 수탁,유입재산 / 0002 압류재산 / 0003 국유재산 )
     @GET("KamcoPblsalThingInquireSvc/getKamcoPlnmPbctList?serviceKey=TqjIDWEFUiSaeznEMiLDt2X05LgJsJWP0Ja9xKpbEIbwBfiGFLQoAXV1kpXjBNLZSQyhHOzF5Vh%2Fm4wZE7XXug%3D%3D&numOfRows=10&pageNo=1&PRPT_DVSN_CD=&")
-    fun getcalender():Call<Camco>
+    fun getcalender():Call<CamcoNotice>
     //5.캠코공매일정 조회(조회시작년도)
     @GET("KamcoPblsalThingInquireSvc/getKamcoPbctSchedule?serviceKey=TqjIDWEFUiSaeznEMiLDt2X05LgJsJWP0Ja9xKpbEIbwBfiGFLQoAXV1kpXjBNLZSQyhHOzF5Vh%2Fm4wZE7XXug%3D%3D&stdt=&")
     fun getsellcalender():Call<Camco>
