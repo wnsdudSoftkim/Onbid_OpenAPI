@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#14000000"
     android:padding="32dp"
-    tools:context=".fragment2_searchpopup">
+    tools:context=".fragment.fragment2_searchpopup">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -108,81 +108,7 @@
 
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="60dp"
-                android:background="@drawable/login_borderbox"
-                android:orientation="vertical">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="4dp"
-                    android:text="물건종류"
-                    android:textColor="#000" />
-
-                <RadioGroup
-                    android:layout_width="match_parent"
-                    android:layout_height="60dp"
-                    android:gravity="center"
-                    android:orientation="horizontal"
-                    android:weightSum="4">
-
-                    <RadioButton
-                        android:id="@+id/thing_total"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:buttonTint="@color/ourcolor"
-                        android:checked="true"
-                        android:clickable="true"
-                        android:contextClickable="true"
-                        android:duplicateParentState="true"
-                        android:onClick="onRadioButtonClicked"
-                        android:text="전체"
-                        android:textIsSelectable="true" />
-
-                    <RadioButton
-                        android:id="@+id/thing_car"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:buttonTint="@color/ourcolor"
-                        android:clickable="true"
-                        android:duplicateParentState="true"
-                        android:onClick="onRadioButtonClicked"
-                        android:text="운송장비"
-                        android:textIsSelectable="true" />
-
-                    <RadioButton
-                        android:id="@+id/thing_thing"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:buttonTint="@color/ourcolor"
-                        android:clickable="true"
-                        android:duplicateParentState="true"
-                        android:onClick="onRadioButtonClicked"
-                        android:text="물품"
-                        android:textIsSelectable="true" />
-
-                    <RadioButton
-                        android:id="@+id/thing_money"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:buttonTint="@color/ourcolor"
-                        android:clickable="true"
-                        android:duplicateParentState="true"
-                        android:onClick="onRadioButtonClicked"
-                        android:text="권리/증권"
-                        android:textIsSelectable="true" />
-                </RadioGroup>
-
-
-            </LinearLayout>
         </LinearLayout>
 
         <LinearLayout

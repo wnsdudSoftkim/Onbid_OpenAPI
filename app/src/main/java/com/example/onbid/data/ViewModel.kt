@@ -26,6 +26,7 @@ class ViewModel : ViewModel() {
     val cancontractdata = ArrayList<CamcoData_item>()
     val appraisaldata = ArrayList<CamcoData_item_TestDetail>()
     val noticedata = ArrayList<CamcoData_itemNoticeData>()
+    val searchdata = ArrayList<CamcoData_item>()
 
 
     val Livedata = MutableLiveData<ArrayList<CamcoData_item>>()
@@ -49,6 +50,7 @@ class ViewModel : ViewModel() {
     val Livecancontractdata = MutableLiveData<ArrayList<CamcoData_item>>()
     val Liveappraisaldata = MutableLiveData<ArrayList<CamcoData_item_TestDetail>>()
     val Livenoticedata = MutableLiveData<ArrayList<CamcoData_itemNoticeData>>()
+    val Livesearchdata = MutableLiveData<ArrayList<CamcoData_item>>()
 
 
     fun mysHomeListSetData(item: Camco) {
@@ -220,9 +222,7 @@ class ViewModel : ViewModel() {
         for (i in 0 until a.size) {
             homedetaildatamoney.add(a[i])
         }
-
         LiveHomedetailmoneydata.value = homedetaildatamoney
-
     }
 
     fun myemargySetData(item: Camco) {
@@ -250,12 +250,10 @@ class ViewModel : ViewModel() {
 
     fun mycancontractSetData(item: Camco) {
         cancontractdata.clear()
-
         val a = item.body[0].items[0].item
         for (i in 0 until a.size) {
             cancontractdata.add(a[i])
         }
-
         Livecancontractdata.value = cancontractdata
 
     }
@@ -269,18 +267,26 @@ class ViewModel : ViewModel() {
         }
 
         Liveappraisaldata.value = appraisaldata
-
-        fun myNoticeData(item: CamcoNotice) {
-            noticedata.clear()
-
-            val a = item.body[0].items[0].item
-            for (i in 0 until a.size) {
-                noticedata.add(a[i])
-            }
-
-            Livenoticedata.value = noticedata
-
-
-        }
     }
+    fun myNoticeData(item: CamcoNotice) {
+        noticedata.clear()
+
+        val a = item.body[0].items[0].item
+        for (i in 0 until a.size) {
+            noticedata.add(a[i])
+        }
+
+        Livenoticedata.value = noticedata
+    }
+    fun mySearchData(item: Camco) {
+        searchdata.clear()
+
+        val a = item.body[0].items[0].item
+        for (i in 0 until a.size) {
+            searchdata.add(a[i])
+        }
+
+        Livesearchdata.value =searchdata
+    }
+
 }

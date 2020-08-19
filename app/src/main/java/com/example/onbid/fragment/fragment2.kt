@@ -8,14 +8,16 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import com.example.onbid.Home_Detail_Car
 import com.example.onbid.R
+import com.example.onbid.SearchActivity
 import kotlinx.android.synthetic.main.activity_fragment2.*
 
 class fragment2 : Fragment() {
-    var result1 :String?=null
-    var result2 : String?=null
-    var result3 : String?=null
-    var result4 : String?=null
+    var result1 :String?=""
+    var result2 : String?=""
+    var result3 : String?=""
+    var result4 : String?=""
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -33,6 +35,12 @@ class fragment2 : Fragment() {
         btn_search.setOnClickListener {
             if(edit_search.toString()!=null) {
 
+                val intent = Intent(context, SearchActivity::class.java)
+                intent.putExtra("result1",result1)
+                intent.putExtra("search",edit_search.toString())
+                intent.putExtra("low",result3)
+                intent.putExtra("upper",result4)
+                startActivity(intent)
 
             }else {
                 Toast.makeText(context,"기입해주세요",Toast.LENGTH_SHORT).show()
@@ -53,6 +61,8 @@ class fragment2 : Fragment() {
                 text_search_result2.setText(result2)
                 text_search_select1.setText(result3)
                 text_search_select2.setText(result4)
+                //1.DPSL_MTD_CD(0001 매각 0002 임대)
+                //
             }
         }
     }

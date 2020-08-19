@@ -127,11 +127,7 @@ class fragment3 : Fragment() {
                         val body = response.body()
                         //viewModel로 데이터를 보내줌.
                         if (body != null) {
-                            //viewModel.mysHomeListSetData(body)
                             viewModel.mysHomeListSetData(response.body()!!)
-                            //val a = body.body[0].items[0].item as ArrayList<RoomData>
-                            //val task = InsertAsyncTask(a, context)
-                            //task.execute()
 
                         }
                     }
