@@ -21,6 +21,7 @@ class ViewModel : ViewModel() {
     val grid6data = ArrayList<CamcoData_item>()
     val homedetaildata = ArrayList<CamcoData_item_Detail>()
     val homedetaildatamoney = ArrayList<CamcoData_item_DetailMoney>()
+    val homedetailmachine = ArrayList<CamcoData_item_DetailMachine>()
     val emargytopdata = ArrayList<CamcoData_item>()
     val newlistdata = ArrayList<CamcoData_item>()
     val cancontractdata = ArrayList<CamcoData_item>()
@@ -49,7 +50,7 @@ class ViewModel : ViewModel() {
     val Livecancontractdata = MutableLiveData<ArrayList<CamcoData_item>>()
     val Liveappraisaldata = MutableLiveData<ArrayList<CamcoData_item_TestDetail>>()
     val Livenoticedata = MutableLiveData<ArrayList<CamcoData_itemNoticeData>>()
-
+    val Livemachinedata = MutableLiveData<ArrayList<CamcoData_item_DetailMachine>>()
 
     fun mysHomeListSetData(item: Camco) {
         data.clear()
@@ -271,6 +272,7 @@ class ViewModel : ViewModel() {
         Liveappraisaldata.value = appraisaldata
     }
 
+
     fun myNoticeData(item: CamcoNotice) {
         noticedata.clear()
 
@@ -282,5 +284,32 @@ class ViewModel : ViewModel() {
         Livenoticedata.value = noticedata
 
 
+        fun myNoticeData(item: CamcoNotice) {
+            noticedata.clear()
+
+            val a = item.body[0].items[0].item
+            for (i in 0 until a.size) {
+                noticedata.add(a[i])
+            }
+
+            Livenoticedata.value = noticedata
+
+
+        }
+
+        fun mymachineData(item: CamcoDetailDataMachine) {
+            homedetailmachine.clear()
+
+
+            val a = item.body[0].item
+            for (i in 0 until a.size) {
+                homedetailmachine.add(a[i])
+            }
+
+            Livemachinedata.value = homedetailmachine
+
+
+        }
     }
 }
+

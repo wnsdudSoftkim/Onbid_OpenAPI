@@ -96,6 +96,11 @@ interface DataService {
         @Query("CLTR_NO") CLTR_NO: String,
         @Query("PBCT_NO") PBCT_NO:String
     ):Call<CamcoDetailData>
+    @GET("ThingInfoInquireSvc/getUnifyUsageCltrBasicInfoDetail?serviceKey=TqjIDWEFUiSaeznEMiLDt2X05LgJsJWP0Ja9xKpbEIbwBfiGFLQoAXV1kpXjBNLZSQyhHOzF5Vh%2Fm4wZE7XXug%3D%3D&")
+    fun getmachinedetail(
+        @Query("CLTR_NO") CLTR_NO: String,
+        @Query("PBCT_NO") PBCT_NO:String
+    ):Call<CamcoDetailDataMachine>
 
     //통합수의계약가능목록조회
     @GET("ThingInfoInquireSvc/getUnifyPrivateContractCltrList?serviceKey=TqjIDWEFUiSaeznEMiLDt2X05LgJsJWP0Ja9xKpbEIbwBfiGFLQoAXV1kpXjBNLZSQyhHOzF5Vh%2Fm4wZE7XXug%3D%3D&DPSL_MTD_CD=0001&CTGR_HIRK_ID=&CTGR_HIRK_ID_MID=&SIDO=&SGK=&EMD=&GOODS_PRICE_FROM=&GOODS_PRICE_TO=&OPEN_PRICE_FROM=&OPEN_PRICE_TO=&CLTR_NM=&CLTR_MNMT_NO=&numOfRows=10&pageNo=1&")
