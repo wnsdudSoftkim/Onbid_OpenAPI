@@ -68,7 +68,7 @@ class fragment3 : Fragment() {
             startActivity(
                 Intent(
                     context,
-                    com.example.onbid.gradle.gradle5::class.java
+                    com.example.onbid.gradle.gradle6::class.java
                 )
             )
         }
@@ -76,7 +76,7 @@ class fragment3 : Fragment() {
             startActivity(
                 Intent(
                     context,
-                    com.example.onbid.gradle.gradle6::class.java
+                    com.example.onbid.gradle.gradle5::class.java
                 )
             )
         }

@@ -26,9 +26,6 @@ class fragment1 : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        fragment1_1.setOnClickListener {
-            startActivity(Intent(context,newList::class.java))
-        }
         fragment1_2.setOnClickListener {
             startActivity(Intent(context,emargyTop::class.java))
         }

@@ -28,32 +28,6 @@
                 android:textSize="60dp" />
 
         </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/fragment1_1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
-            android:weightSum="100"
-            android:background="@drawable/login_borderbox"
-            android:orientation="horizontal"
-            android:padding="15dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="90"
-                android:text="통합새로운물건목록조회 "
-                android:textSize="23dp" />
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="10"
-                android:src="@drawable/ic_baseline_navigate_next_24" />
-
-        </LinearLayout>
-
         <LinearLayout
             android:id="@+id/fragment1_2"
             android:layout_width="match_parent"
@@ -68,7 +42,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="90"
-                android:text="통합마감임박물건목록조회"
+                android:text="통합 마감임박 물건 목록 조회"
                 android:textSize="23dp" />
 
             <ImageView
@@ -116,7 +90,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="80"
-                android:text="통합 50% 체감물건목록조회"
+                android:text="통합 50% 체감물건 목록조회"
                 android:textSize="23dp" />
 
             <ImageView
@@ -141,7 +115,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="80"
-                android:text="통합클릭탑20물건목록조회"
+                android:text="통합 클릭 탑20 물건목록 조회"
                 android:textSize="23dp" />
 
             <ImageView
@@ -166,7 +140,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="80"
-                android:text="통합관심탑20물건목록조회"
+                android:text="통합 관심 탑20 물건목록 조회"
                 android:textSize="23dp" />
 
             <ImageView

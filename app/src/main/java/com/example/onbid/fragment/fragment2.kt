@@ -58,7 +58,6 @@ class fragment2 : Fragment() {
                 result3 = data?.getStringExtra("selectedValue")
                 result4 = data?.getStringExtra("selectedValue2")
                 text_search_result1.setText(result1)
-                text_search_result2.setText(result2)
                 text_search_select1.setText(result3)
                 text_search_select2.setText(result4)
                 //1.DPSL_MTD_CD(0001 매각 0002 임대)

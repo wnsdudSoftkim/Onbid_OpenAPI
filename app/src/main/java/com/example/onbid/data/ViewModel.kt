@@ -274,15 +274,6 @@ class ViewModel : ViewModel() {
         Liveappraisaldata.value = appraisaldata
     }
 
-    fun myNoticeData(item: CamcoNotice) {
-        noticedata.clear()
-
-        val a = item.body[0].items[0].item
-        for (i in 0 until a.size) {
-            noticedata.add(a[i])
-        }
-
-        Livenoticedata.value = noticedata
 
     fun myNoticeData(item: CamcoNotice) {
         noticedata.clear()
@@ -305,20 +296,20 @@ class ViewModel : ViewModel() {
         Livesearchdata.value = searchdata
     }
 
-        fun mymachineData(item: CamcoDetailDataMachine) {
-            homedetailmachine.clear()
+    fun mymachineData(item: CamcoDetailDataMachine) {
+        homedetailmachine.clear()
 
 
-            val a = item.body[0].item
-            for (i in 0 until a.size) {
-                homedetailmachine.add(a[i])
-            }
-
-            Livemachinedata.value = homedetailmachine
-
-
+        val a = item.body[0].item
+        for (i in 0 until a.size) {
+            homedetailmachine.add(a[i])
         }
+
+        Livemachinedata.value = homedetailmachine
+
+
     }
+
 }
 
 
