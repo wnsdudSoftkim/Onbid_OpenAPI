@@ -57,7 +57,6 @@ class ViewModel : ViewModel() {
     val Livesearchdata = MutableLiveData<ArrayList<CamcoData_item>>()
 
 
-
     fun mysHomeListSetData(item: Camco) {
         data.clear()
         val a = item.body[0].items[0].item
@@ -286,15 +285,16 @@ class ViewModel : ViewModel() {
 
         Livenoticedata.value = noticedata
     }
+
     fun mySearchData(item: Camco) {
         searchdata.clear()
-
         val a = item.body[0].items[0].item
         for (i in 0 until a.size) {
             searchdata.add(a[i])
         }
         Livesearchdata.value = searchdata
     }
+
 
     fun mymachineData(item: CamcoDetailDataMachine) {
         homedetailmachine.clear()
@@ -307,12 +307,8 @@ class ViewModel : ViewModel() {
 
         Livemachinedata.value = homedetailmachine
 
-
     }
 
 }
-
-
-
 
 
