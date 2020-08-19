@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.View
 import androidx.activity.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -15,6 +16,7 @@ import com.example.onbid.data.Camco
 import com.example.onbid.data.ViewModel
 import kotlinx.android.synthetic.main.activity_can_contract.*
 import kotlinx.android.synthetic.main.activity_emargy_top.*
+import kotlinx.android.synthetic.main.grid_fragment1.*
 import retrofit2.Response
 
 class canContract : AppCompatActivity() {
@@ -48,9 +50,8 @@ class canContract : AppCompatActivity() {
 
 
     fun initview() {
-
-
         if (viewModel.cancontractdata.size==0) {
+            animation_view_cancontract.visibility= View.VISIBLE
             RetrofitClient.dataservice.getcontract()
                 .enqueue(object : retrofit2.Callback<Camco> {
                     override fun onFailure(call: retrofit2.Call<Camco>, t: Throwable) {
@@ -64,7 +65,7 @@ class canContract : AppCompatActivity() {
                         //viewModel로 데이터를 보내줌.
                         if (body != null) {
                             viewModel.mycancontractSetData(body)
-
+                            animation_view_cancontract.visibility=View.GONE
                         }
                     }
 

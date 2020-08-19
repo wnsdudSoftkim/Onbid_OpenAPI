@@ -43,7 +43,17 @@
         android:layout_weight="90"
         android:orientation="vertical"
         android:weightSum="90">
-
+        <com.airbnb.lottie.LottieAnimationView
+            android:layout_marginTop="200dp"
+            android:layout_marginBottom="100dp"
+            android:id="@+id/animation_view_cancontract"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center"
+            android:visibility="gone"
+            app:lottie_autoPlay="true"
+            app:lottie_fileName="load.json"
+            app:lottie_loop="true" />
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_view_cancontract"
             android:layout_width="match_parent"

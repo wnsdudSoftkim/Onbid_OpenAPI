@@ -23,12 +23,13 @@ class fragment3 : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        initview()
+
         return inflater.inflate(R.layout.activity_fragment3, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        initview()
         gradle1.setOnClickListener {
             startActivity(
                 Intent(
@@ -83,11 +84,13 @@ class fragment3 : Fragment() {
 
     }
 
+
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
         viewModel.Livedata.observe(viewLifecycleOwner, Observer {
             if (viewModel.data != null) {
+
                 val adapter =
                     RecyclerAdapter(
                         viewModel.data,
@@ -112,8 +115,8 @@ class fragment3 : Fragment() {
 
     //통신 후 viewModel 에서 데이터를 꺼내와줌.
     fun initview() {
-        if(viewModel.data!=null) {
-
+        if(viewModel.data.size==0) {
+            animation_view.visibility=View.VISIBLE
             RetrofitClient.dataservice.getdata()
                 .enqueue(object : retrofit2.Callback<Camco> {
                     override fun onFailure(call: retrofit2.Call<Camco>, t: Throwable) {
@@ -132,6 +135,8 @@ class fragment3 : Fragment() {
                             //val a = body.body[0].items[0].item as ArrayList<RoomData>
                             //val task = InsertAsyncTask(a, context)
                             //task.execute()
+                            animation_view.visibility=View.GONE
+
 
                         }
                     }

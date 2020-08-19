@@ -269,18 +269,18 @@ class ViewModel : ViewModel() {
         }
 
         Liveappraisaldata.value = appraisaldata
+    }
 
-        fun myNoticeData(item: CamcoNotice) {
-            noticedata.clear()
+    fun myNoticeData(item: CamcoNotice) {
+        noticedata.clear()
 
-            val a = item.body[0].items[0].item
-            for (i in 0 until a.size) {
-                noticedata.add(a[i])
-            }
-
-            Livenoticedata.value = noticedata
-
-
+        val a = item.body[0].items[0].item
+        for (i in 0 until a.size) {
+            noticedata.add(a[i])
         }
+
+        Livenoticedata.value = noticedata
+
+
     }
 }

@@ -59,6 +59,7 @@ class gradle3 : AppCompatActivity() {
 
     fun initview() {
         if (viewModel.grid3data.size==0) {
+            animation_view_gradle3.visibility=View.VISIBLE
             RetrofitClient.dataservice.get50()
                 .enqueue(object : retrofit2.Callback<Camco> {
                     override fun onFailure(call: retrofit2.Call<Camco>, t: Throwable) {
@@ -73,6 +74,7 @@ class gradle3 : AppCompatActivity() {
                         //viewModel로 데이터를 보내줌.
                         if (body != null) {
                             viewModel.myGrid3SetData(body)
+                            animation_view_gradle3.visibility=View.GONE
 
 
                         }

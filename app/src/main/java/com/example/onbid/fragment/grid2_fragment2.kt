@@ -23,12 +23,12 @@ class grid2_fragment2 : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        initview()
         return inflater.inflate(R.layout.grid_fragment1, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        initview()
 
 
     }
@@ -59,9 +59,8 @@ class grid2_fragment2 : Fragment() {
 
     fun initview() {
 
-
-
         if (viewModel.grid2fragment2data.size==0) {
+            animation_view2.visibility=View.VISIBLE
             RetrofitClient.dataservice.getclick20("0003","20","1")
                 .enqueue(object : retrofit2.Callback<Camco> {
                     override fun onFailure(call: retrofit2.Call<Camco>, t: Throwable) {
@@ -75,7 +74,7 @@ class grid2_fragment2 : Fragment() {
                         //viewModel로 데이터를 보내줌.
                         if (body != null) {
                             viewModel.myGrid2Fragment2SetData(body)
-
+                            animation_view2.visibility=View.GONE
 
                         }
                     }

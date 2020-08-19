@@ -16,7 +16,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Appraisal_report"></activity>
+        <activity android:name=".loading"/>
+        <activity android:name=".Appraisal_report" />
         <activity android:name=".menu.canContract" />
         <activity android:name=".Home_Detail_machine" />
         <activity android:name=".Home_Detail_things" />
@@ -27,7 +28,13 @@
         <activity android:name=".SignUp" />
         <activity android:name=".Login" />
         <activity android:name=".Home_ShowDetail" />
-        <activity android:name=".hometab"/>
+        <activity android:name=".hometab" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".fragment.fragment2_searchpopup" />
         <activity android:name=".fragment.fragment5" />
         <activity android:name=".gradle.gradle1" />
@@ -40,13 +47,7 @@
         <activity android:name=".fragment.fragment1" />
         <activity android:name=".fragment.fragment2" />
         <activity android:name=".fragment.fragment3" />
-        <activity android:name=".MainActivity" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>

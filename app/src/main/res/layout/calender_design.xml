@@ -50,7 +50,7 @@
     <LinearLayout
         android:gravity="center"
         android:background="@drawable/login_borderbox"
-        android:layout_width="120dp"
+        android:layout_width="110dp"
         android:layout_height="140dp">
         <TextView
             android:id="@+id/notice_PLNM_DT"
@@ -62,7 +62,7 @@
     <LinearLayout
         android:gravity="center"
         android:background="@drawable/login_borderbox"
-        android:layout_width="120dp"
+        android:layout_width="110dp"
         android:layout_height="140dp">
         <TextView
             android:id="@+id/notice_PBCT_EXCT_DTM"

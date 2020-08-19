@@ -75,13 +75,15 @@
             android:text="동산"
             android:textSize="20dp"/>
     </LinearLayout>
-    <ImageView
+    <com.airbnb.lottie.LottieAnimationView
+        android:layout_marginTop="60dp"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
         android:layout_gravity="center"
-        android:layout_marginTop="40dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/rotate"
-        android:src="@drawable/ic_baseline_rotate_right_24"/>
+        android:visibility="visible"
+        app:lottie_autoPlay="true"
+        app:lottie_fileName="main_loading.json"
+        app:lottie_loop="true" />
 
     <LinearLayout
         android:layout_width="match_parent"

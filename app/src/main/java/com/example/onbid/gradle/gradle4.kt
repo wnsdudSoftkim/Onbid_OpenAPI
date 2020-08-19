@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.View
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.lifecycle.Observer
@@ -15,6 +16,7 @@ import com.example.onbid.RetrofitClient
 import com.example.onbid.data.Camco
 import com.example.onbid.data.ViewModel
 import kotlinx.android.synthetic.main.activity_gradle4.*
+import kotlinx.android.synthetic.main.grid_fragment1.*
 import retrofit2.Response
 
 class gradle4 : AppCompatActivity() {
@@ -25,6 +27,7 @@ class gradle4 : AppCompatActivity() {
         btn_grid4_backpress.setOnClickListener {
             onBackPressed()
         }
+        initview()
         viewModel.Livegrid4data.observe(this, Observer {
             if (viewModel.grid4data.size != null) {
                 val adapter =
@@ -45,6 +48,7 @@ class gradle4 : AppCompatActivity() {
     }
     fun initview() {
         if (viewModel.grid4data.size==0) {
+            animation_view_gradle4.visibility= View.VISIBLE
             RetrofitClient.dataservice.getCargrid4()
                 .enqueue(object : retrofit2.Callback<Camco> {
                     override fun onFailure(call: retrofit2.Call<Camco>, t: Throwable) {
@@ -59,8 +63,7 @@ class gradle4 : AppCompatActivity() {
                         //viewModel로 데이터를 보내줌.
                         if (body != null) {
                             viewModel.myGrid4SetData(body)
-                            Toast.makeText(applicationContext,"성공"+body,Toast.LENGTH_LONG).show()
-
+                            animation_view_gradle4.visibility=View.GONE
 
                         }
                     }

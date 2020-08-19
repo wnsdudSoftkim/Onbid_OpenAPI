@@ -13,15 +13,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        if (rotate.getAnimation() == null) {
-            val rotateAnimation: Animation =
-                AnimationUtils.loadAnimation(getApplicationContext(), R.anim.anim_image)
-            rotate.startAnimation(rotateAnimation)
-            rotate.setAnimation(rotateAnimation)
-        }
-
-
-
         Handler().postDelayed({
             startActivity(Intent(this,hometab::class.java))
 

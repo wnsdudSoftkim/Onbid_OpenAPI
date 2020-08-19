@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.View
 import androidx.activity.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -15,6 +16,7 @@ import com.example.onbid.data.Camco
 import com.example.onbid.data.ViewModel
 import kotlinx.android.synthetic.main.activity_emargy_top.*
 import kotlinx.android.synthetic.main.activity_new_list.*
+import kotlinx.android.synthetic.main.grid_fragment1.*
 import retrofit2.Response
 
 class newList : AppCompatActivity() {
@@ -49,6 +51,7 @@ class newList : AppCompatActivity() {
 
     fun initview() {
         if (viewModel.newlistdata.size==0) {
+            animation_view_newlist.visibility= View.VISIBLE
             RetrofitClient.dataservice.getnewlist()
                 .enqueue(object : retrofit2.Callback<Camco> {
                     override fun onFailure(call: retrofit2.Call<Camco>, t: Throwable) {
@@ -62,7 +65,7 @@ class newList : AppCompatActivity() {
                         //viewModel로 데이터를 보내줌.
                         if (body != null) {
                             viewModel.mynewlistSetData(body)
-
+                            animation_view_newlist.visibility=View.GONE
                         }
                     }
 
