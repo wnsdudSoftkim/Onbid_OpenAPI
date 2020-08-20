@@ -39,10 +39,10 @@ class canContract : AppCompatActivity() {
                             //물건정보조회 서비스의 상세조회API
                             startActivity(Intent(this, Home_Detail_Car::class.java))
                         })
-                recycler_view_emergency.adapter = adapter
-                recycler_view_emergency.layoutManager = LinearLayoutManager(this)
-                recycler_view_emergency.adapter?.notifyDataSetChanged()
-                (recycler_view_emergency.adapter as RecyclerAdapter).setData(it)
+                recycler_view_cancontract.adapter = adapter
+                recycler_view_cancontract.layoutManager = LinearLayoutManager(this)
+                recycler_view_cancontract.adapter?.notifyDataSetChanged()
+                (recycler_view_cancontract.adapter as RecyclerAdapter).setData(it)
             }
         })
     }
@@ -55,7 +55,7 @@ class canContract : AppCompatActivity() {
             RetrofitClient.dataservice.getcontract()
                 .enqueue(object : retrofit2.Callback<Camco> {
                     override fun onFailure(call: retrofit2.Call<Camco>, t: Throwable) {
-                        Toast.makeText(this@canContract,""+t.message,Toast.LENGTH_LONG).show()
+                        Toast.makeText(this@canContract,"리스트를 읽어오는데 실패하였습니다",Toast.LENGTH_LONG).show()
                     }
 
                     override fun onResponse(

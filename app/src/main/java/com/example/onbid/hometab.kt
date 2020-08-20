@@ -66,19 +66,19 @@ class hometab : AppCompatActivity() {
 
                 when (tab!!.position) {
                     0 -> {
-                        linear_home_color1.setBackgroundResource(R.color.gray6)
+                        linear_home_color1.setBackgroundResource(R.color.ourcolor)
                     }
                     1 -> {
-                        linear_home_color2.setBackgroundResource(R.color.gray6)
+                        linear_home_color2.setBackgroundResource(R.color.ourcolor)
                     }
                     2 -> {
-                        linear_home_color3.setBackgroundResource(R.color.gray6)
+                        linear_home_color3.setBackgroundResource(R.color.ourcolor)
                     }
                     3 -> {
-                        linear_home_color4.setBackgroundResource(R.color.gray6)
+                        linear_home_color4.setBackgroundResource(R.color.ourcolor)
                     }
                     4 -> {
-                        linear_home_color5.setBackgroundResource(R.color.gray6)
+                        linear_home_color5.setBackgroundResource(R.color.ourcolor)
                     }
                     else -> {
 

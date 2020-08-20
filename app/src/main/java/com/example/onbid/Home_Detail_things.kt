@@ -1,6 +1,7 @@
 package com.example.onbid
 
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -9,6 +10,7 @@ import androidx.lifecycle.Observer
 import com.example.onbid.data.CamcoDetailDataMoney
 import com.example.onbid.data.ViewModel
 import kotlinx.android.synthetic.main.activity_home__detail__car.*
+import kotlinx.android.synthetic.main.activity_home__detail_machine.*
 import kotlinx.android.synthetic.main.activity_home__detail_things.*
 import retrofit2.Response
 
@@ -21,6 +23,10 @@ class Home_Detail_things : AppCompatActivity() {
         setContentView(R.layout.activity_home__detail_things)
         btn_things_backpress.setOnClickListener {
             onBackPressed()
+        }
+        btn_go_things.setOnClickListener {
+            val intent  = Intent(Intent.ACTION_VIEW, Uri.parse(("https://www.onbid.co.kr/op/cta/cltrdtl/collateralDetailMoveableAssetsList.do")))
+            startActivity(intent)
         }
         btn_things_popup.setOnClickListener {
             val intent = Intent(this,Appraisal_report::class.java)
@@ -36,6 +42,7 @@ class Home_Detail_things : AppCompatActivity() {
         viewModel.LiveHomedetailmoneydata.observe(this, Observer {
             if (viewModel.homedetaildatamoney != null) {
                 val a = viewModel.homedetaildatamoney[0]
+                thingsp_MIN_BID_PRC.setText(a.MIN_BID_PRC)
                 things_CTGR_TYPE_NM.setText(a.CTGR_TYPE_NM)
                 things_DPSL_MTD_NM.setText(a.DPSL_MTD_NM)
                 things_PBCT_CLTR_STAT_NM.setText(a.PBCT_CLTR_STAT_NM)
@@ -93,7 +100,7 @@ class Home_Detail_things : AppCompatActivity() {
                     override fun onFailure(call: retrofit2.Call<CamcoDetailDataMoney>, t: Throwable) {
                         Toast.makeText(
                             this@Home_Detail_things,
-                            "리스트를 읽어오는데 실패하였습니다"+t.message,
+                            "리스트를 읽어오는데 실패하였습니다",
                             Toast.LENGTH_LONG
                         ).show()
                     }

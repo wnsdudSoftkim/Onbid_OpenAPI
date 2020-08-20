@@ -39,10 +39,16 @@ class RecyclerAdapter(
     override fun onBindViewHolder(holder: RecyclerAdapter.ViewHolder, position: Int) {
         val item = itemList[position]
         holder.total_name.setText(item.CLTR_NM)
-        val a= item.APSL_ASES_AVG_AMT?.toLong()
-        val formatter = DecimalFormat("###,###")
-        val num = formatter.format(a)
-        holder.total_money.setText(num.toString())
+
+        if(item.APSL_ASES_AVG_AMT!=null && item.APSL_ASES_AVG_AMT!="-") {
+            val a= item.APSL_ASES_AVG_AMT?.toLong()
+            val formatter = DecimalFormat("###,###")
+            val num = formatter.format(a)
+            holder.total_money.setText(num.toString())
+        }else {
+            holder.total_money.setText(""+item.APSL_ASES_AVG_AMT)
+        }
+
         holder.total_mini1.setText(item.DPSL_MTD_NM)
         holder.total_mini2.setText(item.BID_MTD_NM)
         holder.linear_detail.setOnClickListener {

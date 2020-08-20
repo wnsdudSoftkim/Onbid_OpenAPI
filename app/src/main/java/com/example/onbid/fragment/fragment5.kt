@@ -45,7 +45,6 @@ class fragment5 : Fragment() {
             linear_gologin.visibility=View.GONE
             linear_login_visible.visibility=View.VISIBLE
             linear_gologout.visibility=View.VISIBLE
-            text_myname.setText(""+auth.currentUser)
         }
 
         image_quickaction.setOnClickListener{
@@ -63,7 +62,7 @@ class fragment5 : Fragment() {
     fun quickActivity() {
         QuickAction?.setColor(999)
         QuickAction?.setTextColor(333)
-        val item = ActionItem(1,"여기에 적을꺼 뭐 적지")
+        val item = ActionItem(1,"더 자세한 내용은 온비드 홈페이지를 통해 알아보시기 바랍니다.")
         val quickAction = QuickAction(requireContext(),me.piruin.quickaction.QuickAction.VERTICAL)
         quickAction.setColorRes(R.color.gray6)
         quickAction.setTextColorRes(R.color.ourcolor)

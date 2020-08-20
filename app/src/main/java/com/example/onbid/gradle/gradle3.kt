@@ -44,7 +44,7 @@ class gradle3 : AppCompatActivity() {
                         onClick = {
                             //여기서 통신을 바로 하고 통신이 완료될 때 까지 dialog 보여준다 통신이 완료되면 상세페이지로 이동하게끔 , data 를 intent 로 보내준다.
                             //물건정보조회 서비스의 상세조회API
-                            startActivity(Intent(this, Home_ShowDetail::class.java))
+                            startActivity(Intent(this, Home_Detail_Car::class.java))
                         })
                 recycler_view_grid3.adapter = adapter
                 recycler_view_grid3.layoutManager = LinearLayoutManager(this)

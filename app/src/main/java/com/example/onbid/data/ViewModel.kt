@@ -6,7 +6,6 @@ import androidx.lifecycle.ViewModel
 class ViewModel : ViewModel() {
     //데이터와 Livedata 선언
     val data = ArrayList<CamcoData_item>()
-    val logindata = ArrayList<LoginData>()
     val grid1fragment1data = ArrayList<CamcoData_item>()
     val grid1fragment2data = ArrayList<CamcoData_item>()
     val grid1fragment3data = ArrayList<CamcoData_item>()
@@ -31,7 +30,6 @@ class ViewModel : ViewModel() {
 
 
     val Livedata = MutableLiveData<ArrayList<CamcoData_item>>()
-    val Livelogindata = MutableLiveData<ArrayList<LoginData>>()
     val Livegrid1fragment1data = MutableLiveData<ArrayList<CamcoData_item>>()
     val Livegrid1fragment2data = MutableLiveData<ArrayList<CamcoData_item>>()
     val Livegrid1fragment3data = MutableLiveData<ArrayList<CamcoData_item>>()
@@ -67,11 +65,7 @@ class ViewModel : ViewModel() {
 
     }
 
-    fun setLoginData(item: LoginData) {
-        logindata.add(item)
-        Livelogindata.value = logindata
 
-    }
 
     fun myGrid1Fragment1SetData(item: Camco) {
         grid1fragment1data.clear()
@@ -264,7 +258,7 @@ class ViewModel : ViewModel() {
     fun myappraisalSetData(item: CamcoDetailTestData) {
         appraisaldata.clear()
 
-        val a = item.body[0].items[0].item
+        val a = item.body[0].items[0].estimationInfo
         for (i in 0 until a.size) {
             appraisaldata.add(a[i])
         }

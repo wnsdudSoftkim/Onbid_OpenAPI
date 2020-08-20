@@ -31,12 +31,25 @@ class fragment2 : Fragment() {
             startActivityForResult(Intent(context,
                 fragment2_searchpopup::class.java),200)
         }
+        search_1.setOnClickListener {
+            startActivityForResult(Intent(context,
+                fragment2_searchpopup::class.java),200)
+        }
         btn_search.setOnClickListener {
             if(edit_search.toString()!=null) {
 
                 val intent = Intent(context, SearchActivity::class.java)
+                if(result1 =="전체") {
+                    result1=""
+                }
+                if(result3=="전체"){
+                    result3=""
+                }
+                if(result4=="전체"){
+                    result4=""
+                }
                 intent.putExtra("result1",result1)
-                intent.putExtra("search",edit_search.toString())
+                intent.putExtra("search",edit_search.text.toString())
                 intent.putExtra("low",result3)
                 intent.putExtra("upper",result4)
                 startActivity(intent)
@@ -55,15 +68,7 @@ class fragment2 : Fragment() {
                 result1 = data?.getStringExtra("check1")
                 result3 = data?.getStringExtra("selectedValue")
                 result4 = data?.getStringExtra("selectedValue2")
-                if(result1 =="전체") {
-                    result1=""
-                }
-                if(result3=="전체"){
-                    result3=""
-                }
-                if(result4=="전체"){
-                    result4=""
-                }
+
                 text_search_result1.setText(result1)
                 text_search_select1.setText(result3)
                 text_search_select2.setText(result4)

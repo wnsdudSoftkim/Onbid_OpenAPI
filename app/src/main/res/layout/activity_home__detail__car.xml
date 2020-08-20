@@ -75,6 +75,7 @@
                         android:textStyle="bold" />
 
                     <TextView
+                        android:id="@+id/carp_MIN_BID_PRC"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="20"
@@ -101,6 +102,7 @@
                     android:src="@drawable/pngwing" />
 
                 <Button
+                    android:id="@+id/btn_go_car"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="right"

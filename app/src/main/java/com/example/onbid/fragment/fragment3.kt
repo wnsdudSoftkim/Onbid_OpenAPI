@@ -12,6 +12,7 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.onbid.*
 import com.example.onbid.data.*
+import com.example.onbid.menu.newList
 import kotlinx.android.synthetic.main.activity_fragment3.*
 import retrofit2.Response
 
@@ -76,7 +77,7 @@ class fragment3 : Fragment() {
             startActivity(
                 Intent(
                     context,
-                    com.example.onbid.gradle.gradle5::class.java
+                    newList::class.java
                 )
             )
         }
@@ -107,6 +108,7 @@ class fragment3 : Fragment() {
                 recycler_view.layoutManager = LinearLayoutManager(context)
                 recycler_view.adapter?.notifyDataSetChanged()
                 (recycler_view.adapter as RecyclerAdapter).setData(it)
+
             }
         })
 

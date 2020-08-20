@@ -69,13 +69,7 @@
             android:textColor="#000"
             android:layout_height="wrap_content"
             android:text="환영합니다"/>
-        <TextView
-            android:id="@+id/text_myname"
-            android:text="aa"
-            android:textColor="#4585FF"
-            android:textSize="32dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+
     </LinearLayout>
     <LinearLayout
         android:visibility="gone"
@@ -103,56 +97,7 @@
             android:src="@drawable/ic_baseline_navigate_next_24" />
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:background="@drawable/login_borderbox"
-        android:orientation="horizontal"
-        android:padding="20dp"
-        android:weightSum="100">
 
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:text="나의 관심물건 • 관심 공고"
-            android:textSize="25dp"
-            android:textColor="#000000"
-            android:layout_weight="90"/>
-
-        <ImageView
-            android:layout_weight="10"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:src="@drawable/ic_baseline_navigate_next_24" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_marginTop="25dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/login_borderbox"
-        android:orientation="horizontal"
-        android:weightSum="100"
-        android:padding="20dp">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:text="나의 입찰 목록"
-            android:textSize="25dp"
-            android:textColor="#000000"
-            android:layout_weight="90"/>
-
-        <ImageView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:src="@drawable/ic_baseline_navigate_next_24"
-            android:layout_weight="10"/>
-
-    </LinearLayout>
 
 
 

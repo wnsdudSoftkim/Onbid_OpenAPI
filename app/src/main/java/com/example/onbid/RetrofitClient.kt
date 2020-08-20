@@ -31,25 +31,11 @@ object RetrofitClient {
 
 //서버로 보내는 INPUT데이터
 interface DataService {
-    //회원가입 POST
-    @FormUrlEncoded
-    @POST("app_login")
-    fun SignUp(
-        @Field("email") email:String,
-        @Field("password") password:String,
-        @Field("name") name:String
-    ):Call<LoginData>
-    //로그인 POST
-    @FormUrlEncoded
-    @POST("app_login")
-    fun Login(
-        @Field("email") email:String,
-        @Field("password") password:String
-    ):Call<LoginData>
+
 
     //베이스 URL 을 제외한 경로
     //캠코공매물건목록조회(상세)
-    @GET("KamcoPblsalThingInquireSvc/getKamcoPbctCltrList?serviceKey=TqjIDWEFUiSaeznEMiLDt2X05LgJsJWP0Ja9xKpbEIbwBfiGFLQoAXV1kpXjBNLZSQyhHOzF5Vh%2Fm4wZE7XXug%3D%3D&numOfRows=10&pageNo=1&DPSL_MTD_CD=&CTGR_HIRK_ID=&CTGR_HIRK_ID_MID=&SIDO=&SGK=&EMD=&GOODS_PRICE_FROM=&GOODS_PRICE_TO=&OPEN_PRICE_FROM=&OPEN_PRICE_TO=&CLTR_NM=&PBCT_BEGN_DTM=&PBCT_CLS_DTM=&CLTR_MNMT_NO=&")
+    @GET("KamcoPblsalThingInquireSvc/getKamcoPbctCltrList?serviceKey=TqjIDWEFUiSaeznEMiLDt2X05LgJsJWP0Ja9xKpbEIbwBfiGFLQoAXV1kpXjBNLZSQyhHOzF5Vh%2Fm4wZE7XXug%3D%3D&numOfRows=100&pageNo=1&DPSL_MTD_CD=&CTGR_HIRK_ID=&CTGR_HIRK_ID_MID=&SIDO=&SGK=&EMD=&GOODS_PRICE_FROM=&GOODS_PRICE_TO=&OPEN_PRICE_FROM=&OPEN_PRICE_TO=&CLTR_NM=&PBCT_BEGN_DTM=&PBCT_CLS_DTM=&CLTR_MNMT_NO=&")
     fun getdata(): Call<Camco>
     //1.통합관심탑20물건목록조회(0001부동산/0002자동차,운송장비 / 0003물품[기계] / 0004 물품(기타) / 0005 권리,증권
     @GET("ThingInfoInquireSvc/getUnifyInterestTop20CltrList?serviceKey=TqjIDWEFUiSaeznEMiLDt2X05LgJsJWP0Ja9xKpbEIbwBfiGFLQoAXV1kpXjBNLZSQyhHOzF5Vh%2Fm4wZE7XXug%3D%3D&")
@@ -100,7 +86,7 @@ interface DataService {
     @GET("ThingInfoInquireSvc/getUnifyPrivateContractCltrList?serviceKey=TqjIDWEFUiSaeznEMiLDt2X05LgJsJWP0Ja9xKpbEIbwBfiGFLQoAXV1kpXjBNLZSQyhHOzF5Vh%2Fm4wZE7XXug%3D%3D&DPSL_MTD_CD=0001&CTGR_HIRK_ID=&CTGR_HIRK_ID_MID=&SIDO=&SGK=&EMD=&GOODS_PRICE_FROM=&GOODS_PRICE_TO=&OPEN_PRICE_FROM=&OPEN_PRICE_TO=&CLTR_NM=&CLTR_MNMT_NO=&numOfRows=10&pageNo=1&")
     fun getcontract():Call<Camco>
 
-    @GET("ThingInfoInquireSvc/getUnifyUsageCltrBasicInfoDetail?serviceKey=TqjIDWEFUiSaeznEMiLDt2X05LgJsJWP0Ja9xKpbEIbwBfiGFLQoAXV1kpXjBNLZSQyhHOzF5Vh%2Fm4wZE7XXug%3D%3D&")
+    @GET("ThingInfoInquireSvc/getUnifyUsageCltrEstimationInfoDetail?serviceKey=TqjIDWEFUiSaeznEMiLDt2X05LgJsJWP0Ja9xKpbEIbwBfiGFLQoAXV1kpXjBNLZSQyhHOzF5Vh%2Fm4wZE7XXug%3D%3D&pageNo=1&numOfRows=1&")
     //감정평가서
     fun getTestDetail(
         @Query("CLTR_NO") CLTR_NO: String,
@@ -113,19 +99,17 @@ interface DataService {
         @Query("PBCT_NO") PBCT_NO:String
     ):Call<CamcoDetailDataMoney>
     //자동차 /운송장비(grid4) 상위 코드 12000
-    @GET("getKamcoPbctCltrList?serviceKey=TqjIDWEFUiSaeznEMiLDt2X05LgJsJWP0Ja9xKpbEIbwBfiGFLQoAXV1kpXjBNLZSQyhHOzF5Vh%2Fm4wZE7XXug%3D%3D&numOfRows=10&pageNo=1&DPSL_MTD_CD=&CTGR_HIRK_ID=12000&CTGR_HIRK_ID_MID=&SIDO=&SGK=&EMD=&GOODS_PRICE_FROM=&GOODS_PRICE_TO=&OPEN_PRICE_FROM=&OPEN_PRICE_TO=&CLTR_NM=&PBCT_BEGN_DTM=&PBCT_CLS_DTM=&CLTR_MNMT_NO=&")
+    @GET("KamcoPblsalThingInquireSvc/getKamcoPbctCltrList?serviceKey=TqjIDWEFUiSaeznEMiLDt2X05LgJsJWP0Ja9xKpbEIbwBfiGFLQoAXV1kpXjBNLZSQyhHOzF5Vh%2Fm4wZE7XXug%3D%3D&numOfRows=10&pageNo=1&DPSL_MTD_CD=&CTGR_HIRK_ID=12000&CTGR_HIRK_ID_MID=&SIDO=&SGK=&EMD=&GOODS_PRICE_FROM=&GOODS_PRICE_TO=&OPEN_PRICE_FROM=&OPEN_PRICE_TO=&CLTR_NM=&PBCT_BEGN_DTM=&PBCT_CLS_DTM=&CLTR_MNMT_NO=&")
     fun getCargrid4():Call<Camco>
     //권리 증권(grid6)상위 코드 11000
     @GET("KamcoPblsalThingInquireSvc/getKamcoPbctCltrList?serviceKey=TqjIDWEFUiSaeznEMiLDt2X05LgJsJWP0Ja9xKpbEIbwBfiGFLQoAXV1kpXjBNLZSQyhHOzF5Vh%2Fm4wZE7XXug%3D%3D&numOfRows=10&pageNo=1&DPSL_MTD_CD=&CTGR_HIRK_ID=11000&CTGR_HIRK_ID_MID=&SIDO=&SGK=&EMD=&GOODS_PRICE_FROM=&GOODS_PRICE_TO=&OPEN_PRICE_FROM=&OPEN_PRICE_TO=&CLTR_NM=&PBCT_BEGN_DTM=&PBCT_CLS_DTM=&CLTR_MNMT_NO=&")
     fun getMoneygrid6():Call<Camco>
     //검색통신
-    @GET("KamcoPblsalThingInquireSvc/getKamcoPbctCltrList?serviceKey=TqjIDWEFUiSaeznEMiLDt2X05LgJsJWP0Ja9xKpbEIbwBfiGFLQoAXV1kpXjBNLZSQyhHOzF5Vh%2Fm4wZE7XXug%3D%3D&numOfRows=10&pageNo=1&CTGR_HIRK_ID=&CTGR_HIRK_ID_MID=&SIDO=&SGK=&EMD=&OPEN_PRICE_FROM=&OPEN_PRICE_TO=&PBCT_BEGN_DTM=&PBCT_CLS_DTM=&CLTR_MNMT_NO=&")
+    @GET("ThingInfoInquireSvc/getUnifyUsageCltr?serviceKey=TqjIDWEFUiSaeznEMiLDt2X05LgJsJWP0Ja9xKpbEIbwBfiGFLQoAXV1kpXjBNLZSQyhHOzF5Vh%2Fm4wZE7XXug%3D%3D&DPSL_MTD_CD=&CTGR_HIRK_ID=&CTGR_HIRK_ID_MID=&SIDO=&SGK=&EMD=&GOODS_PRICE_FROM=&GOODS_PRICE_TO=&OPEN_PRICE_FROM=&OPEN_PRICE_TO=&PBCT_BEGN_DTM=&PBCT_CLS_DTM=&ORG_NM=&ORG_BASE_NO=&CLTR_MNMT_NO=&")
     fun getSearch(
-        @Query("DPSL_MTD_CD")  DPSL_MTD_CD:String,
         @Query("CLTR_NM")  CLTR_NM:String,
-        @Query("GOODS_PRICE_FROM")  GOODS_PRICE_FROM:String,
-        @Query("GOODS_PRICE_TO")  GOODS_PRICE_TO:String
-
+        @Query("numOfRows") numOfRows:String,
+    @Query("pageNo") pageNo:String
     ):Call<Camco>
 }
 

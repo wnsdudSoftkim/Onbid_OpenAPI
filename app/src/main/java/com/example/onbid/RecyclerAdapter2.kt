@@ -44,11 +44,7 @@ class RecyclerAdapter2(                  // 존나 어렵다 viewholder라는 �
         holder.notice_name.setText(list[position].PLNM_NM)
         holder.notice_companyname.setText(list[position].RSBY_DEPT)
         holder.notice_1.setText(list[position].PRPT_DVSN_NM)
-        val a= items.PLNM_DT?.toLong()
-        val dateFormat= SimpleDateFormat("yyyy/MM/dd")
-        val date =dateFormat.format(a)
-        holder.notice_day1.setText(date.toString())
-        //holder.notice_day1.setText(list[position].PLNM_DT)
+        holder.notice_day1.setText(list[position].PLNM_DT)
         holder.notice_day2.setText(list[position].PBCT_EXCT_DTM)
 
     }

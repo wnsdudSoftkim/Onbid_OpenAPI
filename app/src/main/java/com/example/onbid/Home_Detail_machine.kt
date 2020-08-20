@@ -1,6 +1,7 @@
 package com.example.onbid
 
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -28,6 +29,10 @@ class Home_Detail_machine : AppCompatActivity() {
         btn_machine_backpress.setOnClickListener {
             onBackPressed()
         }
+        btn_go_machine.setOnClickListener {
+            val intent  = Intent(Intent.ACTION_VIEW, Uri.parse(("https://www.onbid.co.kr/op/cta/cltrdtl/collateralDetailMoveableAssetsList.do")))
+            startActivity(intent)
+        }
         btn_machine_popup.setOnClickListener {
             val intent = Intent(this,Appraisal_report::class.java)
             intent.putExtra("CLTR_NO",CLTR_NO)
@@ -36,6 +41,7 @@ class Home_Detail_machine : AppCompatActivity() {
         }
         viewModel.Livemachinedata.observe(this, Observer {
             val a = viewModel.homedetailmachine[0]
+            machinep_MIN_BID_PRC.setText(a.MIN_BID_PRC)
             machine_CLTR_NM.setText(a.CLTR_NM)
             machine_CTGR_TYPE_NM.setText(a.CTGR_TYPE_NM)
             machine_DPSL_MTD_NM.setText(a.DPSL_MTD_NM)
@@ -80,7 +86,7 @@ class Home_Detail_machine : AppCompatActivity() {
                     override fun onFailure(call: retrofit2.Call<CamcoDetailDataMachine>, t: Throwable) {
                         Toast.makeText(
                             this@Home_Detail_machine,
-                            "리스트를 읽어오는데 실패하였습니다" + t.message,
+                            "리스트를 읽어오는데 실패하였습니다",
                             Toast.LENGTH_LONG
                         ).show()
 

@@ -19,7 +19,7 @@ import retrofit2.Response
 class SearchActivity : AppCompatActivity() {
     val viewModel: ViewModel by viewModels()
     var result1: String? = ""
-    var search: String? = ""
+    var search: String?=""
     var result3: String? = ""
     var result4: String? = ""
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,12 +28,12 @@ class SearchActivity : AppCompatActivity() {
         btn_search_backpress.setOnClickListener {
             onBackPressed()
         }
-        result1 = intent.getStringExtra("result1")
         search = intent.getStringExtra("search")
-        result3 = intent.getStringExtra("result3")
-        result4 = intent.getStringExtra("result4")
 
-        initview()
+        if(search!=null) {
+            initview()
+        }
+
 
         viewModel.Livesearchdata.observe(this, Observer {
             if (viewModel.searchdata != null) {
@@ -57,13 +57,12 @@ class SearchActivity : AppCompatActivity() {
         })
     }
     fun initview() {
-        if(viewModel.searchdata.size==0) {
+        if(viewModel.searchdata!=null) {
             animation_view_search.visibility = View.VISIBLE
-            RetrofitClient.dataservice.getSearch(result1?:"",search?:"",result3?:"",result4?:"")
+            RetrofitClient.dataservice.getSearch(search!!,"20","1")
                 .enqueue(object : retrofit2.Callback<Camco> {
                     override fun onFailure(call: retrofit2.Call<Camco>, t: Throwable) {
                         Toast.makeText(applicationContext, "리스트를 읽어오는데 실패하였습니다"+t.message, Toast.LENGTH_LONG).show()
-                        asd.setText(t.message)
                     }
 
                     override fun onResponse(
@@ -74,7 +73,6 @@ class SearchActivity : AppCompatActivity() {
                         //viewModel로 데이터를 보내줌.
                         if (body != null) {
                             viewModel.mySearchData(response.body()!!)
-                            Toast.makeText(applicationContext,""+body,Toast.LENGTH_LONG).show()
                             animation_view_search.visibility = View.GONE
                         }
                     }
@@ -84,3 +82,4 @@ class SearchActivity : AppCompatActivity() {
         }
     }
 }
+

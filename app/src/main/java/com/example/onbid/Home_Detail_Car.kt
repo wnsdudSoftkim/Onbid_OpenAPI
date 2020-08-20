@@ -1,6 +1,7 @@
 package com.example.onbid
 
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -21,6 +22,10 @@ class Home_Detail_Car : AppCompatActivity() {
         btn_cardetail_backpress.setOnClickListener {
             onBackPressed()
         }
+        btn_go_car.setOnClickListener {
+            val intent  = Intent(Intent.ACTION_VIEW, Uri.parse(("https://www.onbid.co.kr/op/cta/cltrdtl/collateralDetailMoveableAssetsList.do")))
+            startActivity(intent)
+        }
         btn_car_popup.setOnClickListener {
             val intent = Intent(this,Appraisal_report::class.java)
             intent.putExtra("CLTR_NO",CLTR_NO)
@@ -36,6 +41,7 @@ class Home_Detail_Car : AppCompatActivity() {
         viewModel.LiveHomedetaildata.observe(this, Observer {
             if (viewModel.homedetaildata != null) {
                 val a = viewModel.homedetaildata[0]
+                carp_MIN_BID_PRC.setText(a.MIN_BID_PRC)
                 car_CLTR_NM.setText("" + a.CLTR_NM)
                 car_DPSL_MTD_NM.setText("" + a.DPSL_MTD_NM)
                 car_PBCT_CLTR_STAT_NM.setText("" + a.PBCT_CLTR_STAT_NM)
@@ -83,7 +89,7 @@ class Home_Detail_Car : AppCompatActivity() {
                     override fun onFailure(call: retrofit2.Call<CamcoDetailData>, t: Throwable) {
                         Toast.makeText(
                             this@Home_Detail_Car,
-                            "리스트를 읽어오는데 실패하였습니다" + t.message,
+                            "리스트를 읽어오는데 실패하였습니다" ,
                             Toast.LENGTH_LONG
                         ).show()
                         car_CLTR_NM.setText("" +t.message)

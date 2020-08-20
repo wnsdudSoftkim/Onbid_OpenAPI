@@ -36,6 +36,7 @@
     <LinearLayout
         android:layout_weight="90"
         android:layout_width="match_parent"
+        android:orientation="vertical"
         android:layout_height="0dp">
         <com.airbnb.lottie.LottieAnimationView
             android:layout_marginTop="200dp"
