@@ -18,16 +18,10 @@ data class CamcoDetailData @JvmOverloads constructor(
 data class CamcoDataDetail @JvmOverloads constructor(
     @field:ElementList(name = "items", inline = true)
     @param:ElementList(name = "items", inline = true)
-    val items: List<CamcoData_itemsDetail>
-)
-
-@Root(name = "items", strict = false)
-data class CamcoData_itemsDetail @JvmOverloads constructor(
-    @field:ElementList(name = "item", inline = true)
-    @param:ElementList(name = "item", inline = true)
     val item: List<CamcoData_item_Detail>
-
 )
+
+
 
 @Root(name = "item", strict = false)
 data class CamcoData_item_Detail @JvmOverloads constructor(

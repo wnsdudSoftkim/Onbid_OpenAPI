@@ -12,6 +12,7 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.onbid.*
 import com.example.onbid.data.*
+import com.example.onbid.menu.newList
 import kotlinx.android.synthetic.main.activity_fragment3.*
 import retrofit2.Response
 
@@ -23,12 +24,13 @@ class fragment3 : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        initview()
+
         return inflater.inflate(R.layout.activity_fragment3, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        initview()
         gradle1.setOnClickListener {
             startActivity(
                 Intent(
@@ -67,7 +69,7 @@ class fragment3 : Fragment() {
             startActivity(
                 Intent(
                     context,
-                    com.example.onbid.gradle.gradle5::class.java
+                    com.example.onbid.gradle.gradle6::class.java
                 )
             )
         }
@@ -75,7 +77,7 @@ class fragment3 : Fragment() {
             startActivity(
                 Intent(
                     context,
-                    com.example.onbid.gradle.gradle6::class.java
+                    newList::class.java
                 )
             )
         }
@@ -83,11 +85,13 @@ class fragment3 : Fragment() {
 
     }
 
+
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
         viewModel.Livedata.observe(viewLifecycleOwner, Observer {
             if (viewModel.data != null) {
+
                 val adapter =
                     RecyclerAdapter(
                         viewModel.data,
@@ -95,15 +99,16 @@ class fragment3 : Fragment() {
                         onClick = {
                             //여기서 통신을 바로 하고 통신이 완료될 때 까지 dialog 보여준다 통신이 완료되면 상세페이지로 이동하게끔 , data 를 intent 로 보내준다.
                             //물건정보조회 서비스의 상세조회API
-                            val intent = Intent(context,Home_Detail_Car::class.java)
-                            intent.putExtra("CLTR_NO",it.CLTR_NO)
-                            intent.putExtra("PBCT_NO",it.PBCT_NO)
+                            val intent = Intent(context, Home_Detail_Car::class.java)
+                            intent.putExtra("CLTR_NO", it.CLTR_NO)
+                            intent.putExtra("PBCT_NO", it.PBCT_NO)
                             startActivity(intent)
                         })
                 recycler_view.adapter = adapter
                 recycler_view.layoutManager = LinearLayoutManager(context)
                 recycler_view.adapter?.notifyDataSetChanged()
                 (recycler_view.adapter as RecyclerAdapter).setData(it)
+
             }
         })
 
@@ -112,8 +117,8 @@ class fragment3 : Fragment() {
 
     //통신 후 viewModel 에서 데이터를 꺼내와줌.
     fun initview() {
-        if(viewModel.data!=null) {
-
+        if (viewModel.data.size == 0) {
+            animation_view.visibility = View.VISIBLE
             RetrofitClient.dataservice.getdata()
                 .enqueue(object : retrofit2.Callback<Camco> {
                     override fun onFailure(call: retrofit2.Call<Camco>, t: Throwable) {
@@ -127,11 +132,12 @@ class fragment3 : Fragment() {
                         val body = response.body()
                         //viewModel로 데이터를 보내줌.
                         if (body != null) {
-                            //viewModel.mysHomeListSetData(body)
                             viewModel.mysHomeListSetData(response.body()!!)
                             //val a = body.body[0].items[0].item as ArrayList<RoomData>
                             //val task = InsertAsyncTask(a, context)
                             //task.execute()
+                            animation_view.visibility = View.GONE
+
 
                         }
                     }

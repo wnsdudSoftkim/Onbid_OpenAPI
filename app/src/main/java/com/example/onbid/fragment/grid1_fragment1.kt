@@ -1,5 +1,6 @@
 package com.example.onbid.fragment
 
+import android.app.Dialog
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -13,6 +14,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.onbid.*
 import com.example.onbid.data.Camco
 import com.example.onbid.data.ViewModel
+import kotlinx.android.synthetic.main.activity_fragment3.*
 import kotlinx.android.synthetic.main.grid_fragment1.*
 import retrofit2.Response
 
@@ -24,12 +26,13 @@ class grid1_fragment1 : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        initview()
         return inflater.inflate(R.layout.grid_fragment1, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        initview()
+
 
 
     }
@@ -37,7 +40,7 @@ class grid1_fragment1 : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel.Livegrid1fragment1data.observe(viewLifecycleOwner, Observer {
-            if (viewModel.grid1fragment1data.size == 0) {
+            if (viewModel.grid1fragment1data.size != null) {
                 val adapter =
                     RecyclerAdapter(
                         viewModel.grid1fragment1data,
@@ -59,6 +62,7 @@ class grid1_fragment1 : Fragment() {
     }
     fun initview() {
         if (viewModel.grid1fragment1data.size==0) {
+            animation_view2.visibility=View.VISIBLE
             RetrofitClient.dataservice.getTop20("0002","20","1")
                 .enqueue(object : retrofit2.Callback<Camco> {
                     override fun onFailure(call: retrofit2.Call<Camco>, t: Throwable) {
@@ -72,6 +76,7 @@ class grid1_fragment1 : Fragment() {
                         //viewModel로 데이터를 보내줌.
                         if (body != null) {
                             viewModel.myGrid1Fragment1SetData(body)
+                            animation_view2.visibility=View.GONE
                         }
                     }
 

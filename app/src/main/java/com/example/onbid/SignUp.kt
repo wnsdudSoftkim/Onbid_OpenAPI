@@ -7,7 +7,6 @@ import android.util.Log
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.fragment.app.viewModels
-import com.example.onbid.data.LoginData
 import com.example.onbid.data.ViewModel
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser

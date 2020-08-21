@@ -22,6 +22,7 @@
 
 
                 <ImageView
+                    android:id="@+id/btn_things_backpress"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/ic_baseline_keyboard_arrow_left_24" />
@@ -64,6 +65,7 @@
                         android:textStyle="bold" />
 
                     <TextView
+                        android:id="@+id/thingsp_MIN_BID_PRC"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="20"
@@ -90,6 +92,7 @@
                     android:src="@drawable/pngwing" />
 
                 <Button
+                    android:id="@+id/btn_go_things"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="right"

@@ -25,7 +25,7 @@ data class CamcoDataTestDetail @JvmOverloads constructor(
 data class CamcoData_itemsTestDetail @JvmOverloads constructor(
     @field:ElementList(name = "estimationInfo", inline = true)
     @param:ElementList(name = "estimationInfo", inline = true)
-    val item: List<CamcoData_item_TestDetail>
+    val estimationInfo: List<CamcoData_item_TestDetail>
 )
 
 @Root(name = "estimationInfo", strict = false)

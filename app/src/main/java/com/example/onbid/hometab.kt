@@ -32,7 +32,7 @@ class hometab : AppCompatActivity() {
         tabLayout.getTabAt(0)?.setIcon(R.drawable.ic_baseline_menu_24)
         tabLayout.getTabAt(1)?.setIcon(R.drawable.ic_baseline_search_24)
         tabLayout.getTabAt(2)?.setIcon(R.drawable.ic_baseline_home_24)
-        tabLayout.getTabAt(3)?.setIcon(R.drawable.ic_baseline_favorite_24)
+        tabLayout.getTabAt(3)?.setIcon(R.drawable.ic_baseline_calendar_today_24)
         tabLayout.getTabAt(4)?.setIcon(R.drawable.ic_baseline_person_24)
         tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
             override fun onTabReselected(tab: TabLayout.Tab?) {
@@ -66,19 +66,19 @@ class hometab : AppCompatActivity() {
 
                 when (tab!!.position) {
                     0 -> {
-                        linear_home_color1.setBackgroundResource(R.color.gray6)
+                        linear_home_color1.setBackgroundResource(R.color.ourcolor)
                     }
                     1 -> {
-                        linear_home_color2.setBackgroundResource(R.color.gray6)
+                        linear_home_color2.setBackgroundResource(R.color.ourcolor)
                     }
                     2 -> {
-                        linear_home_color3.setBackgroundResource(R.color.gray6)
+                        linear_home_color3.setBackgroundResource(R.color.ourcolor)
                     }
                     3 -> {
-                        linear_home_color4.setBackgroundResource(R.color.gray6)
+                        linear_home_color4.setBackgroundResource(R.color.ourcolor)
                     }
                     4 -> {
-                        linear_home_color5.setBackgroundResource(R.color.gray6)
+                        linear_home_color5.setBackgroundResource(R.color.ourcolor)
                     }
                     else -> {
 

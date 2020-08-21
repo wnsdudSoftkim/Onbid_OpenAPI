@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="140dp">
+
+
+    <LinearLayout
+        android:gravity="center"
+        android:layout_width="170dp"
+        android:layout_height="140dp"
+        android:background="@drawable/login_borderbox"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/notice_PLNM_NO"
+            android:textColor="#000"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="공고 번호" />
+
+        <TextView
+            android:id="@+id/notice_PLNM_NM"
+            android:textColor="#339af0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="공고명" />
+
+        <TextView
+            android:id="@+id/notice_RSBY_DEPT"
+            android:textColor="#fa5252"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="기관명" />
+
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/notice_PRPT_DVSN_NM"
+                android:layout_marginRight="10dp"
+                android:padding="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/login_borderbox"
+                android:text="재산 구분" />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:gravity="center"
+        android:background="@drawable/login_borderbox"
+        android:layout_width="110dp"
+        android:layout_height="140dp">
+        <TextView
+            android:id="@+id/notice_PLNM_DT"
+            android:textColor="#000"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="공고 일자"/>
+    </LinearLayout>
+    <LinearLayout
+        android:gravity="center"
+        android:background="@drawable/login_borderbox"
+        android:layout_width="110dp"
+        android:layout_height="140dp">
+        <TextView
+            android:id="@+id/notice_PBCT_EXCT_DTM"
+            android:textColor="#000"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="개찰 일시"/>
+    </LinearLayout>
+</LinearLayout>
